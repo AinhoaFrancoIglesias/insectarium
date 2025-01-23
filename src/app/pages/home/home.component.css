@@ -1,0 +1,35 @@
+/* Estilos del menu*/
+header {
+  background-color: rgba(120, 210, 106, 0.304);
+  padding: 10px;
+  border-radius: 30px;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+nav li {
+  display: inline; /* Hace que los ítems del menú estén en una línea horizontal */
+  margin-right: 30px; /* Espacio entre los ítems del menú */
+}
+
+nav a {
+  text-decoration: none;
+  color: #2c9a39;
+  font-size: 16px;
+}
+
+nav a:hover {
+  text-decoration: none;
+}
+
+/* --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- */
+
+
+h1 {
+    color: #2c9a39;
+  }
+  

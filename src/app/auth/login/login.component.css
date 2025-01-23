@@ -1,0 +1,123 @@
+
+/* Estilos del menu*/
+header {
+  background-color: rgba(120, 210, 106, 0.304);
+  padding: 10px;
+  border-radius: 30px;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+nav li {
+  display: inline; /* Hace que los ítems del menú estén en una línea horizontal */
+  margin-right: 30px; /* Espacio entre los ítems del menú */
+}
+
+nav a {
+  text-decoration: none;
+  color: #2c9a39;
+  font-size: 16px;
+}
+
+nav a:hover {
+  text-decoration: none;
+}
+
+/* --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- */
+
+:host {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  background-image: url('/assets/login_bg.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.login-container {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  padding: 40px;
+  border: 1px solid #aacb8f;
+  border-radius: 8px;
+  background-color: #fff; 
+  box-shadow: 0 2px 8px rgba(34, 165, 39, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch; 
+}
+
+/* Estilo de encabezado */
+.login-container h2 {
+  margin-bottom: 20px;
+  color: #2c9a39;
+  text-align: center; 
+}
+
+/* Estilo de los campos de formulario */
+.form-group {
+  margin-bottom: 25px;
+}
+
+label {
+  display: block;
+  margin-bottom: 15px;
+  color: #29ce6b;
+}
+
+input {
+  width: 100%;
+  padding: 15px; 
+  margin-bottom: 15px; 
+  border: 1px solid #ccc;
+  border-radius: 30px;
+  box-sizing: border-box;
+}
+
+input:focus {
+  outline: none;
+  border-color: #29ce6b;
+}
+
+button {
+  width: 100%;
+  padding: 15px;
+  margin-top: 20px;
+  background-color: #95e36b;
+  color: #fff;
+  border: none;
+  border-radius: 60px;
+  cursor: pointer;
+}
+
+button:disabled {
+  background-color: #cfdeca;
+  cursor: not-allowed;
+}
+
+.register-link {
+  text-align: center;
+  margin-top: 15px;
+}
+
+.register-link a {
+  color: #2c9a39;
+  text-decoration: none;
+}
+
+.register-link a:hover {
+  text-decoration: underline;
+}
+
+small {
+  color: red;
+}

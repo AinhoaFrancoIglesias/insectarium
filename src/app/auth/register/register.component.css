@@ -1,0 +1,184 @@
+/* Estilos del menu*/
+header {
+  background-color: rgba(120, 210, 106, 0.304);
+  padding: 10px;
+  border-radius: 30px;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+nav li {
+  display: inline; /* Hace que los ítems del menú estén en una línea horizontal */
+  margin-right: 30px; /* Espacio entre los ítems del menú */
+}
+
+nav a {
+  text-decoration: none;
+  color: #2c9a39;
+  font-size: 16px;
+}
+
+nav a:hover {
+  text-decoration: none;
+}
+
+/* --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- */
+
+
+/* Contenedor de la página */
+.page-container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 100vh;
+}
+
+/* Sidebar izquierdo */
+.sidebar-left {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 10px;
+}
+
+.sidebar-item {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.sidebar-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/* Formulario de registro */
+.register-container {
+  width: 40%;
+  height: auto;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch; 
+  box-sizing: border-box;
+}
+
+/* Encabezado del formulario */
+.form-header {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+h2 {
+  color: #2c9a39;
+}
+
+/* Estilos para los campos del formulario */
+.register-form .form-group {
+  margin-bottom: 25px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+/* Etiquetas de los campos */
+.register-form label {
+  font-size: 16px;
+  color: #29ce6b;
+  display: block;
+  margin-bottom: 10px;
+}
+
+/* Estilos para los campos de entrada */
+.register-form input {
+  width: 100%; 
+  padding: 15px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 30px;
+  box-sizing: border-box; 
+  margin-bottom: 10px; 
+  transition: width 0.3s ease;
+}
+
+.register-form input:focus {
+  border-color: rgba(34, 165, 39, 0.1);
+  outline: none;
+}
+
+/* Cuando el input tiene un error, el borde se pone rojo */
+.register-form input.ng-invalid.ng-touched {
+  border-color: red;
+}
+
+/* Estilos para el mensaje de error */
+.register-form small {
+  color: red; 
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+/* Estilos para el botón de envío */
+.register-form button {
+  width: 100%;
+  padding: 15px;
+  font-size: 16px;
+  background-color: #95e36b;
+  color: white;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.register-form button:hover {
+  background-color: #29ce6b;
+}
+
+
+/* Enlaces de navegación */
+.register-form .link-container {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.register-form .link-container a {
+  color: #2c9a39;
+  text-decoration: none;
+}
+
+.register-form .link-container a:hover {
+  text-decoration: underline;
+}
+
+/* Sidebar derecho */
+.sidebar-right {
+  width: 50%; 
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 10px;
+}
+
+.sidebar-item {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.sidebar-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+}
