@@ -1,9 +1,13 @@
-
-/* Estilos del menu*/
+/* Estilos del header */
 header {
+  position: fixed; /* Fija el header en la parte superior */
+  top: 0;
+  left: 0;
+  width: 100%;
   background-color: rgba(120, 210, 106, 0.304);
   padding: 10px;
   border-radius: 30px;
+  z-index: 1000; /* Asegura que el header esté por encima del resto del contenido */
 }
 
 nav ul {
@@ -27,8 +31,9 @@ nav a:hover {
   text-decoration: none;
 }
 
-/* --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- */
+/* ------------------------------------------------------------------------------------------------------------------------ */
 
+/* Estilos del contenedor de login */
 :host {
   display: flex;
   justify-content: center;
@@ -54,6 +59,7 @@ nav a:hover {
   flex-direction: column;
   justify-content: center;
   align-items: stretch; 
+  margin-top: 80px; /* Añade un margen superior para evitar que el contenido se solape con el header */
 }
 
 /* Estilo de encabezado */
@@ -114,7 +120,7 @@ button:disabled {
   text-decoration: none;
 }
 
-.register-link a:hover {
+register-link a:hover {
   text-decoration: underline;
 }
 
