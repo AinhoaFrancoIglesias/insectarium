@@ -5,11 +5,11 @@ header {
   border-radius: 0 0 15px 15px;
   text-align: center;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  margin-bottom: 20px; /* Añade margen inferior para separar del contenido */
+  margin-bottom: 20px; 
 }
 
 header h1 {
-  margin: 0;
+  margin: 10px;
   color: white;
   font-size: 24px;
 }
@@ -17,10 +17,12 @@ header h1 {
 nav ul {
   list-style: none;
   padding: 0;
-  margin: 10px 0 0 0;
+  margin: 10px 10px 10px 10px;
   display: flex;
   justify-content: center;
-  gap: 40px; /* Aumenta la separación entre los enlaces */
+  gap: 40px;
+  align-items: center;
+  height: 100%;
 }
 
 nav li {
@@ -28,15 +30,16 @@ nav li {
   margin-right: 20px;
 }
 
+/* Enlaces del header */
 nav a {
-  text-decoration: none;
+  text-decoration: none; 
   color: white;
   font-size: 16px;
   font-weight: bold;
 }
 
 nav a:hover {
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 /* ------------------------------------------------------------------------------------------------------------------------ */
@@ -51,7 +54,6 @@ body {
 }
 
 /* Contenido general */
-
 .content {
   display: flex;
   flex-direction: column;
@@ -65,13 +67,27 @@ body {
 .category-section {
   width: 100%;
   margin-bottom: 40px;
+  background-color: rgba(255, 255, 255, 0.596);
+  border: 1px solid #aacb8f;  
+  padding: 20px; /* Añadir padding para que no esté pegado a los bordes */
+  border-radius: 18px; /* Bordes redondeados */
 }
+
 
 .category-section h2 {
   text-align: left;
   width: 100%;
+  font-size: 160%;
+  font-weight: bolder;
+  color: #1f6c28;
+
 }
 
+.category-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
 
 .grid {
   display: grid;
@@ -82,12 +98,12 @@ body {
 }
 
 .category-item {
-  background-color: #95e36b;
-  color: white;
+  background-color: rgba(120, 210, 106, 0.123);
+  color: #1f6c28;
   padding: 15px;
   border-radius: 8px;
   font-weight: bold;
-  text-transform: uppercase;
+  text-transform:capitalize;
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -95,6 +111,7 @@ body {
   justify-content: space-between;
   height: 200px; 
 }
+
 
 .category-item img {
   width: 100%;
@@ -116,18 +133,92 @@ body {
   width: 100%;
   text-align: left; /* Alinea el texto a la izquierda */
   padding: 20px;
-  background-color: white;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: rgba(255, 255, 255, 0.596);
+  border: 1px solid #aacb8f;
+  border-radius: 18px;
+  box-shadow: 0 2px 8px rgba(34, 165, 39, 0.1);
   align-self: flex-start; /* Asegura que se mantenga a la izquierda */
 }
 
+.faq-section h2 {
+  text-align: left;
+  width: 100%;
+  font-size: 160%;
+  font-weight: bolder;
+  color: #1f6c28;
+  margin-bottom: 20px;
+}
+
+
 .faq-item {
   margin-bottom: 15px;
+  font-size: 100%;
 }
 
 .faq-item h3 {
   margin-bottom: 5px;
   color: #333;
+  font-size: 100%;
+  font-weight: bold;
 }
+
+
+/*------------------------------------------------------------------*/
+/* Estilos del footer */
+footer {
+  background-color: rgba(120, 210, 106, 0.9); /* Color de fondo */
+  padding: 15px;
+  border-radius: 15px 15px 0 0; /* Bordes redondeados */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  display: flex;
+  justify-content: space-between; /* Separar las columnas */
+  padding: 10px 30px; /* Ajuste del padding */
+  position: relative; /* Relative para mantener la estructura */
+  margin-top: 30px; /* Añadir margen superior si es necesario */
+  width: 100%; /* Ancho completo */
+  z-index: 1;
+}
+
+/* Estilos del footer */
+footer {
+  background-color: rgba(120, 210, 106, 0.9); 
+  padding: 15px;
+  border-radius: 15px 15px 0 0;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+  display: flex;
+  justify-content: space-between; 
+  padding: 10px 30px; 
+  position: relative;
+  margin-top: 30px;
+  width: 100%;
+  z-index: 1;
+}
+
+/* Estilo de los textos dentro del footer */
+footer p {
+  margin: 0;
+  color: white;
+  font-size: 14px;
+}
+
+/* Estilo para las columnas dentro del footer */
+.footer-left, .footer-right {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-left {
+  text-align: left;
+  margin-left: 10%;
+}
+
+.footer-right {
+  text-align: right;
+  margin-right: 10%;
+
+}
+
+/* Para centrar las columnas horizontalmente en el footer */
+
+
+

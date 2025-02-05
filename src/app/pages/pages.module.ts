@@ -5,18 +5,17 @@ import { HomeModule } from './home/home.module';
 import { ShopModule } from './shop/shop.module';
 import { GuidesModule } from './guides/guides.module';
 
+
 @NgModule({
   declarations: [
   ],
   imports: [
-    CommonModule,
   ],
   exports: [
     HomeModule,
+    ContactModule,
     ShopModule,
-    GuidesModule,
-    ContactModule
-
+    GuidesModule
   ]
 })
 export class PagesModule { }

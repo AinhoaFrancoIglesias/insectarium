@@ -37,7 +37,7 @@ export class LoginComponent {
       // Por simplicidad, asumimos que el inicio de sesión es exitoso:
       if (email === 'a@g.com' && password === '123456') {
         console.log('Inicio de sesión exitoso');
-        this.router.navigate(['/profile']); // Redirige al perfil
+        this.router.navigate(['/home']); // Redirige al home
       } else {
         console.error('Credenciales incorrectas');
         alert('Email o contraseña incorrectos');

@@ -52,14 +52,14 @@ nav a:hover {
   height: auto;
   padding: 40px;
   border: 1px solid #aacb8f;
-  border-radius: 8px;
+  border-radius: 18px;
   background-color: #fff; 
   box-shadow: 0 2px 8px rgba(34, 165, 39, 0.1);
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: stretch; 
-  margin-top: 80px; /* Añade un margen superior para evitar que el contenido se solape con el header */
+  margin-top: 80px;
 }
 
 /* Estilo de encabezado */

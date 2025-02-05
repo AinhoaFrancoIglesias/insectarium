@@ -8,6 +8,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class RegisterComponent {
   registerForm: FormGroup;
+  router: any;
 
   constructor(private fb: FormBuilder) {
     // Definir el formulario reactivo con sus validaciones
@@ -51,6 +52,7 @@ export class RegisterComponent {
     if (this.registerForm.valid) {
       const { username, email, password } = this.registerForm.value;
       console.log('Registrando usuario:', { username, email, password });
+        this.router.navigate(['/home']); // Redirige al home
       // Lógica de registro (llamar al servicio de registro, etc.)
     }
   }

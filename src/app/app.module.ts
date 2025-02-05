@@ -4,13 +4,16 @@ import { AppRoutingModule } from './app-routing.module';
 import { AuthModule } from './auth/auth.module';  
 
 import { AppComponent } from './app.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [AppComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    AuthModule  // Asegúrate de que AuthModule está importado aquí
+    AuthModule,
+    RouterModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

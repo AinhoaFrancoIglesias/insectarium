@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ContactComponent } from './contact.component';
+import { AuthRoutingModule } from '../../auth/auth-routing.module';
 
 
 
@@ -9,7 +10,9 @@ import { ContactComponent } from './contact.component';
     ContactComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    AuthRoutingModule
+    
   ], 
   exports: [
     ContactComponent
