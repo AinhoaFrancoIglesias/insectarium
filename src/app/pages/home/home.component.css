@@ -69,8 +69,8 @@ body {
   margin-bottom: 40px;
   background-color: rgba(255, 255, 255, 0.596);
   border: 1px solid #aacb8f;  
-  padding: 20px; /* Añadir padding para que no esté pegado a los bordes */
-  border-radius: 18px; /* Bordes redondeados */
+  padding: 20px; 
+  border-radius: 18px;
 }
 
 
@@ -80,7 +80,8 @@ body {
   font-size: 160%;
   font-weight: bolder;
   color: #1f6c28;
-
+  margin-bottom: 35px;
+  margin-top: 20px;
 }
 
 .category-link {
@@ -166,16 +167,16 @@ body {
 /*------------------------------------------------------------------*/
 /* Estilos del footer */
 footer {
-  background-color: rgba(120, 210, 106, 0.9); /* Color de fondo */
+  background-color: rgba(120, 210, 106, 0.9); 
   padding: 15px;
-  border-radius: 15px 15px 0 0; /* Bordes redondeados */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  border-radius: 15px 15px 0 0; 
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
   display: flex;
-  justify-content: space-between; /* Separar las columnas */
-  padding: 10px 30px; /* Ajuste del padding */
-  position: relative; /* Relative para mantener la estructura */
-  margin-top: 30px; /* Añadir margen superior si es necesario */
-  width: 100%; /* Ancho completo */
+  justify-content: space-between; 
+  padding: 10px 30px; 
+  position: relative; 
+  margin-top: 30px; 
+  width: 100%; 
   z-index: 1;
 }
 
@@ -217,8 +218,3 @@ footer p {
   margin-right: 10%;
 
 }
-
-/* Para centrar las columnas horizontalmente en el footer */
-
-
-

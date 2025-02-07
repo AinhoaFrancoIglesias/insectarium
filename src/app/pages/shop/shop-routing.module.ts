@@ -6,6 +6,7 @@ import { ShoparachnidaComponent } from './shoparachnida/shoparachnida.component'
 const routes: Routes = [
   { path: '', component: AllshopComponent }, // `/pages/shop` carga AllshopComponent
   { path: 'arachnida', component: ShoparachnidaComponent }, // `/pages/shop/arachnida`
+  
 ];
 
 @NgModule({

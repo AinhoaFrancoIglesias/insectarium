@@ -20,6 +20,7 @@ import { ShopmantodeaComponent } from './pages/shop/shopmantodea/shopmantodea.co
 import { ShopphasmatodeaComponent } from './pages/shop/shopphasmatodea/shopphasmatodea.component';
 import { LoginComponent } from './auth/login/login.component';
 import { RegisterComponent } from './auth/register/register.component';
+import { ShopgastropodaComponent } from './pages/shop/shopgastropoda/shopgastropoda.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -40,7 +41,7 @@ const routes: Routes = [
   { path: 'shop/shopcoleoptera', component: ShopcoleopteraComponent },
   { path: 'shop/shopcrustacea', component: ShopcrustaceaComponent },
   { path: 'shop/shopdiplopoda', component: ShopdiplopodaComponent },
-  { path: 'shop/shopgastropoda', component: ShopdiplopodaComponent },
+  { path: 'shop/shopgastropoda', component: ShopgastropodaComponent },
   { path: 'shop/shophymenoptera', component: ShophymenopteraComponent },
   { path: 'shop/shopisopoda', component: ShopisopodaComponent },
   { path: 'shop/shoplepidoptera', component: ShoplepidopteraComponent },
@@ -48,7 +49,7 @@ const routes: Routes = [
   { path: 'shop/shopphasmatodea', component: ShopphasmatodeaComponent},
 
   { path: '', redirectTo: 'home', pathMatch: 'full' }, // Redirigir a home si la ruta está vacía
-  { path: '**', redirectTo: 'allshop' } // Manejo de rutas desconocidas
+  { path: '**', redirectTo: 'home' } // Manejo de rutas desconocidas
 ];
 
 

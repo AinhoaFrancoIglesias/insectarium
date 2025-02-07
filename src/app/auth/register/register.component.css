@@ -1,32 +1,48 @@
-/* Estilos del menu*/
+/* Estilos del header */
 header {
-  background-color: rgba(120, 210, 106, 0.304);
-  padding: 10px;
-  border-radius: 30px;
+  background-color: rgba(120, 210, 106, 0.9);
+  padding: 15px;
+  border-radius: 0 0 15px 15px;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px; 
+}
+
+header h1 {
+  margin: 10px;
+  color: white;
+  font-size: 24px;
 }
 
 nav ul {
   list-style: none;
   padding: 0;
-  margin: 0;
+  margin: 10px 10px 10px 10px;
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  align-items: center;
+  height: 100%;
 }
 
 nav li {
-  display: inline; /* Hace que los ítems del menú estén en una línea horizontal */
-  margin-right: 30px; /* Espacio entre los ítems del menú */
+  display: inline;
+  margin-right: 20px;
 }
 
+/* Enlaces del header */
 nav a {
-  text-decoration: none;
-  color: #2c9a39;
+  text-decoration: none; 
+  color: white;
   font-size: 16px;
+  font-weight: bold;
 }
 
 nav a:hover {
   text-decoration: none;
 }
 
-/* --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- */
+/* ------------------------------------------------------------------------------------------------------------------------ */
 
 
 /* Contenedor de la página */
@@ -181,4 +197,59 @@ h2 {
   height: 100%;
   object-fit: cover;
   border-radius: 8px;
+}
+
+/*------------------------------------------------------------------*/
+/* Estilos del footer */
+footer {
+  background-color: rgba(120, 210, 106, 0.9); 
+  padding: 15px;
+  border-radius: 15px 15px 0 0; 
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+  display: flex;
+  justify-content: space-between; 
+  padding: 10px 30px; 
+  position: relative; 
+  margin-top: 30px; 
+  width: 100%; 
+  z-index: 1;
+}
+
+/* Estilos del footer */
+footer {
+  background-color: rgba(120, 210, 106, 0.9); 
+  padding: 15px;
+  border-radius: 15px 15px 0 0;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+  display: flex;
+  justify-content: space-between; 
+  padding: 10px 30px; 
+  position: relative;
+  margin-top: 30px;
+  width: 100%;
+  z-index: 1;
+}
+
+/* Estilo de los textos dentro del footer */
+footer p {
+  margin: 0;
+  color: white;
+  font-size: 14px;
+}
+
+/* Estilo para las columnas dentro del footer */
+.footer-left, .footer-right {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-left {
+  text-align: left;
+  margin-left: 10%;
+}
+
+.footer-right {
+  text-align: right;
+  margin-right: 10%;
+
 }
