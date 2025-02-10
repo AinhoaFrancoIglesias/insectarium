@@ -6,7 +6,6 @@ import { AllguidesComponent } from './guides/allguides/allguides.component';
 import { ContactComponent } from './contact/contact.component';
 import { ShoppingcartComponent } from '../favs/shoppingcart/shoppingcart.component';
 import { FavoritesComponent } from '../favs/favorites/favorites.component';
-import { ShoparachnidaComponent } from './shop/shoparachnida/shoparachnida.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -15,7 +14,6 @@ const routes: Routes = [
   { path: 'contact', component: ContactComponent },
   { path: 'shoppingcart', component: ShoppingcartComponent },
   { path: 'favorites', component: FavoritesComponent },
-  { path: 'shoparachnida', component: ShoparachnidaComponent }
 ];
 
 @NgModule({

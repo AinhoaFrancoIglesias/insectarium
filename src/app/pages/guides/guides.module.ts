@@ -39,19 +39,7 @@ import { AuthRoutingModule } from '../../auth/auth-routing.module';
         AuthRoutingModule
   ],
   exports: [
-    AllguidesComponent,
-    GuidesarachnidaComponent,
-    GuidesblattodeaComponent,
-    GuideschilopodaComponent,
-    GuidescoleopteraComponent,
-    GuidescrustaceaComponent,
-    GuidesdiplopodaComponent,
-    GuidesgastropodaComponent,
-    GuideshymenopteraComponent,
-    GuidesisopodaComponent,
-    GuideslepidopteraComponent,
-    GuidesmantodeaComponent,
-    GuidesphasmatodeaComponent
+
   ]
 })
 export class GuidesModule { }
