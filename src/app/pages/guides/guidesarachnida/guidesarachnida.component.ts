@@ -1,34 +1,49 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-guidesarachnida',
   templateUrl: './guidesarachnida.component.html',
   styleUrls: ['./guidesarachnida.component.css']
 })
-export class GuidesarachnidaComponent {
+export class GuidesarachnidaComponent implements OnInit {
   guide1 = {
     isOpen: false,
     content: `
-      <p>Los ciempiés son artrópodos pertenecientes al orden Chilopoda. Son conocidos por sus múltiples patas y su habilidad para moverse rápidamente. Se encuentran en diversos hábitats, desde bosques hasta áreas áridas, y son depredadores eficaces de otros insectos. Aunque pueden ser venenosos, su veneno generalmente no es peligroso para los humanos.</p>
+      <p>Las arañas son artrópodos pertenecientes a la clase Arachnida. Son conocidas por su capacidad para tejer telarañas y su gran diversidad de especies. Se encuentran en casi todos los ecosistemas del mundo y juegan un papel crucial en el control de poblaciones de insectos. Algunas especies poseen veneno potente, aunque la mayoría son inofensivas para los humanos.</p>
     `
   };
   
   guide2 = {
     isOpen: false,
     content: `
-      <p><strong>Alimentación:</strong> Los ciempiés deben alimentarse cada 3 días. Se recomienda ofrecerles presas vivas, como insectos pequeños, o presas pre-muertas. Las presas vivas deben ser más pequeñas que el tamaño del cuerpo del ciempiés, y deben ser consumidas en un plazo de 24 horas. Si las presas son pre-muertas, deben retirarse rápidamente para evitar la descomposición.</p>
+      <p>Las arañas se alimentan principalmente de insectos. Dependiendo de la especie, pueden capturar sus presas mediante telarañas pegajosas o mediante caza activa. Es recomendable alimentarlas cada 3-5 días con insectos vivos o presas adecuadas a su tamaño. Si no consumen la presa en un día, es mejor retirarla para evitar problemas de estrés o contaminación.</p>
     `
   };
   
-
   guide3 = {
     isOpen: false,
     content: `
-      <p><strong>Alojamiento:</strong> El alojamiento debe ser adecuado para el tamaño y comportamiento del ciempiés. Para especies pequeñas, un espacio de unos 5×5 cm es suficiente, pero para especies más grandes puede ser necesario un espacio más grande y con suficiente ventilación. Además, se debe asegurar que el sustrato sea lo suficientemente húmedo para mantener la humedad ambiental adecuada.</p>
+      <p><strong>Alojamiento:</strong> El terrario o hábitat debe adaptarse a la especie de araña que se tenga. Las especies arborícolas requieren un espacio vertical con ramas y refugios, mientras que las terrestres necesitan suficiente sustrato para excavar. La ventilación adecuada es esencial para evitar problemas de hongos y enfermedades.</p>
       
-      <p><strong>Humedad:</strong> Los ciempiés necesitan un nivel de humedad moderado, pero nunca deben estar demasiado mojados. Mantén la mitad del sustrato ligeramente húmedo, especialmente para las crías que pueden deshidratarse rápidamente.</p>
+      <p><strong>Humedad:</strong> La humedad del hábitat debe ajustarse a la especie. Algunas arañas, como las tarántulas del desierto, requieren condiciones secas, mientras que otras necesitan una humedad más alta. Se recomienda pulverizar agua en el terrario según las necesidades específicas de la especie.</p>
     `
   };
+
+  constructor(@Inject(ActivatedRoute) private route: ActivatedRoute) {}
+
+  ngOnInit() {
+    this.route.queryParams.subscribe(params => {
+      const guideId = +params['guide'];
+      if (guideId === 1) {
+        this.guide1.isOpen = true;
+      } else if (guideId === 2) {
+        this.guide2.isOpen = true;
+      } else if (guideId === 3) {
+        this.guide3.isOpen = true;
+      }
+    });
+  }
 
   toggleContent(guideId: number) {
     if (guideId === 1) {

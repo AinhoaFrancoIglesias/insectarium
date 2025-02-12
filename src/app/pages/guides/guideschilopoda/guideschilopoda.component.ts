@@ -16,7 +16,7 @@ export class GuideschilopodaComponent {
   guide2 = {
     isOpen: false,
     content: `
-      <p><strong>Alimentación:</strong> Los ciempiés deben alimentarse cada 3 días. Se recomienda ofrecerles presas vivas, como insectos pequeños, o presas pre-muertas. Las presas vivas deben ser más pequeñas que el tamaño del cuerpo del ciempiés, y deben ser consumidas en un plazo de 24 horas. Si las presas son pre-muertas, deben retirarse rápidamente para evitar la descomposición.</p>
+      <p>Los ciempiés deben alimentarse cada 3 días. Se recomienda ofrecerles presas vivas, como insectos pequeños, o presas pre-muertas. Las presas vivas deben ser más pequeñas que el tamaño del cuerpo del ciempiés, y deben ser consumidas en un plazo de 24 horas. Si las presas son pre-muertas, deben retirarse rápidamente para evitar la descomposición.</p>
     `
   };
   

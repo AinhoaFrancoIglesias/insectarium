@@ -78,6 +78,7 @@ header {
     color: #1f6c28;
   }
   
+  
 /* Sección de Productos */
 .productos-section {
     width: 100%;
@@ -211,6 +212,7 @@ button .icon {
     box-shadow: 0 2px 8px rgba(34, 165, 39, 0.1);
     margin-top: 25px;
     margin-bottom: 25px;
+
   }
   
   .guias-section h2 {
@@ -221,6 +223,7 @@ button .icon {
     color: #1f6c28;
     margin-bottom: 20px;
   }
+
   
   /* Estilo del boton que contiene cada guia */
   .faq-item {
@@ -255,6 +258,16 @@ button .icon {
   .faq-item p {
     margin: 0;
     color: #555;
+  }
+
+  .faq-item-link {
+    text-decoration: none;
+
+  }
+
+  a {
+    text-decoration: none;
+
   }
   
 

@@ -118,6 +118,11 @@ body {
   color: #333;
 }
 
+a {
+  text-decoration: none;
+  color: #1f6c28;
+
+}
 
 /*grid para comprar*/
 .categorias-section {

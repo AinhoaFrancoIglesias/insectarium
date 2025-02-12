@@ -15,7 +15,7 @@ export class GuidesblattodeaComponent {
   guide2 = {
     isOpen: false,
     content: 
-      '<p><strong>Alimentación:</strong> Las cucarachas son omnívoras y pueden alimentarse de una amplia variedad de materiales orgánicos, incluidos restos de comida, madera, papel y materiales en descomposición. En cautiverio, es recomendable ofrecerles alimentos balanceados (frutas, verduras, y ocasionalmente proteínas). Mantén siempre su comida fresca y limpia para evitar la acumulación de bacterias.</p>'
+      '<p>Las cucarachas son omnívoras y pueden alimentarse de una amplia variedad de materiales orgánicos, incluidos restos de comida, madera, papel y materiales en descomposición. En cautiverio, es recomendable ofrecerles alimentos balanceados (frutas, verduras, y ocasionalmente proteínas). Mantén siempre su comida fresca y limpia para evitar la acumulación de bacterias.</p>'
   };
   
 

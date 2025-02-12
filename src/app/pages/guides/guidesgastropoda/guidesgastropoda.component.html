@@ -1,1 +1,94 @@
-<p>guidesgastropoda works!</p>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="/home" style="font-size: 25px;">Insectarium</a></li>
+                <li><a href="/allshop">Tienda</a></li>
+                <li><a href="/allguides">Guías</a></li>
+                <li><a href="/contact">Contacto</a></li>          
+                <li><a href="/profile">Mi perfil</a></li>
+                <li><a href="/shoppingcart" >Carrito</a></li>
+                <li><a href="/favorites" style="font-size: 20px;">&#x2661;</a></li> <!--favoritos-->
+            </ul>
+        </nav>
+      </header>
+      
+    <div class="content">
+        <div class="category-section">
+          <h2>Guías sobre Gastrópodos</h2>
+      
+          <div class="guide">
+            <h1 (click)="toggleContent(1)">Guía 1: ¿Gastrópodos?</h1>
+            <div class="guide-content" [class.open]="guide1.isOpen">
+              <div class="guide-text" [innerHTML]="guide1.content"></div>
+            </div>
+          </div>
+          
+      
+          <div class="guide">
+            <h1 (click)="toggleContent(2)">Guía 2: Alimentación</h1>
+            <div class="guide-content" [class.open]="guide2.isOpen">
+              <div class="guide-text" [innerHTML]="guide2.content"></div>
+            </div>
+          </div>
+          
+      
+          <div class="guide">
+            <h1 (click)="toggleContent(3)">Guía 3: Espacio y Enclosure</h1>
+            <div class="guide-content" [class.open]="guide3.isOpen">
+              <div class="guide-text" [innerHTML]="guide3.content"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <section class="categorias-section">
+        <h2>Compra gastrópodos</h2>
+        <div class="grid">
+            <div class="grid-item">
+                <p>Achatina balteata · 4.99€</p>
+                <img src="/assets/gastropoda_achatinabalteata.jpg" alt="Achatina balteata">
+                <div class="buttons">
+                    <button class="add-to-cart">
+                        <span class="icon cart-icon">🛒</span> Añadir a carrito <span class="icon arrow-icon">→</span>
+                    </button>
+                    <button class="add-to-favorites">Añadir a favoritos</button>
+                </div>
+            </div>
+            <div class="grid-item">
+                <p>Achatina achatina · 18.99€</p>
+                <img src="/assets/gastropoda_achatinaachatina.jpg" alt="Achatina achatina">
+                <div class="buttons">
+                    <button class="add-to-cart">
+                        <span class="icon cart-icon">🛒</span> Añadir a carrito <span class="icon arrow-icon">→</span>
+                    </button>
+                    <button class="add-to-favorites">Añadir a favoritos</button>
+                </div>
+            </div>
+            <div class="grid-item">
+                <p>Emphysetes udzun. · 11.99€</p>
+                <img src="/assets/gastropoda_emphysetesundzugwensis.jpg" alt="Anadenobolus moni">
+                <div class="buttons">
+                    <button class="add-to-cart">
+                        <span class="icon cart-icon">🛒</span> Añadir a carrito <span class="icon arrow-icon">→</span>
+                    </button>
+                    <button class="add-to-favorites">Añadir a favoritos</button>
+                </div>
+            </div>
+        </div>
+      </section>
+
+    
+    
+      <footer>
+        <div class="footer-left">
+            <p><strong>Insectarium</strong></p>
+            <p>C/ Asunción, 14</p>
+          <p>41011 Sevilla</p>
+        </div>
+        <div class="footer-right">
+          <p>653 785 231</p>
+          <p>insectarium"&#64;"gmail.com</p>
+        </div>
+      </footer>
+</body>
