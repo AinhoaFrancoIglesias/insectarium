@@ -50,6 +50,9 @@ header {
     background-size: cover;
     text-align: center;
   }
+  a{
+    text-decoration: none;
+  }
   
   /* Contenido general */
   .content {

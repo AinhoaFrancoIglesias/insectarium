@@ -61,6 +61,10 @@ body {
   padding: 20px;
 }
 
+a{
+  text-decoration: none;
+}
+
 /* Sección de Arañas */
 .categorias-section {
   width: 100%;

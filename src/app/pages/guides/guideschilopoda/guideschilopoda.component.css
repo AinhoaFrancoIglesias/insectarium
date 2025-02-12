@@ -301,4 +301,7 @@ header {
     margin-right: 10%;
   
   }
-  
+  a {
+    text-decoration: none;
+    color: #1f6c28;
+  }

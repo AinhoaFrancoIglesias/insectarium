@@ -60,6 +60,10 @@ header {
     margin: 0 auto;
     padding: 20px;
   }
+
+  a{
+    text-decoration: none;
+  }
   
   /* Sección de Arañas */
   .categorias-section {

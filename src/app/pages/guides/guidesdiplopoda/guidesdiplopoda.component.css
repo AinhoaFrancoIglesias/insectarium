@@ -60,6 +60,11 @@ header {
     margin: 0 auto;
     padding: 20px;
   }
+
+  a{
+    text-decoration: none;
+    color: #1f6c28;
+  }
   
   /* Sección de guías */
   .category-section {

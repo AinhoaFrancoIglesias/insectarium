@@ -78,6 +78,10 @@ header {
     color: #1f6c28;
   }
   
+  a{
+    text-decoration: none;
+  }
+  
 /* Sección de Productos */
 .productos-section {
     width: 100%;
