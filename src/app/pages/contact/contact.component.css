@@ -64,6 +64,8 @@ body {
     margin: 0;
     padding: 0;
   }
+
+
   
 /* Sección de FAQ */
 .faq-section {
@@ -99,6 +101,57 @@ body {
   font-weight: bold;
 }
 
+/* Sección de formulario */
+.contact-form {
+  width: 100%;
+  text-align: left;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.596);
+  border: 1px solid #aacb8f;
+  border-radius: 18px;
+  box-shadow: 0 2px 8px rgba(34, 165, 39, 0.1);
+  align-self: flex-start;
+  margin-top: 30px;
+}
+
+.contact-form h2 {
+  text-align: left;
+  width: 100%;
+  font-size: 160%;
+  font-weight: bolder;
+  color: #1f6c28;
+  margin-bottom: 20px;
+}
+
+.contact-form label {
+  display: block;
+  font-size: 100%;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+.contact-form input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  font-size: 100%;
+  border: 1px solid #aacb8f;
+  border-radius: 10px;
+}
+
+.contact-form button {
+  padding: 10px 20px;
+  background-color: #7cd26a;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.contact-form button:hover { 
+  background-color: #6bb859;
+}
 
   
 /*------------------------------------------------------------------*/

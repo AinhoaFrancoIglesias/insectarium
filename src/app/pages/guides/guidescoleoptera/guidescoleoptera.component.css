@@ -5,7 +5,7 @@ header {
   border-radius: 0 0 15px 15px;
   text-align: center;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  margin-bottom: 20px;
+  margin-bottom: 20px; 
 }
 
 header h1 {
@@ -21,6 +21,8 @@ nav ul {
   display: flex;
   justify-content: center;
   gap: 40px;
+  align-items: center;
+  height: 100%;
 }
 
 nav li {
@@ -30,7 +32,7 @@ nav li {
 
 /* Enlaces del header */
 nav a {
-  text-decoration: none;
+  text-decoration: none; 
   color: white;
   font-size: 16px;
   font-weight: bold;

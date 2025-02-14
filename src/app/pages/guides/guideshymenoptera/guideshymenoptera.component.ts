@@ -1,11 +1,12 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-guideshymenoptera',
   templateUrl: './guideshymenoptera.component.html',
   styleUrls: ['./guideshymenoptera.component.css']
 })
-export class GuideshymenopteraComponent {
+export class GuideshymenopteraComponent implements OnInit {
   guide1 = {
     isOpen: false,
     content: `
@@ -27,7 +28,23 @@ export class GuideshymenopteraComponent {
     `
   };
 
-  toggleContent(guideId: number) {
+  constructor(private route: ActivatedRoute) {}
+
+  ngOnInit(): void {
+    // Obtener el parámetro 'guide' desde la URL
+    this.route.queryParams.subscribe(params => {
+      const guideId = +params['guide'];
+      if (guideId === 1) {
+        this.guide1.isOpen = true;
+      } else if (guideId === 2) {
+        this.guide2.isOpen = true;
+      } else if (guideId === 3) {
+        this.guide3.isOpen = true;
+      }
+    });
+  }
+
+  toggleContent(guideId: number): void {
     if (guideId === 1) {
       this.guide1.isOpen = !this.guide1.isOpen;
     } else if (guideId === 2) {

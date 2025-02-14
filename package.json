@@ -2,6 +2,8 @@
   "name": "insectarium",
   "version": "0.0.0",
   "scripts": {
+    "compodoc": "npx compodoc -p tsconfig.app.json",
+    "compodoc:serve": "npx compodoc -s",
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
