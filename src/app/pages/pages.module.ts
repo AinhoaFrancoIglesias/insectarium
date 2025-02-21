@@ -4,7 +4,7 @@ import { ContactModule } from './contact/contact.module';
 import { HomeModule } from './home/home.module';
 import { ShopModule } from './shop/shop.module';
 import { GuidesModule } from './guides/guides.module';
-import { GuidesRoutingModule } from './guides/guides-routing.module';  // Agrega esta línea
+import { GuidesRoutingModule } from './guides/guides-routing.module'; 
 
 @NgModule({
   declarations: [],
@@ -14,7 +14,7 @@ import { GuidesRoutingModule } from './guides/guides-routing.module';  // Agrega
     ContactModule,
     ShopModule,
     GuidesModule,
-    GuidesRoutingModule
+    GuidesRoutingModule,
   ],
   exports: [
     HomeModule,

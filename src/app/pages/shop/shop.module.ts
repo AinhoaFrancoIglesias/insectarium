@@ -33,7 +33,8 @@ import { ShopphasmatodeaComponent } from './shopphasmatodea/shopphasmatodea.comp
     ShopphasmatodeaComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    
   ]
 })
 export class ShopModule { }

@@ -34,7 +34,6 @@ export class LoginComponent {
       console.log('Iniciando sesión con:', { email, password });
 
       // Aquí se puede añadir lógica de autenticación real (por ejemplo, un servicio HTTP)
-      // Por simplicidad, asumimos que el inicio de sesión es exitoso:
       if (email === 'a@g.com' && password === '123456') {
         console.log('Inicio de sesión exitoso');
         this.router.navigate(['/home']); // Redirige al home

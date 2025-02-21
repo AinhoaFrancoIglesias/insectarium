@@ -2,11 +2,9 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './pages/home/home.component'; 
 import { ProfileComponent } from './auth/profile/profile.component';
-import { FavoritesComponent } from './favs/favorites/favorites.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { AllshopComponent } from './pages/shop/allshop/allshop.component';
 import { AllguidesComponent } from './pages/guides/allguides/allguides.component';
-import { ShoppingcartComponent } from './favs/shoppingcart/shoppingcart.component';
 import { ShoparachnidaComponent } from './pages/shop/shoparachnida/shoparachnida.component';
 import { ShopblattodeaComponent } from './pages/shop/shopblattodea/shopblattodea.component';
 import { ShopchilopodaComponent } from './pages/shop/shopchilopoda/shopchilopoda.component';
@@ -40,8 +38,6 @@ const routes: Routes = [
   { path: 'allguides', component: AllguidesComponent },
   { path: 'contact', component: ContactComponent },
   { path: 'profile', component: ProfileComponent },
-  { path: 'shoppingcart', component: ShoppingcartComponent },
-  { path: 'favorites', component: FavoritesComponent },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
 
