@@ -61,22 +61,22 @@ nav a:hover {
 }
 
 body {
-    margin: 0;
-    padding: 0;
-  }
+  margin: 0;
+  padding: 0;
+  background-color: transparent;
+}
 
-
-  
 /* Sección de FAQ */
 .faq-section {
-  width: 100%;
-  text-align: left; /* Alinea el texto a la izquierda */
+  width: 600px; 
+  margin: 30px auto;
+  text-align: left;
   padding: 20px;
   background-color: rgba(255, 255, 255, 0.596);
   border: 1px solid #aacb8f;
   border-radius: 18px;
   box-shadow: 0 2px 8px rgba(34, 165, 39, 0.1);
-  align-self: flex-start; /* Asegura que se mantenga a la izquierda */
+  align-self: flex-start;
 }
 
 .faq-section h2 {
@@ -87,7 +87,6 @@ body {
   color: #1f6c28;
   margin-bottom: 20px;
 }
-
 
 .faq-item {
   margin-bottom: 15px;
@@ -103,7 +102,8 @@ body {
 
 /* Sección de formulario */
 .contact-form {
-  width: 100%;
+  width: 600px; 
+  margin: 30px auto;
   text-align: left;
   padding: 20px;
   background-color: rgba(255, 255, 255, 0.596);
@@ -111,7 +111,6 @@ body {
   border-radius: 18px;
   box-shadow: 0 2px 8px rgba(34, 165, 39, 0.1);
   align-self: flex-start;
-  margin-top: 30px;
 }
 
 .contact-form h2 {
@@ -153,9 +152,6 @@ body {
   background-color: #6bb859;
 }
 
-  
-/*------------------------------------------------------------------*/
-
 /* Estilos del footer */
 footer {
   background-color: rgba(120, 210, 106, 0.9);
@@ -173,7 +169,6 @@ footer {
   left: 0;
   z-index: 1;
 }
-
 
 footer p {
   margin: 0;

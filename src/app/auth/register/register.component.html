@@ -7,7 +7,7 @@
             <li><a href="/contact">Contacto</a></li>          
             <li><a href="/profile">Mi perfil</a></li>
             <li><a href="/shoppingcart" >Carrito</a></li>
-            <li><a href="/favorites" style="font-size: 20px;">&#x2661;</a></li> <!--favoritos-->
+            <li><a href="/blog">Blog</a></li> 
         </ul>
     </nav>
   </header>
@@ -102,9 +102,11 @@
         </div>
 
         <!-- Botón de registro -->
-        <button type="submit" class="btn btn-primary" [disabled]="registerForm.invalid">
-            Registrarse
-        </button>
+         <a href="/pages/home">
+            <button type="submit" class="btn btn-primary" [disabled]="registerForm.invalid">
+                Registrarse
+            </button>
+        </a>
 
         <!-- Link de cuenta existente -->
         <div class="link-container">

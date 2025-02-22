@@ -33,14 +33,7 @@ export class LoginComponent {
       const { email, password } = this.loginForm.value;
       console.log('Iniciando sesión con:', { email, password });
 
-      // Aquí se puede añadir lógica de autenticación real (por ejemplo, un servicio HTTP)
-      if (email === 'a@g.com' && password === '123456') {
-        console.log('Inicio de sesión exitoso');
-        this.router.navigate(['/home']); // Redirige al home
-      } else {
-        console.error('Credenciales incorrectas');
-        alert('Email o contraseña incorrectos');
-      }
+      this.router.navigate(['/pages/home']);
     }
   }
 

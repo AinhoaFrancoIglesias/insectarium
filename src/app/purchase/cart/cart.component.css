@@ -1,0 +1,258 @@
+/* Estilos del header */
+header {
+  background-color: rgba(120, 210, 106, 0.9);
+  padding: 15px;
+  border-radius: 0 0 15px 15px;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px; 
+}
+
+header h1 {
+  margin: 10px;
+  color: white;
+  font-size: 24px;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 10px 10px 10px 10px;
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  align-items: center;
+  height: 100%;
+}
+
+nav li {
+  display: inline;
+  margin-right: 20px;
+}
+
+/* Enlaces del header */
+nav a {
+  text-decoration: none; 
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+nav a:hover {
+  text-decoration: none;
+}
+
+/* ------------------------------------------------------------------------------------------------------------------------ */
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: url('/assets/home_bg.png') no-repeat center center fixed;
+  background-size: cover;
+  text-align: center;
+}
+
+/* Sección del carrito */
+.carrito-section {
+margin-top: 20px;
+}
+
+/* Título Carrito de Compras */
+.carrito-section h2 {
+text-align: center;
+color: #44a35c;
+font-size: 30px;
+margin-bottom: 20px;
+}
+
+/* Estilo de cada item del carrito */
+.carrito-item {
+display: flex;
+justify-content: space-between;
+align-items: center;
+background-color: rgba(255, 255, 255, 0.664);
+padding: 15px;
+margin-bottom: 15px;
+border-radius: 10px;
+box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+width: 70%; 
+margin-left: auto;  
+margin-right: auto; 
+border: 1px solid #aacb8f;  
+
+}
+
+/* Imagen del producto */
+.carrito-item img {
+width: 100px;
+height: 100px;
+object-fit: cover;
+border-radius: 10px;
+}
+
+/* Información del producto */
+.carrito-info {
+flex-grow: 1;
+padding: 0 15px;
+display: flex;
+flex-direction: column;
+justify-content: center;
+}
+
+.carrito-info p {
+  margin: 5px 0;  
+  text-align: left;
+}
+
+/* Botones de cantidad */
+.cantidad {
+display: flex;
+align-items: center;
+justify-content: center;
+gap: 10px;
+margin-top: 10px;
+}
+
+.btn-cantidad {
+width: 30px;
+height: 30px;
+font-size: 20px;
+background-color: #44a35c;
+color: white;
+border: none;
+border-radius: 50%;
+cursor: pointer;
+transition: background-color 0.3s ease;
+}
+
+.btn-cantidad:hover {
+background-color: #95e36b;
+}
+
+/* Número de cantidad */
+.cantidad-numero {
+font-size: 18px;
+color: #1f6c28;
+}
+
+/* Estilo de los botones Eliminar y Añadir a Favoritos */
+.carrito-buttons {
+display: flex;
+flex-direction: column;
+gap: 10px;
+}
+
+.remove-from-cart, .add-to-favorites {
+font-size: 12px;
+padding: 5px 10px;
+width: 150px;
+border-radius: 18px;
+border: none;
+display: flex;
+justify-content: center;
+align-items: center;
+cursor: pointer;
+transition: background-color 0.3s ease;
+}
+
+.remove-from-cart {
+background-color: #ff8077;
+color: white;
+}
+
+.remove-from-cart:hover {
+background-color: #ecb8ae;
+}
+
+.add-to-favorites {
+background-color: transparent;
+color: black;
+}
+
+.add-to-favorites:hover {
+background-color: #daeace;
+}
+
+.icon {
+margin-right: 5px;
+}
+
+.precio-total {
+  position: fixed;  
+  right: 20px;
+  top: 100px; 
+  background-color: rgba(255, 255, 255, 0.94); 
+  color: rgb(0, 0, 0);
+  padding: 10px 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  font-size: 1.2em;
+  z-index: 1000;  /* Asegura que esté por encima de otros elementos */
+}
+
+.precio-total p {
+  margin: 0;
+}
+
+/* ------------------------------------------------------------------ */
+/* Estilo del botón "Comprar todo" */
+.comprar-todo {
+display: flex;
+justify-content: center;
+margin-top: 20px;
+}
+
+.btn-comprar-todo {
+background-color: #44a35c;
+color: white;
+padding: 15px 30px;
+font-size: 18px;
+border: none;
+border-radius: 18px;
+cursor: pointer;
+transition: background-color 0.3s ease;
+}
+
+.btn-comprar-todo:hover {
+background-color: #95e36b;
+}
+
+/*------------------------------------------------------------------*/
+/* Estilos del footer */
+footer {
+background-color: rgba(120, 210, 106, 0.9); 
+padding: 15px;
+border-radius: 15px 15px 0 0; 
+box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+display: flex;
+justify-content: space-between; 
+padding: 10px 30px; 
+position: relative; 
+margin-top: 30px; 
+width: 100%; 
+z-index: 1;
+}
+
+/* Estilo de los textos dentro del footer */
+footer p {
+margin: 0;
+color: white;
+font-size: 14px;
+}
+
+/* Estilo para las columnas dentro del footer */
+.footer-left, .footer-right {
+display: flex;
+flex-direction: column;
+}
+
+.footer-left {
+text-align: left;
+margin-left: 10%;
+}
+
+.footer-right {
+text-align: right;
+margin-right: 10%;
+}

@@ -4,10 +4,13 @@ import { ContactModule } from './contact/contact.module';
 import { HomeModule } from './home/home.module';
 import { ShopModule } from './shop/shop.module';
 import { GuidesModule } from './guides/guides.module';
-import { GuidesRoutingModule } from './guides/guides-routing.module'; 
+import { GuidesRoutingModule } from './guides/guides-routing.module';
+import { BlogComponent } from './blog/blog.component'; 
 
 @NgModule({
-  declarations: [],
+  declarations: [
+    BlogComponent
+  ],
   imports: [
     CommonModule,
     HomeModule,

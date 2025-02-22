@@ -31,6 +31,8 @@ import { GuidesisopodaComponent } from './pages/guides/guidesisopoda/guidesisopo
 import { GuideslepidopteraComponent } from './pages/guides/guideslepidoptera/guideslepidoptera.component';
 import { GuidesmantodeaComponent } from './pages/guides/guidesmantodea/guidesmantodea.component';
 import { GuidesphasmatodeaComponent } from './pages/guides/guidesphasmatodea/guidesphasmatodea.component';
+import { CartComponent } from './purchase/cart/cart.component';
+import { BlogComponent } from './pages/blog/blog.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -40,6 +42,8 @@ const routes: Routes = [
   { path: 'profile', component: ProfileComponent },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
+  { path: 'blog', component: BlogComponent },
+
 
   // Rutas de las tiendas por categoría
   { path: 'shop/shoparachnida', component: ShoparachnidaComponent },
@@ -54,6 +58,8 @@ const routes: Routes = [
   { path: 'shop/shoplepidoptera', component: ShoplepidopteraComponent },
   { path: 'shop/shopmantodea', component: ShopmantodeaComponent },
   { path: 'shop/shopphasmatodea', component: ShopphasmatodeaComponent },
+  { path: 'shoppingcart', component: CartComponent },
+
 
   // Rutas de las guías por categoría
   { path: 'guides/guidesarachnida', component: GuidesarachnidaComponent },
