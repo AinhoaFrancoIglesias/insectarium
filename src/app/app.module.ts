@@ -10,23 +10,33 @@ import { CartComponent } from './purchase/cart/cart.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { PagesModule } from './pages/pages.module';
 
+/**
+ * Módulo principal de la aplicación.
+ * 
+ * Este módulo incluye los componentes, módulos y configuraciones necesarias
+ * para la ejecución de la aplicación. Se encarga de inicializar el sistema de rutas,
+ * la autenticación, y la integración con otros módulos y componentes como el carrito de compras.
+ * 
+ * @export
+ * @class AppModule
+ */
 @NgModule({
   declarations: [
-    AppComponent,
-    CartComponent
+    AppComponent,  // Componente principal de la aplicación
+    CartComponent  // Componente que gestiona el carrito de compras
   ],
   imports: [
-    BrowserModule,
-    AppRoutingModule,
-    AuthModule,
-    RouterModule,
-    AppRoutingModule,
-    CommonModule,
-    ReactiveFormsModule,
-    PagesModule,
+    BrowserModule,        // Módulo principal para aplicaciones web
+    AppRoutingModule,     // Módulo de rutas de la aplicación
+    AuthModule,           // Módulo para gestionar la autenticación
+    RouterModule,         // Módulo de enrutamiento de Angular
+    CommonModule,         // Módulo que contiene directivas comunes
+    ReactiveFormsModule,  // Módulo para formularios reactivos
+    PagesModule,          // Módulo que gestiona las páginas de la aplicación
   ],
-  providers:  [
+  providers: [
+    // Aquí se pueden agregar proveedores si es necesario
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent]  // Componente que arranca la aplicación
 })
 export class AppModule { }
