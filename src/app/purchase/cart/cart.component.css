@@ -61,9 +61,9 @@ margin-top: 20px;
 /* Título Carrito de Compras */
 .carrito-section h2 {
 text-align: center;
-color: #44a35c;
-font-size: 30px;
+color: #1f6c28;
 margin-bottom: 20px;
+font-weight: bold;
 }
 
 /* Estilo de cada item del carrito */

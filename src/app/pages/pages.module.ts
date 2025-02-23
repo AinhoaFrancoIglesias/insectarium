@@ -6,6 +6,7 @@ import { ShopModule } from './shop/shop.module';
 import { GuidesModule } from './guides/guides.module';
 import { GuidesRoutingModule } from './guides/guides-routing.module';
 import { BlogComponent } from './blog/blog.component'; 
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,8 @@ import { BlogComponent } from './blog/blog.component';
     ShopModule,
     GuidesModule,
     GuidesRoutingModule,
+    ReactiveFormsModule
+    ,
   ],
   exports: [
     HomeModule,

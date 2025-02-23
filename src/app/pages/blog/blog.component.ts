@@ -1,6 +1,5 @@
-import { Component, OnInit, Inject } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-
+import { Component, OnInit } from '@angular/core';
+import { environment } from '../../../environments/environment';
 
 @Component({
   selector: 'app-blog',
@@ -8,6 +7,8 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./blog.component.css']
 })
 export class BlogComponent implements OnInit {
+
+  apiKey: string = environment.apiKey; 
 
   noticia1 = {
     isOpen: false,
@@ -40,16 +41,37 @@ export class BlogComponent implements OnInit {
       </div>
     `
   };
-  
-  
 
   noticia2 = {
     isOpen: false,
     content: `
-      <p>
-        Se ha observado una disminución drástica de las poblaciones de abejas en todo el mundo, lo que está afectando la polinización de muchas plantas y cultivos. Esto podría tener un impacto significativo en los ecosistemas y en la producción de alimentos...
-      </p>
-      <a href="https://www.nationalgeographic.com/environment/2022/03/decline-bees-global-impact/">Seguir leyendo</a>
+      <div class="noticia-content">
+        <p>
+          Después de muchos años de trabajo, los científicos han calculado el estatus de unas <strong>77.000 especies</strong> de plantas 
+          y animales en la Lista Roja de animales amenazados de la Unión Internacional para la Conservación de la Naturaleza (UICN). 
+          Los datos científicos sobre la distribución y la abundancia de las especies a lo largo del tiempo permiten evaluar cuán cerca 
+          está una especie al borde de la extinción. Pero a los científicos todavía les faltan los datos necesarios para estudiar las 
+          <strong>1,5 millones de especies</strong> que existen, y mucho más aún los <strong>7 millones</strong> que aún falta por conocer.
+        </p>
+        <p>
+          Resulta difícil que una especie pueda atraer atención o apoyo para su conservación si no se la clasifica en peligro de extinción. 
+          Pero si no hay fondos, no se puede estudiar la información necesaria para ver cuál es el riesgo de una especie. Así que para superar 
+          esta contradicción, algunos conservacionistas han estado aprovechándose de un recurso que no cuesta nada y que siempre ha estado 
+          disponible: el <strong>voluntariado</strong>.
+        </p>
+        <p>
+          Entre las multitudes del mercado de Lorengau en la Isla Manus, Papúa Nueva Guinea, existe mucho conocimiento — y en particular, 
+          datos — que podría tomar meses y miles de dólares para compilar si estuviera a cargo de un equipo de investigación en una expedición 
+          en la jungla. Nathan Whitmore, un biólogo enfocado en demografía con la organización Wildlife Conservation Society, estuvo con estas 
+          comunidades locales para aprender de “la sabiduría de las multitudes” y para tener una idea sobre la abundancia y la distribución 
+          del caracol Manus de árbol (<i>Papustyla pulcherrima</i>). Sus resultados fueron publicados recientemente en la revista Oryx.
+        </p>
+        <div style="text-align: center; margin-top: 15px;">
+          <a href="https://es.mongabay.com/2015/10/estudiando-las-especies-poco-queridas-con-la-ayuda-de-proyectos-de-colaboracion-publica/">
+            Seguir leyendo
+          </a>
+        </div>
+      </div>
     `
   };
 
@@ -57,15 +79,23 @@ export class BlogComponent implements OnInit {
     isOpen: false,
     content: `
       <p>
-        Investigaciones recientes han revelado que la contaminación del agua afecta gravemente a las especies de invertebrados acuáticos. A medida que los contaminantes se acumulan en los ecosistemas acuáticos, la biodiversidad y las cadenas alimenticias se ven alteradas...
+        Seguramente, el trabajo de los insectos del mundo llegue a tus labios cada día. El café o el té que saboreas lo han polinizado insectos. Las manzanas, las naranjas, los repollos, las cerezas, las zanahorias, el brócoli, la sandía, el ajo, la canela, la albahaca, las pipas de girasol, las almendras, el aceite de canola… todos son polinizados por los insectos. La miel, los colorantes e incluso algunas vacunas requieren que haya insectos para salir adelante.
       </p>
-      <a href="https://www.msn.com/es-es/noticias/mundo/la-contaminaci%C3%B3n-del-agua-pone-en-peligro-la-biodiversidad/">Seguir leyendo</a>
+      <p>
+        Son vitales para la red alimentaria del mundo, están alojados en el ciclo de nutrientes e integrados en la industria. Cuanto más los observamos, más vemos que los insectos son vitales para mantener las estructuras de la vida. En referencia a esto, el reconocido biólogo E.O. Wilson escribió en 1987: “Si los insectos desaparecieran, dudo que la especie humana dure más de unos meses”. Por eso, el precipitado declive de los insectos está causando alarma.
+      </p>
+      <p>
+        Las poblaciones de insectos se están reduciendo a un ritmo diferente en el espacio y el tiempo, pero de media, se cree que el descenso en su abundancia es de alrededor de un 1-2 % al año, o un 10-20 % por década.
+      </p>
+      <a href="https://es.mongabay.com/2021/03/peligra-la-vida-en-la-tierra-a-causa-de-la-perdida-de-insectos/">Seguir leyendo</a>
     `
   };
 
   constructor() {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    console.log('API Key:', this.apiKey); 
+  }
 
   toggleContent(noticiaId: number) {
     if (noticiaId === 1) {

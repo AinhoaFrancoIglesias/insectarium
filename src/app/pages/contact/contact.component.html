@@ -15,19 +15,29 @@
 
 <body>
 
-      <!-- Formulario de contacto -->
-      <section class="contact-form">
-        <h2>Formulario de Contacto</h2>
-        <form action="/submit-form" method="POST">
-          <label for="nombre">Nombre completo:</label>
-          <input type="text" id="nombre" name="nombre" required>
-          <br>
-          <label for="email">Correo electrónico:</label>
-          <input type="email" id="email" name="email" required>
-        
-          <button type="submit">Enviar</button>
-        </form>
-      </section>
+  <section class="contact-form">
+    <h2>Formulario de Contacto</h2>
+    <form [formGroup]="contactForm" (ngSubmit)="onSubmit($event)">
+      
+      <label for="nombre">Nombre completo:</label>
+      <input type="text" id="nombre" formControlName="nombre">
+      <div *ngIf="contactForm.get('nombre')?.invalid && contactForm.get('nombre')?.touched" class="error">
+        El nombre solo puede contener letras y espacios.
+      </div>
+  
+      <label for="email">Correo electrónico:</label>
+      <input type="email" id="email" formControlName="email">
+      <div *ngIf="contactForm.get('email')?.invalid && contactForm.get('email')?.touched" class="error">
+        Introduzca un correo válido con "&#64;".
+      </div>
+  
+      <button type="submit">Enviar</button>
+    </form>
+  
+    <p [style.color]="messageColor">{{ mensaje }}</p>
+  </section>
+  
+      
 
 
     <!-- Sección de FAQ -->

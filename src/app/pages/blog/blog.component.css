@@ -1,4 +1,4 @@
-/* Estilos del header */
+/* Estilos del header */ 
 header {
   background-color: rgba(120, 210, 106, 0.9);
   padding: 15px;
@@ -140,14 +140,12 @@ a {
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
   text-align: left;
   border: 1px solid #aacb8f;
-
 }
 
 .noticia h1 {
   font-size: 22px;
   color: #ffffff;
   cursor: pointer;
-  transition: color 0.3s ease;
   margin-bottom: 10px;
 }
 
@@ -173,19 +171,52 @@ a {
   color: #1f6c28;
 }
 
-.noticia-button {
-  display: inline-block;
-  background-color: rgba(120, 210, 106, 0.9);
-  color: white;
-  font-weight: bold;
-  padding: 10px 20px;
-  border-radius: 5px;
-  text-decoration: none;
-  transition: background-color 0.3s ease;
+/* Estilos de Curiosidades */
+#curiosidades {
+  background-color: rgba(255, 255, 255, 0.9);
+  border: 1px solid #aacb8f;
+  border-radius: 18px;
+  padding: 20px;
+  margin-bottom: 40px;
 }
 
-.noticia-button:hover {
-  background-color: rgba(100, 180, 90, 1);
+#curiosidades h2 {
+  color: #1f6c28;
+  margin-bottom: 15px;
+  text-align: left;
+  padding-bottom: 10px;
+}
+
+#curiosidades p {
+  line-height: 1.6;
+  margin-bottom: 20px;
+  color: #333333;
+  text-align: left;  /* Asegura que el texto empiece desde la izquierda */
+}
+
+#curiosidades ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+#curiosidades li {
+  background-color: rgba(120, 210, 106, 0.15);
+  border: 1px solid #aacb8f;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  padding: 15px;
+  color: #1f6c28;
+}
+
+#curiosidades li strong {
+  color: #1f6c28;
+  font-weight: bolder;
+}
+
+#curiosidades ul li:hover {
+  background-color: rgba(120, 210, 106, 0.3);
+  transition: background-color 0.5s ease;
 }
 
 

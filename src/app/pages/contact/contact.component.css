@@ -104,6 +104,7 @@ body {
 .contact-form {
   width: 600px; 
   margin: 30px auto;
+  margin-top: 100px;
   text-align: left;
   padding: 20px;
   background-color: rgba(255, 255, 255, 0.596);
@@ -151,6 +152,12 @@ body {
 .contact-form button:hover { 
   background-color: #6bb859;
 }
+
+.error {
+  color: red;
+  font-size: 14px;
+}
+
 
 /* Estilos del footer */
 footer {

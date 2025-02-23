@@ -34,7 +34,7 @@
       </section>
   
       <section id="noticias" class="category-section">
-        <h2>Noticias</h2>
+        <h2>Noticias sobre invertebrados</h2>
       
         <!-- Noticia 1 -->
     <div class="noticia">
@@ -46,7 +46,7 @@
     
     <!-- Noticia 2 -->
     <div class="noticia">
-        <h1 (click)="toggleContent(2)">La disminución de las abejas y su impacto global</h1>
+        <h1 (click)="toggleContent(2)">Estudiando las especies poco queridas</h1>
         <div class="noticia-content" [class.open]="noticia2.isOpen">
         <div class="noticia-text" [innerHTML]="noticia2.content"></div>
         </div>
@@ -54,18 +54,34 @@
     
     <!-- Noticia 3 -->
     <div class="noticia">
-        <h1 (click)="toggleContent(3)">La contaminación del agua pone en peligro la biodiversidad</h1>
+        <h1 (click)="toggleContent(3)">¿Peligra la vida en la Tierra a causa de la pérdida de insectos?</h1>
         <div class="noticia-content" [class.open]="noticia3.isOpen">
         <div class="noticia-text" [innerHTML]="noticia3.content"></div>
         </div>
     </div>
   
       </section>
-    
       <section id="curiosidades" class="category-section">
         <h2>Curiosidades</h2>
-        <p>Datos interesantes y sorprendentes sobre los invertebrados.</p>
-      </section>
+        <ul>
+          <li>
+            <strong>Insectos en la alimentación:</strong> Los insectos desempeñan un papel crucial en la polinización de muchos alimentos que consumimos a diario, como frutas, verduras y especias.
+          </li>
+          <li>
+            <strong>La longevidad de algunas especies:</strong> Algunos invertebrados como ciertas especies de medusas pueden vivir más de 100 años, mientras que otros, como las libélulas, tienen una vida útil de solo unos meses.
+        </li>
+          <li>
+            <strong>Insectos que pueden sobrevivir sin cabeza:</strong> Algunos insectos, como las cucarachas, pueden sobrevivir durante días o incluso semanas sin su cabeza debido a su sistema nervioso descentralizado.
+          </li>
+          <li>
+            <strong>El aguijón del alacrán:</strong> El veneno de un alacrán no solo se utiliza para cazar, sino que también sirve como defensa. En algunas culturas, su veneno se ha utilizado en medicina tradicional.
+          </li>
+          <li>
+            <strong>Invertebrados bioluminiscentes:</strong> Muchos invertebrados, como algunas especies de medusas y calamares, tienen la capacidad de producir luz en la oscuridad, un fenómeno conocido como bioluminiscencia.
+          </li>
+        </ul>
+              </section>
+      
     </main>
   
     <footer>

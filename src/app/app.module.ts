@@ -7,6 +7,8 @@ import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { CartComponent } from './purchase/cart/cart.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { PagesModule } from './pages/pages.module';
 
 @NgModule({
   declarations: [
@@ -20,6 +22,8 @@ import { CartComponent } from './purchase/cart/cart.component';
     RouterModule,
     AppRoutingModule,
     CommonModule,
+    ReactiveFormsModule,
+    PagesModule,
   ],
   providers:  [
   ],
