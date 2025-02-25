@@ -38,7 +38,7 @@ export class LoginComponent {
       password: ['', [Validators.required, Validators.minLength(6)]]  // Campo de contraseña con validación requerida y mínima longitud de 6 caracteres.
     });
   }
-
+/**/
   /**
    * Obtiene el control del formulario para el campo de email.
    * 
