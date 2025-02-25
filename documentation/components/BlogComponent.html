@@ -1,0 +1,1222 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>insectarium documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="../" class="navbar-brand">insectarium documentation</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Components</li>
+  <li class="breadcrumb-item"
+  >
+  BlogComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" class="nav-link"
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li class="nav-item">
+            <a href="#templateData" class="nav-link"
+                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li class="nav-item">
+            <a href="#styleData" class="nav-link"
+                role="tab" id="styleData-tab" data-bs-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li class="nav-item">
+            <a href="#tree" class="nav-link"
+                role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/pages/blog/blog.component.ts</code>
+</p>
+
+
+    <p class="comment">
+        <h3>Description</h3>
+    </p>
+    <p class="comment">
+        <p>Componente que representa el blog de noticias sobre insectos y su conservación.
+Este componente maneja la visualización de noticias y su contenido, y permite alternar
+la visualización de las noticias al hacer clic.</p>
+
+    </p>
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                <code>OnInit</code>
+    </p>
+
+
+<section data-compodoc="block-metadata">
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-blog</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./blog.component.css</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./blog.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#apiKey" >apiKey</a>
+                            </li>
+                            <li>
+                                <a href="#noticia1" >noticia1</a>
+                            </li>
+                            <li>
+                                <a href="#noticia2" >noticia2</a>
+                            </li>
+                            <li>
+                                <a href="#noticia3" >noticia3</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#ngOnInit" >ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#toggleContent" >toggleContent</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+
+
+
+
+
+    <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <span ><b>ngOnInit</b></span>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="107"
+                                    class="link-to-prism">src/app/pages/blog/blog.component.ts:107</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Método del ciclo de vida de Angular que se ejecuta cuando el componente se inicializa.
+Este método se usa aquí para mostrar la clave de la API, solo con fines de depuración.</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="toggleContent"></a>
+                    <span class="name">
+                        <span ><b>toggleContent</b></span>
+                        <a href="#toggleContent"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>toggleContent(noticiaId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="117"
+                                    class="link-to-prism">src/app/pages/blog/blog.component.ts:117</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Método que alterna la visibilidad del contenido de una noticia específica.
+Al hacer clic en una noticia, se cambia su estado de visibilidad entre abierto o cerrado.</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>noticiaId</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>El ID de la noticia cuyo contenido se quiere alternar</p>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section data-compodoc="block-properties">
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="apiKey"></a>
+                    <span class="name">
+                        <span ><b>apiKey</b></span>
+                        <a href="#apiKey"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>environment.apiKey</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">src/app/pages/blog/blog.component.ts:17</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Clave de API obtenida desde el archivo de configuración del entorno</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="noticia1"></a>
+                    <span class="name">
+                        <span ><b>noticia1</b></span>
+                        <a href="#noticia1"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/object" target="_blank" >object</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{
+    isOpen: false,
+    content: &#x60;
+      &lt;div class&#x3D;&quot;noticia-content&quot;&gt;
+        &lt;p&gt;
+          Al comparar las especies de agua dulce de los arroyos no contaminados con aquellas de los arroyos altamente contaminados, 
+          los investigadores encontraron que la biodiversidad de invertebrados de los arroyos contaminados de Europa se redujo en un 
+          &lt;strong&gt;42%&lt;/strong&gt;. Mientras tanto, en Australia, la biodiversidad de agua dulce disminuyó en un &lt;strong&gt;27%&lt;/strong&gt; 
+          entre los arroyos limpios y contaminados.
+        &lt;/p&gt;
+        &lt;p&gt;
+          La contaminación por pesticidas afectó mucho más a ciertos grupos de invertebrados como las efímeras, las libélulas, 
+          moscas de las piedras y las neurópteras. Dichas especies no han desaparecido todas necesariamente, pero sí que se ha 
+          visto disminuir su presencia. Aunque muchas de las especies diezmadas no son muy conocidas por el público en general, 
+          juegan un papel importante en la cadena alimenticia, incluyendo el de presa para las aves y los peces.
+        &lt;/p&gt;
+        &lt;p&gt;
+          Según los científicos, cabe destacar que la normativa vigente en Europa no es lo suficientemente fuerte para proteger 
+          a estas especies. Descubrieron que incluso en los lugares contaminados que cumplían las regulaciones de la UE, 
+          la biodiversidad había disminuido. Esto señala una creciente controversia sobre los controles adecuados y la evaluación 
+          de los riesgos de los pesticidas antes de que sean puestos en manos del público.
+        &lt;/p&gt;
+        &lt;div style&#x3D;&quot;text-align: center; margin-top: 15px;&quot;&gt;
+          &lt;a href&#x3D;&quot;https://es.mongabay.com/2013/08/los-pesticidas-estan-diezmando-la-poblacion-de-libelulas-y-otros-insectos-acuaticos/&quot; 
+             target&#x3D;&quot;_blank&quot; class&#x3D;&quot;noticia-button&quot;&gt;
+            Seguir leyendo
+          &lt;/a&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &#x60;
+  }</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="20" class="link-to-prism">src/app/pages/blog/blog.component.ts:20</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Objeto que representa la primera noticia, incluyendo su contenido y estado de visibilidad</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="noticia2"></a>
+                    <span class="name">
+                        <span ><b>noticia2</b></span>
+                        <a href="#noticia2"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/object" target="_blank" >object</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{
+    isOpen: false,
+    content: &#x60;
+      &lt;div class&#x3D;&quot;noticia-content&quot;&gt;
+        &lt;p&gt;
+          Después de muchos años de trabajo, los científicos han calculado el estatus de unas &lt;strong&gt;77.000 especies&lt;/strong&gt; de plantas 
+          y animales en la Lista Roja de animales amenazados de la Unión Internacional para la Conservación de la Naturaleza (UICN). 
+          Los datos científicos sobre la distribución y la abundancia de las especies a lo largo del tiempo permiten evaluar cuán cerca 
+          está una especie al borde de la extinción. Pero a los científicos todavía les faltan los datos necesarios para estudiar las 
+          &lt;strong&gt;1,5 millones de especies&lt;/strong&gt; que existen, y mucho más aún los &lt;strong&gt;7 millones&lt;/strong&gt; que aún falta por conocer.
+        &lt;/p&gt;
+        &lt;p&gt;
+          Resulta difícil que una especie pueda atraer atención o apoyo para su conservación si no se la clasifica en peligro de extinción. 
+          Pero si no hay fondos, no se puede estudiar la información necesaria para ver cuál es el riesgo de una especie. Así que para superar 
+          esta contradicción, algunos conservacionistas han estado aprovechándose de un recurso que no cuesta nada y que siempre ha estado 
+          disponible: el &lt;strong&gt;voluntariado&lt;/strong&gt;.
+        &lt;/p&gt;
+        &lt;p&gt;
+          Entre las multitudes del mercado de Lorengau en la Isla Manus, Papúa Nueva Guinea, existe mucho conocimiento — y en particular, 
+          datos — que podría tomar meses y miles de dólares para compilar si estuviera a cargo de un equipo de investigación en una expedición 
+          en la jungla. Nathan Whitmore, un biólogo enfocado en demografía con la organización Wildlife Conservation Society, estuvo con estas 
+          comunidades locales para aprender de “la sabiduría de las multitudes” y para tener una idea sobre la abundancia y la distribución 
+          del caracol Manus de árbol (&lt;i&gt;Papustyla pulcherrima&lt;/i&gt;). Sus resultados fueron publicados recientemente en la revista Oryx.
+        &lt;/p&gt;
+        &lt;div style&#x3D;&quot;text-align: center; margin-top: 15px;&quot;&gt;
+          &lt;a href&#x3D;&quot;https://es.mongabay.com/2015/10/estudiando-las-especies-poco-queridas-con-la-ayuda-de-proyectos-de-colaboracion-publica/&quot;&gt;
+            Seguir leyendo
+          &lt;/a&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &#x60;
+  }</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="53" class="link-to-prism">src/app/pages/blog/blog.component.ts:53</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Objeto que representa la segunda noticia, incluyendo su contenido y estado de visibilidad</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="noticia3"></a>
+                    <span class="name">
+                        <span ><b>noticia3</b></span>
+                        <a href="#noticia3"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/object" target="_blank" >object</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{
+    isOpen: false,
+    content: &#x60;
+      &lt;p&gt;
+        Seguramente, el trabajo de los insectos del mundo llegue a tus labios cada día. El café o el té que saboreas lo han polinizado insectos. Las manzanas, las naranjas, los repollos, las cerezas, las zanahorias, el brócoli, la sandía, el ajo, la canela, la albahaca, las pipas de girasol, las almendras, el aceite de canola… todos son polinizados por los insectos. La miel, los colorantes e incluso algunas vacunas requieren que haya insectos para salir adelante.
+      &lt;/p&gt;
+      &lt;p&gt;
+        Son vitales para la red alimentaria del mundo, están alojados en el ciclo de nutrientes e integrados en la industria. Cuanto más los observamos, más vemos que los insectos son vitales para mantener las estructuras de la vida. En referencia a esto, el reconocido biólogo E.O. Wilson escribió en 1987: “Si los insectos desaparecieran, dudo que la especie humana dure más de unos meses”. Por eso, el precipitado declive de los insectos está causando alarma.
+      &lt;/p&gt;
+      &lt;p&gt;
+        Las poblaciones de insectos se están reduciendo a un ritmo diferente en el espacio y el tiempo, pero de media, se cree que el descenso en su abundancia es de alrededor de un 1-2 % al año, o un 10-20 % por década.
+      &lt;/p&gt;
+      &lt;a href&#x3D;&quot;https://es.mongabay.com/2021/03/peligra-la-vida-en-la-tierra-a-causa-de-la-perdida-de-insectos/&quot;&gt;Seguir leyendo&lt;/a&gt;
+    &#x60;
+  }</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="87" class="link-to-prism">src/app/pages/blog/blog.component.ts:87</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Objeto que representa la tercera noticia, incluyendo su contenido y estado de visibilidad</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
+import { environment } from &#x27;../../../environments/environment&#x27;;
+
+/**
+ * Componente que representa el blog de noticias sobre insectos y su conservación.
+ * Este componente maneja la visualización de noticias y su contenido, y permite alternar
+ * la visualización de las noticias al hacer clic.
+ */
+@Component({
+  selector: &#x27;app-blog&#x27;,
+  templateUrl: &#x27;./blog.component.html&#x27;,
+  styleUrls: [&#x27;./blog.component.css&#x27;]
+})
+export class BlogComponent implements OnInit {
+
+  /** Clave de API obtenida desde el archivo de configuración del entorno */
+  apiKey: string &#x3D; environment.apiKey; 
+
+  /** Objeto que representa la primera noticia, incluyendo su contenido y estado de visibilidad */
+  noticia1 &#x3D; {
+    isOpen: false,
+    content: &#x60;
+      &lt;div class&#x3D;&quot;noticia-content&quot;&gt;
+        &lt;p&gt;
+          Al comparar las especies de agua dulce de los arroyos no contaminados con aquellas de los arroyos altamente contaminados, 
+          los investigadores encontraron que la biodiversidad de invertebrados de los arroyos contaminados de Europa se redujo en un 
+          &lt;strong&gt;42%&lt;/strong&gt;. Mientras tanto, en Australia, la biodiversidad de agua dulce disminuyó en un &lt;strong&gt;27%&lt;/strong&gt; 
+          entre los arroyos limpios y contaminados.
+        &lt;/p&gt;
+        &lt;p&gt;
+          La contaminación por pesticidas afectó mucho más a ciertos grupos de invertebrados como las efímeras, las libélulas, 
+          moscas de las piedras y las neurópteras. Dichas especies no han desaparecido todas necesariamente, pero sí que se ha 
+          visto disminuir su presencia. Aunque muchas de las especies diezmadas no son muy conocidas por el público en general, 
+          juegan un papel importante en la cadena alimenticia, incluyendo el de presa para las aves y los peces.
+        &lt;/p&gt;
+        &lt;p&gt;
+          Según los científicos, cabe destacar que la normativa vigente en Europa no es lo suficientemente fuerte para proteger 
+          a estas especies. Descubrieron que incluso en los lugares contaminados que cumplían las regulaciones de la UE, 
+          la biodiversidad había disminuido. Esto señala una creciente controversia sobre los controles adecuados y la evaluación 
+          de los riesgos de los pesticidas antes de que sean puestos en manos del público.
+        &lt;/p&gt;
+        &lt;div style&#x3D;&quot;text-align: center; margin-top: 15px;&quot;&gt;
+          &lt;a href&#x3D;&quot;https://es.mongabay.com/2013/08/los-pesticidas-estan-diezmando-la-poblacion-de-libelulas-y-otros-insectos-acuaticos/&quot; 
+             target&#x3D;&quot;_blank&quot; class&#x3D;&quot;noticia-button&quot;&gt;
+            Seguir leyendo
+          &lt;/a&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &#x60;
+  };
+
+  /** Objeto que representa la segunda noticia, incluyendo su contenido y estado de visibilidad */
+  noticia2 &#x3D; {
+    isOpen: false,
+    content: &#x60;
+      &lt;div class&#x3D;&quot;noticia-content&quot;&gt;
+        &lt;p&gt;
+          Después de muchos años de trabajo, los científicos han calculado el estatus de unas &lt;strong&gt;77.000 especies&lt;/strong&gt; de plantas 
+          y animales en la Lista Roja de animales amenazados de la Unión Internacional para la Conservación de la Naturaleza (UICN). 
+          Los datos científicos sobre la distribución y la abundancia de las especies a lo largo del tiempo permiten evaluar cuán cerca 
+          está una especie al borde de la extinción. Pero a los científicos todavía les faltan los datos necesarios para estudiar las 
+          &lt;strong&gt;1,5 millones de especies&lt;/strong&gt; que existen, y mucho más aún los &lt;strong&gt;7 millones&lt;/strong&gt; que aún falta por conocer.
+        &lt;/p&gt;
+        &lt;p&gt;
+          Resulta difícil que una especie pueda atraer atención o apoyo para su conservación si no se la clasifica en peligro de extinción. 
+          Pero si no hay fondos, no se puede estudiar la información necesaria para ver cuál es el riesgo de una especie. Así que para superar 
+          esta contradicción, algunos conservacionistas han estado aprovechándose de un recurso que no cuesta nada y que siempre ha estado 
+          disponible: el &lt;strong&gt;voluntariado&lt;/strong&gt;.
+        &lt;/p&gt;
+        &lt;p&gt;
+          Entre las multitudes del mercado de Lorengau en la Isla Manus, Papúa Nueva Guinea, existe mucho conocimiento — y en particular, 
+          datos — que podría tomar meses y miles de dólares para compilar si estuviera a cargo de un equipo de investigación en una expedición 
+          en la jungla. Nathan Whitmore, un biólogo enfocado en demografía con la organización Wildlife Conservation Society, estuvo con estas 
+          comunidades locales para aprender de “la sabiduría de las multitudes” y para tener una idea sobre la abundancia y la distribución 
+          del caracol Manus de árbol (&lt;i&gt;Papustyla pulcherrima&lt;/i&gt;). Sus resultados fueron publicados recientemente en la revista Oryx.
+        &lt;/p&gt;
+        &lt;div style&#x3D;&quot;text-align: center; margin-top: 15px;&quot;&gt;
+          &lt;a href&#x3D;&quot;https://es.mongabay.com/2015/10/estudiando-las-especies-poco-queridas-con-la-ayuda-de-proyectos-de-colaboracion-publica/&quot;&gt;
+            Seguir leyendo
+          &lt;/a&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &#x60;
+  };
+
+  /** Objeto que representa la tercera noticia, incluyendo su contenido y estado de visibilidad */
+  noticia3 &#x3D; {
+    isOpen: false,
+    content: &#x60;
+      &lt;p&gt;
+        Seguramente, el trabajo de los insectos del mundo llegue a tus labios cada día. El café o el té que saboreas lo han polinizado insectos. Las manzanas, las naranjas, los repollos, las cerezas, las zanahorias, el brócoli, la sandía, el ajo, la canela, la albahaca, las pipas de girasol, las almendras, el aceite de canola… todos son polinizados por los insectos. La miel, los colorantes e incluso algunas vacunas requieren que haya insectos para salir adelante.
+      &lt;/p&gt;
+      &lt;p&gt;
+        Son vitales para la red alimentaria del mundo, están alojados en el ciclo de nutrientes e integrados en la industria. Cuanto más los observamos, más vemos que los insectos son vitales para mantener las estructuras de la vida. En referencia a esto, el reconocido biólogo E.O. Wilson escribió en 1987: “Si los insectos desaparecieran, dudo que la especie humana dure más de unos meses”. Por eso, el precipitado declive de los insectos está causando alarma.
+      &lt;/p&gt;
+      &lt;p&gt;
+        Las poblaciones de insectos se están reduciendo a un ritmo diferente en el espacio y el tiempo, pero de media, se cree que el descenso en su abundancia es de alrededor de un 1-2 % al año, o un 10-20 % por década.
+      &lt;/p&gt;
+      &lt;a href&#x3D;&quot;https://es.mongabay.com/2021/03/peligra-la-vida-en-la-tierra-a-causa-de-la-perdida-de-insectos/&quot;&gt;Seguir leyendo&lt;/a&gt;
+    &#x60;
+  };
+
+  /**
+   * Método del ciclo de vida de Angular que se ejecuta cuando el componente se inicializa.
+   * Este método se usa aquí para mostrar la clave de la API, solo con fines de depuración.
+   */
+  ngOnInit() {
+    console.log(&#x27;API Key:&#x27;, this.apiKey); 
+  }
+
+  /**
+   * Método que alterna la visibilidad del contenido de una noticia específica.
+   * Al hacer clic en una noticia, se cambia su estado de visibilidad entre abierto o cerrado.
+   * 
+   * @param {number} noticiaId El ID de la noticia cuyo contenido se quiere alternar
+   */
+  toggleContent(noticiaId: number) {
+    if (noticiaId &#x3D;&#x3D;&#x3D; 1) {
+      this.noticia1.isOpen &#x3D; !this.noticia1.isOpen;
+    } else if (noticiaId &#x3D;&#x3D;&#x3D; 2) {
+      this.noticia2.isOpen &#x3D; !this.noticia2.isOpen;
+    } else if (noticiaId &#x3D;&#x3D;&#x3D; 3) {
+      this.noticia3.isOpen &#x3D; !this.noticia3.isOpen;
+    }
+  }
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;body&gt;
+    &lt;header&gt;
+      &lt;nav&gt;
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href&#x3D;&quot;/home&quot; style&#x3D;&quot;font-size: 25px;&quot;&gt;Insectarium&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href&#x3D;&quot;/allshop&quot;&gt;Tienda&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href&#x3D;&quot;/allguides&quot;&gt;Guías&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href&#x3D;&quot;/contact&quot;&gt;Contacto&lt;/a&gt;&lt;/li&gt;          
+          &lt;li&gt;&lt;a href&#x3D;&quot;/profile&quot;&gt;Mi perfil&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href&#x3D;&quot;/shoppingcart&quot; &gt;Carrito&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href&#x3D;&quot;/blog&quot;&gt;Blog&lt;/a&gt;&lt;/li&gt; 
+        &lt;/ul&gt;
+      &lt;/nav&gt;
+    &lt;/header&gt;
+  
+    &lt;main class&#x3D;&quot;content&quot;&gt;
+      &lt;section id&#x3D;&quot;ultimas-llegadas&quot; class&#x3D;&quot;category-section&quot;&gt;
+        &lt;h2&gt;Últimas llegadas&lt;/h2&gt;
+        &lt;div class&#x3D;&quot;grid&quot;&gt;
+          &lt;a href&#x3D;&quot;/shop/shopcrustacea&quot;&gt;
+            &lt;div class&#x3D;&quot;category-item&quot;&gt;
+              &lt;img src&#x3D;&quot;/assets/crustacea_ucapugilator.jpg&quot; alt&#x3D;&quot;Uca pugilator&quot;&gt;
+              &lt;p&gt;Nuevo crustáceo en tienda: Uca pugilator. ¡Mira qué pinza!&lt;/p&gt;
+            &lt;/div&gt;
+          &lt;/a&gt;
+          
+          &lt;a href&#x3D;&quot;shop/shophymenoptera&quot;&gt;
+            &lt;div class&#x3D;&quot;category-item&quot;&gt;
+              &lt;img src&#x3D;&quot;/assets/hymenoptera_hormigabala.jpg&quot; alt&#x3D;&quot;hormiga bala&quot;&gt;
+              &lt;p&gt;¡Colonias de hormiga bala a la venta!&lt;/p&gt;
+            &lt;/div&gt;
+          &lt;/a&gt;
+        &lt;/div&gt;
+      &lt;/section&gt;
+  
+      &lt;section id&#x3D;&quot;noticias&quot; class&#x3D;&quot;category-section&quot;&gt;
+        &lt;h2&gt;Noticias sobre invertebrados&lt;/h2&gt;
+      
+        &lt;!-- Noticia 1 --&gt;
+    &lt;div class&#x3D;&quot;noticia&quot;&gt;
+        &lt;h1 (click)&#x3D;&quot;toggleContent(1)&quot;&gt;Los pesticidas están diezmando la población de libélulas&lt;/h1&gt;
+        &lt;div class&#x3D;&quot;noticia-content&quot; [class.open]&#x3D;&quot;noticia1.isOpen&quot;&gt;
+            &lt;div class&#x3D;&quot;noticia-text&quot; [innerHTML]&#x3D;&quot;noticia1.content&quot;&gt;&lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    
+    &lt;!-- Noticia 2 --&gt;
+    &lt;div class&#x3D;&quot;noticia&quot;&gt;
+        &lt;h1 (click)&#x3D;&quot;toggleContent(2)&quot;&gt;Estudiando las especies poco queridas&lt;/h1&gt;
+        &lt;div class&#x3D;&quot;noticia-content&quot; [class.open]&#x3D;&quot;noticia2.isOpen&quot;&gt;
+        &lt;div class&#x3D;&quot;noticia-text&quot; [innerHTML]&#x3D;&quot;noticia2.content&quot;&gt;&lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    
+    &lt;!-- Noticia 3 --&gt;
+    &lt;div class&#x3D;&quot;noticia&quot;&gt;
+        &lt;h1 (click)&#x3D;&quot;toggleContent(3)&quot;&gt;¿Peligra la vida en la Tierra a causa de la pérdida de insectos?&lt;/h1&gt;
+        &lt;div class&#x3D;&quot;noticia-content&quot; [class.open]&#x3D;&quot;noticia3.isOpen&quot;&gt;
+        &lt;div class&#x3D;&quot;noticia-text&quot; [innerHTML]&#x3D;&quot;noticia3.content&quot;&gt;&lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+  
+      &lt;/section&gt;
+      &lt;section id&#x3D;&quot;curiosidades&quot; class&#x3D;&quot;category-section&quot;&gt;
+        &lt;h2&gt;Curiosidades&lt;/h2&gt;
+        &lt;ul&gt;
+          &lt;li&gt;
+            &lt;strong&gt;Insectos en la alimentación:&lt;/strong&gt; Los insectos desempeñan un papel crucial en la polinización de muchos alimentos que consumimos a diario, como frutas, verduras y especias.
+          &lt;/li&gt;
+          &lt;li&gt;
+            &lt;strong&gt;La longevidad de algunas especies:&lt;/strong&gt; Algunos invertebrados como ciertas especies de medusas pueden vivir más de 100 años, mientras que otros, como las libélulas, tienen una vida útil de solo unos meses.
+        &lt;/li&gt;
+          &lt;li&gt;
+            &lt;strong&gt;Insectos que pueden sobrevivir sin cabeza:&lt;/strong&gt; Algunos insectos, como las cucarachas, pueden sobrevivir durante días o incluso semanas sin su cabeza debido a su sistema nervioso descentralizado.
+          &lt;/li&gt;
+          &lt;li&gt;
+            &lt;strong&gt;El aguijón del alacrán:&lt;/strong&gt; El veneno de un alacrán no solo se utiliza para cazar, sino que también sirve como defensa. En algunas culturas, su veneno se ha utilizado en medicina tradicional.
+          &lt;/li&gt;
+          &lt;li&gt;
+            &lt;strong&gt;Invertebrados bioluminiscentes:&lt;/strong&gt; Muchos invertebrados, como algunas especies de medusas y calamares, tienen la capacidad de producir luz en la oscuridad, un fenómeno conocido como bioluminiscencia.
+          &lt;/li&gt;
+        &lt;/ul&gt;
+              &lt;/section&gt;
+      
+    &lt;/main&gt;
+  
+    &lt;footer&gt;
+      &lt;div class&#x3D;&quot;footer-left&quot;&gt;
+        &lt;p&gt;&lt;strong&gt;Insectarium&lt;/strong&gt;&lt;/p&gt;
+        &lt;p&gt;C/ Asunción, 14&lt;/p&gt;
+        &lt;p&gt;41011 Sevilla&lt;/p&gt;
+      &lt;/div&gt;
+      &lt;div class&#x3D;&quot;footer-right&quot;&gt;
+        &lt;p&gt;653 785 231&lt;/p&gt;
+        &lt;p&gt;insectarium&quot;&amp;#64;&quot;gmail.com&lt;/p&gt;
+      &lt;/div&gt;
+    &lt;/footer&gt;
+  &lt;/body&gt;
+  </code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="styleData">
+                <p class="comment">
+                    <code>./blog.component.css</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">/* Estilos del header */ 
+header {
+  background-color: rgba(120, 210, 106, 0.9);
+  padding: 15px;
+  border-radius: 0 0 15px 15px;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+header h1 {
+  margin: 10px;
+  color: white;
+  font-size: 24px;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 10px;
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  align-items: center;
+  height: 100%;
+}
+
+nav li {
+  display: inline;
+  margin-right: 20px;
+}
+
+/* Enlaces del header */
+nav a {
+  text-decoration: none;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+nav a:hover {
+  text-decoration: none;
+}
+
+/* ------------------------------------------------------------------------------------------------------------------------ */
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: url(&#x27;/assets/home_bg.png&#x27;) no-repeat center center fixed;
+  background-size: cover;
+  text-align: center;
+}
+
+/* Contenido general */
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Sección de categorías */
+.category-section {
+  width: 100%;
+  margin-bottom: 40px;
+  background-color: rgba(255, 255, 255, 0.596);
+  border: 1px solid #aacb8f;
+  padding: 20px;
+  border-radius: 18px;
+}
+
+.category-section h2 {
+  text-align: left;
+  width: 100%;
+  font-size: 160%;
+  font-weight: bolder;
+  color: #1f6c28;
+  margin-bottom: 35px;
+  margin-top: 20px;
+}
+
+a {
+  text-decoration: none;
+}
+
+.category-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+/* Grid de categorías */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 15px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.category-item {
+  background-color: rgba(120, 210, 106, 0.123);
+  color: #1f6c28;
+  padding: 15px;
+  border-radius: 8px;
+  font-weight: bold;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 300px;
+}
+
+.category-item img {
+  width: 100%;
+  height: 75%;
+  object-fit: cover;
+  border-radius: 8px;
+  flex-grow: 1;
+  align-self: stretch;
+}
+
+/* Ajuste del texto */
+.category-item p {
+  margin: 5px 0 0;
+}
+
+/* ---------------------------------------------------------------------------------------------------------------------- */
+/* Estilos de Noticias */
+.noticia {
+  margin-bottom: 20px;
+  padding: 15px;
+  background-color: rgba(120, 210, 106, 0.8);
+  border-radius: 10px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: left;
+  border: 1px solid #aacb8f;
+}
+
+.noticia h1 {
+  font-size: 22px;
+  color: #ffffff;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+
+/* Contenido de la noticia (oculto por defecto) */
+.noticia-content {
+  max-height: 0;
+  overflow: hidden;
+}
+
+/* Mostrar contenido cuando está abierto */
+.noticia-content.open {
+  margin-top: 10px;
+  max-height: 500px;
+  border-radius: 5px;
+  overflow: visible;
+  background-color: rgba(255, 255, 255, 0.851);
+  padding: 15px;
+}
+
+a {
+  text-decoration: none;
+  color: #1f6c28;
+}
+
+/* Estilos de Curiosidades */
+#curiosidades {
+  background-color: rgba(255, 255, 255, 0.9);
+  border: 1px solid #aacb8f;
+  border-radius: 18px;
+  padding: 20px;
+  margin-bottom: 40px;
+}
+
+#curiosidades h2 {
+  color: #1f6c28;
+  margin-bottom: 15px;
+  text-align: left;
+  padding-bottom: 10px;
+}
+
+#curiosidades p {
+  line-height: 1.6;
+  margin-bottom: 20px;
+  color: #333333;
+  text-align: left;  /* Asegura que el texto empiece desde la izquierda */
+}
+
+#curiosidades ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+#curiosidades li {
+  background-color: rgba(120, 210, 106, 0.15);
+  border: 1px solid #aacb8f;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  padding: 15px;
+  color: #1f6c28;
+}
+
+#curiosidades li strong {
+  color: #1f6c28;
+  font-weight: bolder;
+}
+
+#curiosidades ul li:hover {
+  background-color: rgba(120, 210, 106, 0.3);
+  transition: background-color 0.5s ease;
+}
+
+
+/* ---------------------------------------------------------------------------------------------------------------------- */
+/* Estilos del footer */
+footer {
+  background-color: rgba(120, 210, 106, 0.9);
+  padding: 15px;
+  border-radius: 15px 15px 0 0;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 30px;
+  position: relative;
+  margin-top: 30px;
+  width: 100%;
+  z-index: 1;
+}
+
+/* Estilo de los textos dentro del footer */
+footer p {
+  margin: 0;
+  color: white;
+  font-size: 14px;
+}
+
+/* Estilo para las columnas dentro del footer */
+.footer-left, .footer-right {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-left {
+  text-align: left;
+  margin-left: 10%;
+}
+
+.footer-right {
+  text-align: right;
+  margin-right: 10%;
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><body>    <header>      <nav>        <ul>          <li><a href="/home" style="font-size: 25px;">Insectarium</a></li>          <li><a href="/allshop">Tienda</a></li>          <li><a href="/allguides">Guías</a></li>          <li><a href="/contact">Contacto</a></li>                    <li><a href="/profile">Mi perfil</a></li>          <li><a href="/shoppingcart" >Carrito</a></li>          <li><a href="/blog">Blog</a></li>         </ul>      </nav>    </header>      <main class="content">      <section id="ultimas-llegadas" class="category-section">        <h2>Últimas llegadas</h2>        <div class="grid">          <a href="/shop/shopcrustacea">            <div class="category-item">              <img src="/assets/crustacea_ucapugilator.jpg" alt="Uca pugilator">              <p>Nuevo crustáceo en tienda: Uca pugilator. ¡Mira qué pinza!</p>            </div>          </a>                    <a href="shop/shophymenoptera">            <div class="category-item">              <img src="/assets/hymenoptera_hormigabala.jpg" alt="hormiga bala">              <p>¡Colonias de hormiga bala a la venta!</p>            </div>          </a>        </div>      </section>        <section id="noticias" class="category-section">        <h2>Noticias sobre invertebrados</h2>              <!-- Noticia 1 -->    <div class="noticia">        <h1 (click)="toggleContent(1)">Los pesticidas están diezmando la población de libélulas</h1>        <div class="noticia-content" [class.open]="noticia1.isOpen">            <div class="noticia-text" [innerHTML]="noticia1.content"></div>        </div>    </div>        <!-- Noticia 2 -->    <div class="noticia">        <h1 (click)="toggleContent(2)">Estudiando las especies poco queridas</h1>        <div class="noticia-content" [class.open]="noticia2.isOpen">        <div class="noticia-text" [innerHTML]="noticia2.content"></div>        </div>    </div>        <!-- Noticia 3 -->    <div class="noticia">        <h1 (click)="toggleContent(3)">¿Peligra la vida en la Tierra a causa de la pérdida de insectos?</h1>        <div class="noticia-content" [class.open]="noticia3.isOpen">        <div class="noticia-text" [innerHTML]="noticia3.content"></div>        </div>    </div>        </section>      <section id="curiosidades" class="category-section">        <h2>Curiosidades</h2>        <ul>          <li>            <strong>Insectos en la alimentación:</strong> Los insectos desempeñan un papel crucial en la polinización de muchos alimentos que consumimos a diario, como frutas, verduras y especias.          </li>          <li>            <strong>La longevidad de algunas especies:</strong> Algunos invertebrados como ciertas especies de medusas pueden vivir más de 100 años, mientras que otros, como las libélulas, tienen una vida útil de solo unos meses.        </li>          <li>            <strong>Insectos que pueden sobrevivir sin cabeza:</strong> Algunos insectos, como las cucarachas, pueden sobrevivir durante días o incluso semanas sin su cabeza debido a su sistema nervioso descentralizado.          </li>          <li>            <strong>El aguijón del alacrán:</strong> El veneno de un alacrán no solo se utiliza para cazar, sino que también sirve como defensa. En algunas culturas, su veneno se ha utilizado en medicina tradicional.          </li>          <li>            <strong>Invertebrados bioluminiscentes:</strong> Muchos invertebrados, como algunas especies de medusas y calamares, tienen la capacidad de producir luz en la oscuridad, un fenómeno conocido como bioluminiscencia.          </li>        </ul>              </section>          </main>      <footer>      <div class="footer-left">        <p><strong>Insectarium</strong></p>        <p>C/ Asunción, 14</p>        <p>41011 Sevilla</p>      </div>      <div class="footer-right">        <p>653 785 231</p>        <p>insectarium"&#64;"gmail.com</p>      </div>    </footer>  </body>  </div>'
+    var COMPONENTS = [{'name': 'AllguidesComponent', 'selector': 'app-allguides'},{'name': 'AllshopComponent', 'selector': 'app-allshop'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BlogComponent', 'selector': 'app-blog'},{'name': 'CartComponent', 'selector': 'app-cart'},{'name': 'ContactComponent', 'selector': 'app-contact'},{'name': 'GuidesarachnidaComponent', 'selector': 'app-guidesarachnida'},{'name': 'GuidesblattodeaComponent', 'selector': 'app-guidesblattodea'},{'name': 'GuideschilopodaComponent', 'selector': 'app-guideschilopoda'},{'name': 'GuidescoleopteraComponent', 'selector': 'app-guidescoleoptera'},{'name': 'GuidescrustaceaComponent', 'selector': 'app-guidescrustacea'},{'name': 'GuidesdiplopodaComponent', 'selector': 'app-guidesdiplopoda'},{'name': 'GuidesgastropodaComponent', 'selector': 'app-guidesgastropoda'},{'name': 'GuideshymenopteraComponent', 'selector': 'app-guideshymenoptera'},{'name': 'GuidesisopodaComponent', 'selector': 'app-guidesisopoda'},{'name': 'GuideslepidopteraComponent', 'selector': 'app-guideslepidoptera'},{'name': 'GuidesmantodeaComponent', 'selector': 'app-guidesmantodea'},{'name': 'GuidesphasmatodeaComponent', 'selector': 'app-guidesphasmatodea'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'NotfoundComponent', 'selector': 'app-notfound'},{'name': 'ProfileComponent', 'selector': 'app-profile'},{'name': 'RegisterComponent', 'selector': 'app-register'},{'name': 'ShoparachnidaComponent', 'selector': 'app-shoparachnida'},{'name': 'ShopblattodeaComponent', 'selector': 'app-shopblattodea'},{'name': 'ShopchilopodaComponent', 'selector': 'app-shopchilopoda'},{'name': 'ShopcoleopteraComponent', 'selector': 'app-shopcoleoptera'},{'name': 'ShopcrustaceaComponent', 'selector': 'app-shopcrustacea'},{'name': 'ShopdiplopodaComponent', 'selector': 'app-shopdiplopoda'},{'name': 'ShopgastropodaComponent', 'selector': 'app-shopgastropoda'},{'name': 'ShophymenopteraComponent', 'selector': 'app-shophymenoptera'},{'name': 'ShopisopodaComponent', 'selector': 'app-shopisopoda'},{'name': 'ShoplepidopteraComponent', 'selector': 'app-shoplepidoptera'},{'name': 'ShopmantodeaComponent', 'selector': 'app-shopmantodea'},{'name': 'ShopphasmatodeaComponent', 'selector': 'app-shopphasmatodea'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'BlogComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'BlogComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

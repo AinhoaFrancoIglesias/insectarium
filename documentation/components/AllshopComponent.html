@@ -1,0 +1,1991 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>insectarium documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="../" class="navbar-brand">insectarium documentation</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Components</li>
+  <li class="breadcrumb-item"
+  >
+  AllshopComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" class="nav-link"
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li class="nav-item">
+            <a href="#templateData" class="nav-link"
+                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li class="nav-item">
+            <a href="#styleData" class="nav-link"
+                role="tab" id="styleData-tab" data-bs-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li class="nav-item">
+            <a href="#tree" class="nav-link"
+                role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/pages/shop/allshop/allshop.component.ts</code>
+</p>
+
+
+    <p class="comment">
+        <h3>Description</h3>
+    </p>
+    <p class="comment">
+        <p>Componente que representa la página con todos los productos de la tienda.</p>
+<p>Este componente se encarga de mostrar una lista de todos los productos disponibles
+en la tienda. Se espera que se complemente con lógica para manejar la visualización
+de productos, categorías, filtros, y otras funcionalidades relacionadas con el catálogo
+de productos.</p>
+
+    </p>
+
+
+
+
+<section data-compodoc="block-metadata">
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-allshop</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./allshop.component.css</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./allshop.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+
+
+
+
+
+
+
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component } from &#x27;@angular/core&#x27;;
+
+/**
+ * Componente que representa la página con todos los productos de la tienda.
+ * 
+ * Este componente se encarga de mostrar una lista de todos los productos disponibles
+ * en la tienda. Se espera que se complemente con lógica para manejar la visualización
+ * de productos, categorías, filtros, y otras funcionalidades relacionadas con el catálogo
+ * de productos.
+ */
+@Component({
+  selector: &#x27;app-allshop&#x27;,  // Selector que identifica al componente en el HTML
+  templateUrl: &#x27;./allshop.component.html&#x27;,  // Archivo de plantilla asociado al componente
+  styleUrls: [&#x27;./allshop.component.css&#x27;]  // Archivo de estilos asociados al componente
+})
+export class AllshopComponent {
+  // Aquí se pueden agregar propiedades y métodos relacionados con la lógica del componente
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;body&gt;
+    &lt;header&gt;
+      &lt;nav&gt;
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href&#x3D;&quot;/home&quot; style&#x3D;&quot;font-size: 150%;&quot;&gt;Insectarium&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href&#x3D;&quot;/allshop&quot;&gt;Tienda&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href&#x3D;&quot;/allguides&quot;&gt;Guías&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href&#x3D;&quot;/contact&quot;&gt;Contacto&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href&#x3D;&quot;/profile&quot;&gt;Mi perfil&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href&#x3D;&quot;/shoppingcart&quot;&gt;Carrito&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href&#x3D;&quot;/blog&quot;&gt;Blog&lt;/a&gt;&lt;/li&gt; 
+        &lt;/ul&gt;
+      &lt;/nav&gt;
+    &lt;/header&gt;
+
+  
+    &lt;main class&#x3D;&quot;content&quot;&gt;
+
+        &lt;img src&#x3D;&quot;/assets/shopallshop.png&quot; alt&#x3D;&quot;Catálogo Completo&quot; class&#x3D;&quot;catalog-image&quot;&gt;
+      
+    
+    &lt;!-- Seccion complementos --&gt;
+    &lt;section class&#x3D;&quot;categorias-section&quot;&gt;
+      &lt;div class&#x3D;&quot;category-section&quot;&gt;
+        &lt;h2&gt;Suministros para hábitat y alimentación&lt;/h2&gt;
+        &lt;div class&#x3D;&quot;grid&quot;&gt;
+
+          &lt;div class&#x3D;&quot;grid-item&quot;&gt;
+            &lt;p&gt;Suplemento alimenticio · 5.99€&lt;/p&gt;
+            &lt;img src&#x3D;&quot;/assets/lepidoptera_food.png&quot; alt&#x3D;&quot;Suplemento alimenticio&quot;&gt;
+            &lt;div class&#x3D;&quot;buttons&quot;&gt;
+                &lt;button class&#x3D;&quot;add-to-cart&quot;&gt;
+                    &lt;span class&#x3D;&quot;cart-icon&quot;&gt;🛒&lt;/span&gt; Añadir a carrito &lt;span class&#x3D;&quot;arrow-icon&quot;&gt;→&lt;/span&gt;
+                &lt;/button&gt;
+                &lt;button class&#x3D;&quot;add-to-favorites&quot;&gt;Añadir a favoritos&lt;/button&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+          &lt;div class&#x3D;&quot;grid-item&quot;&gt;
+            &lt;p&gt;Larvas moscas (200g) · 2.99€&lt;/p&gt;
+            &lt;img src&#x3D;&quot;/assets/carnivore_food.jpeg&quot; alt&#x3D;&quot;Larvas moscas&quot;&gt;
+          &lt;div class&#x3D;&quot;buttons&quot;&gt;
+            &lt;button class&#x3D;&quot;add-to-cart&quot;&gt;
+              &lt;span class&#x3D;&quot;cart-icon&quot;&gt;🛒&lt;/span&gt; Añadir a carrito &lt;span class&#x3D;&quot;arrow-icon&quot;&gt;→&lt;/span&gt;
+            &lt;/button&gt;
+            &lt;button class&#x3D;&quot;add-to-favorites&quot;&gt;Añadir a favoritos&lt;/button&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;div class&#x3D;&quot;grid-item&quot;&gt;
+          &lt;p&gt;Grillos vivos (250g) · 4.99€&lt;/p&gt;
+          &lt;img src&#x3D;&quot;/assets/carnivore_food2.jpg&quot; alt&#x3D;&quot;Grillos vivos&quot;&gt;
+        &lt;div class&#x3D;&quot;buttons&quot;&gt;
+          &lt;button class&#x3D;&quot;add-to-cart&quot;&gt;
+            &lt;span class&#x3D;&quot;cart-icon&quot;&gt;🛒&lt;/span&gt; Añadir a carrito &lt;span class&#x3D;&quot;arrow-icon&quot;&gt;→&lt;/span&gt;
+          &lt;/button&gt;
+          &lt;button class&#x3D;&quot;add-to-favorites&quot;&gt;Añadir a favoritos&lt;/button&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+
+
+          &lt;div class&#x3D;&quot;grid-item&quot;&gt;
+              &lt;p&gt;Hábitat · 19.99€&lt;/p&gt;
+              &lt;img src&#x3D;&quot;/assets/enclosure2.jpg&quot; alt&#x3D;&quot;Hábitat&quot;&gt;
+            &lt;div class&#x3D;&quot;buttons&quot;&gt;
+              &lt;button class&#x3D;&quot;add-to-cart&quot;&gt;
+                &lt;span class&#x3D;&quot;cart-icon&quot;&gt;🛒&lt;/span&gt; Añadir a carrito &lt;span class&#x3D;&quot;arrow-icon&quot;&gt;→&lt;/span&gt;
+              &lt;/button&gt;
+              &lt;button class&#x3D;&quot;add-to-favorites&quot;&gt;Añadir a favoritos&lt;/button&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+
+          
+        &lt;div class&#x3D;&quot;grid-item&quot;&gt;
+          &lt;p&gt;Hábitat · 15.99€&lt;/p&gt;
+          &lt;img src&#x3D;&quot;/assets/enclosure1.png&quot; alt&#x3D;&quot;Hábitat&quot;&gt;
+        &lt;div class&#x3D;&quot;buttons&quot;&gt;
+          &lt;button class&#x3D;&quot;add-to-cart&quot;&gt;
+            &lt;span class&#x3D;&quot;cart-icon&quot;&gt;🛒&lt;/span&gt; Añadir a carrito &lt;span class&#x3D;&quot;arrow-icon&quot;&gt;→&lt;/span&gt;
+          &lt;/button&gt;
+          &lt;button class&#x3D;&quot;add-to-favorites&quot;&gt;Añadir a favoritos&lt;/button&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+
+
+      &lt;div class&#x3D;&quot;grid-item&quot;&gt;
+        &lt;p&gt;Hormiguero · 35.99€&lt;/p&gt;
+        &lt;img src&#x3D;&quot;/assets/enclosure3hormigueri.jpg&quot; alt&#x3D;&quot;Hormiguero&quot;&gt;
+        &lt;div class&#x3D;&quot;buttons&quot;&gt;
+            &lt;button class&#x3D;&quot;add-to-cart&quot;&gt;
+                &lt;span class&#x3D;&quot;cart-icon&quot;&gt;🛒&lt;/span&gt; Añadir a carrito &lt;span class&#x3D;&quot;arrow-icon&quot;&gt;→&lt;/span&gt;
+            &lt;/button&gt;
+            &lt;button class&#x3D;&quot;add-to-favorites&quot;&gt;Añadir a favoritos&lt;/button&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+
+      &lt;div class&#x3D;&quot;grid-item&quot;&gt;
+        &lt;p&gt;Escondite de corcho · 4.99€&lt;/p&gt;
+        &lt;img src&#x3D;&quot;/assets/z_hideout1.png&quot; alt&#x3D;&quot;Escondite&quot;&gt;
+      &lt;div class&#x3D;&quot;buttons&quot;&gt;
+        &lt;button class&#x3D;&quot;add-to-cart&quot;&gt;
+          &lt;span class&#x3D;&quot;cart-icon&quot;&gt;🛒&lt;/span&gt; Añadir a carrito &lt;span class&#x3D;&quot;arrow-icon&quot;&gt;→&lt;/span&gt;
+        &lt;/button&gt;
+        &lt;button class&#x3D;&quot;add-to-favorites&quot;&gt;Añadir a favoritos&lt;/button&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+      &lt;div class&#x3D;&quot;grid-item&quot;&gt;
+        &lt;p&gt;Escondite de tubos · 15.99€&lt;/p&gt;
+        &lt;img src&#x3D;&quot;/assets/z_hideout2.png&quot; alt&#x3D;&quot;Escondite tubos&quot;&gt;
+      &lt;div class&#x3D;&quot;buttons&quot;&gt;
+        &lt;button class&#x3D;&quot;add-to-cart&quot;&gt;
+          &lt;span class&#x3D;&quot;cart-icon&quot;&gt;🛒&lt;/span&gt; Añadir a carrito &lt;span class&#x3D;&quot;arrow-icon&quot;&gt;→&lt;/span&gt;
+        &lt;/button&gt;
+        &lt;button class&#x3D;&quot;add-to-favorites&quot;&gt;Añadir a favoritos&lt;/button&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+    
+
+    &lt;div class&#x3D;&quot;grid-item&quot;&gt;
+      &lt;p&gt;Colémbolos · 12.99€&lt;/p&gt;
+      &lt;img src&#x3D;&quot;/assets/colembolos.jpg&quot; alt&#x3D;&quot;Colémbolos&quot;&gt;
+      &lt;div class&#x3D;&quot;buttons&quot;&gt;
+          &lt;button class&#x3D;&quot;add-to-cart&quot;&gt;
+              &lt;span class&#x3D;&quot;cart-icon&quot;&gt;🛒&lt;/span&gt; Añadir a carrito &lt;span class&#x3D;&quot;arrow-icon&quot;&gt;→&lt;/span&gt;
+          &lt;/button&gt;
+          &lt;button class&#x3D;&quot;add-to-favorites&quot;&gt;Añadir a favoritos&lt;/button&gt;
+      &lt;/div&gt;
+  &lt;/div&gt;
+
+
+
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/section&gt;
+
+      &lt;!-- Sección de Arañas --&gt;
+      &lt;section class&#x3D;&quot;categorias-section&quot;&gt;
+        &lt;h2&gt;&lt;a href&#x3D;&quot;shop/shoparachnida&quot;&gt;Arañas (arachnida)&lt;/a&gt;&lt;/h2&gt;
+        &lt;div class&#x3D;&quot;grid&quot;&gt;
+          &lt;div class&#x3D;&quot;grid-item&quot;&gt;
+            &lt;p&gt;Caribena Versicolor · 69.99€&lt;/p&gt;
+            &lt;img src&#x3D;&quot;/assets/arachnida_caribenaversicolor.png&quot; alt&#x3D;&quot;caribenaversicolor&quot;&gt;
+            &lt;div class&#x3D;&quot;buttons&quot;&gt;
+              &lt;button class&#x3D;&quot;add-to-cart&quot;&gt;
+                &lt;span class&#x3D;&quot;icon cart-icon&quot;&gt;🛒&lt;/span&gt; Añadir a carrito &lt;span class&#x3D;&quot;icon arrow-icon&quot;&gt;→&lt;/span&gt;
+              &lt;/button&gt;
+              &lt;button class&#x3D;&quot;add-to-favorites&quot;&gt;Añadir a favoritos&lt;/button&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+          &lt;div class&#x3D;&quot;grid-item&quot;&gt;
+            &lt;p&gt;Thomisus onustus · 25.99€&lt;/p&gt;
+            &lt;img src&#x3D;&quot;/assets/arachnida_arañacangrejodelasflores.jpg&quot; alt&#x3D;&quot;arañacangrejodelasflores&quot;&gt;
+            &lt;div class&#x3D;&quot;buttons&quot;&gt;
+              &lt;button class&#x3D;&quot;add-to-cart&quot;&gt;
+                &lt;span class&#x3D;&quot;icon cart-icon&quot;&gt;🛒&lt;/span&gt; Añadir a carrito &lt;span class&#x3D;&quot;icon arrow-icon&quot;&gt;→&lt;/span&gt;
+              &lt;/button&gt;
+              &lt;button class&#x3D;&quot;add-to-favorites&quot;&gt;Añadir a favoritos&lt;/button&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+          &lt;div class&#x3D;&quot;grid-item&quot;&gt;
+            &lt;p&gt;Araña Espejo · 35.99€&lt;/p&gt;
+            &lt;img src&#x3D;&quot;/assets/arachnida_aranaespejo.jpg&quot; alt&#x3D;&quot;arañaespejo&quot;&gt;
+            &lt;div class&#x3D;&quot;buttons&quot;&gt;
+              &lt;button class&#x3D;&quot;add-to-cart&quot;&gt;
+                &lt;span class&#x3D;&quot;icon cart-icon&quot;&gt;🛒&lt;/span&gt; Añadir a carrito &lt;span class&#x3D;&quot;icon arrow-icon&quot;&gt;→&lt;/span&gt;
+              &lt;/button&gt;
+              &lt;button class&#x3D;&quot;add-to-favorites&quot;&gt;Añadir a favoritos&lt;/button&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+          &lt;div class&#x3D;&quot;grid-item&quot;&gt;
+            &lt;p&gt;Araña Mariquita · 35.99€&lt;/p&gt;
+            &lt;img src&#x3D;&quot;/assets/arachnida_arañamariquita.png&quot; alt&#x3D;&quot;Araña Mariquita&quot;&gt;
+            &lt;div class&#x3D;&quot;buttons&quot;&gt;
+              &lt;button class&#x3D;&quot;add-to-cart&quot;&gt;
+                &lt;span class&#x3D;&quot;icon cart-icon&quot;&gt;🛒&lt;/span&gt; Añadir a carrito &lt;span class&#x3D;&quot;icon arrow-icon&quot;&gt;→&lt;/span&gt;
+              &lt;/button&gt;
+              &lt;button class&#x3D;&quot;add-to-favorites&quot;&gt;Añadir a favoritos&lt;/button&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+          &lt;div class&#x3D;&quot;grid-item&quot;&gt;
+            &lt;p&gt;Araña Pavo Real · 69.99€&lt;/p&gt;
+            &lt;img src&#x3D;&quot;/assets/arachnida_pavoreal.jpg&quot; alt&#x3D;&quot;Araña Pavo Real&quot;&gt;
+            &lt;div class&#x3D;&quot;buttons&quot;&gt;
+              &lt;button class&#x3D;&quot;add-to-cart&quot;&gt;
+                &lt;span class&#x3D;&quot;icon cart-icon&quot;&gt;🛒&lt;/span&gt; Añadir a carrito &lt;span class&#x3D;&quot;icon arrow-icon&quot;&gt;→&lt;/span&gt;
+              &lt;/button&gt;
+              &lt;button class&#x3D;&quot;add-to-favorites&quot;&gt;Añadir a favoritos&lt;/button&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+          &lt;div class&#x3D;&quot;grid-item&quot;&gt;
+            &lt;p&gt;Tarántula Calabaza · 79.99€&lt;/p&gt;
+            &lt;img src&#x3D;&quot;/assets/arachnida_tarantulacalabaza.jpg&quot; alt&#x3D;&quot;Tarántula Calabaza&quot;&gt;
+            &lt;div class&#x3D;&quot;buttons&quot;&gt;
+              &lt;button class&#x3D;&quot;add-to-cart&quot;&gt;
+                &lt;span class&#x3D;&quot;icon cart-icon&quot;&gt;🛒&lt;/span&gt; Añadir a carrito &lt;span class&#x3D;&quot;icon arrow-icon&quot;&gt;→&lt;/span&gt;
+              &lt;/button&gt;
+              &lt;button class&#x3D;&quot;add-to-favorites&quot;&gt;Añadir a favoritos&lt;/button&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+          &lt;div class&#x3D;&quot;grid-item&quot;&gt;
+            &lt;p&gt;Araña Avispa · 29.99€&lt;/p&gt;
+            &lt;img src&#x3D;&quot;/assets/arachnida_arañaavispa.jpg&quot; alt&#x3D;&quot;Araña Avispa&quot;&gt;
+            &lt;div class&#x3D;&quot;buttons&quot;&gt;
+              &lt;button class&#x3D;&quot;add-to-cart&quot;&gt;
+                &lt;span class&#x3D;&quot;icon cart-icon&quot;&gt;🛒&lt;/span&gt; Añadir a carrito &lt;span class&#x3D;&quot;icon arrow-icon&quot;&gt;→&lt;/span&gt;
+              &lt;/button&gt;
+              &lt;button class&#x3D;&quot;add-to-favorites&quot;&gt;Añadir a favoritos&lt;/button&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+          &lt;div class&#x3D;&quot;grid-item&quot;&gt;
+            &lt;p&gt;Araña Cangrejo · 23.99€&lt;/p&gt;
+            &lt;img src&#x3D;&quot;/assets/arachnida_arañacangrejo.jpg&quot; alt&#x3D;&quot;Araña Cangrejo&quot;&gt;
+            &lt;div class&#x3D;&quot;buttons&quot;&gt;
+              &lt;button class&#x3D;&quot;add-to-cart&quot;&gt;
+                &lt;span class&#x3D;&quot;icon cart-icon&quot;&gt;🛒&lt;/span&gt; Añadir a carrito &lt;span class&#x3D;&quot;icon arrow-icon&quot;&gt;→&lt;/span&gt;
+              &lt;/button&gt;
+              &lt;button class&#x3D;&quot;add-to-favorites&quot;&gt;Añadir a favoritos&lt;/button&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+          &lt;div class&#x3D;&quot;grid-item&quot;&gt;
+            &lt;p&gt;Araña de las Desertas · 59.99€&lt;/p&gt;
+            &lt;img src&#x3D;&quot;/assets/arachnida_arañadelasdesertas.jpg&quot; alt&#x3D;&quot;Araña de las Desertas&quot;&gt;
+            &lt;div class&#x3D;&quot;buttons&quot;&gt;
+              &lt;button class&#x3D;&quot;add-to-cart&quot;&gt;
+                &lt;span class&#x3D;&quot;icon cart-icon&quot;&gt;🛒&lt;/span&gt; Añadir a carrito &lt;span class&#x3D;&quot;icon arrow-icon&quot;&gt;→&lt;/span&gt;
+              &lt;/button&gt;
+              &lt;button class&#x3D;&quot;add-to-favorites&quot;&gt;Añadir a favoritos&lt;/button&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/section&gt;
+  
+      &lt;!-- Sección de cucas --&gt;
+      &lt;section class&#x3D;&quot;categorias-section&quot;&gt;
+        &lt;h2&gt;&lt;a href&#x3D;&quot;shop/shopblattodea&quot;&gt;Cucarachas (blattodea)&lt;/a&gt;&lt;/h2&gt;
+        &lt;div class&#x3D;&quot;grid&quot;&gt;
+          &lt;div class&#x3D;&quot;grid-item&quot;&gt;
+            &lt;p&gt;Pseudoglomeris m. (2) · 9.99€&lt;/p&gt;
+            &lt;img src&#x3D;&quot;/assets/blattodea_pseudoglomerismagnifica.jpg&quot; alt&#x3D;&quot;Pseudoglomeris Magnifica&quot;&gt;
+            &lt;div class&#x3D;&quot;buttons&quot;&gt;
+              &lt;button class&#x3D;&quot;add-to-cart&quot;&gt;
+                &lt;span class&#x3D;&quot;icon cart-icon&quot;&gt;🛒&lt;/span&gt; Añadir a carrito &lt;span class&#x3D;&quot;icon arrow-icon&quot;&gt;→&lt;/span&gt;
+              &lt;/button&gt;
+              &lt;button class&#x3D;&quot;add-to-favorites&quot;&gt;Añadir a favoritos&lt;/button&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+          &lt;div class&#x3D;&quot;grid-item&quot;&gt;
+            &lt;p&gt;Polyzosteria mit. (2) · 9.99€&lt;/p&gt;
+            &lt;img src&#x3D;&quot;/assets/blattodea_polyzosteriamitchelli.jpeg&quot; alt&#x3D;&quot;Polyzosteria mitchelli&quot;&gt;
+            &lt;div class&#x3D;&quot;buttons&quot;&gt;
+              &lt;button class&#x3D;&quot;add-to-cart&quot;&gt;
+                &lt;span class&#x3D;&quot;icon cart-icon&quot;&gt;🛒&lt;/span&gt; Añadir a carrito &lt;span class&#x3D;&quot;icon arrow-icon&quot;&gt;→&lt;/span&gt;
+              &lt;/button&gt;
+              &lt;button class&#x3D;&quot;add-to-favorites&quot;&gt;Añadir a favoritos&lt;/button&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+          &lt;div class&#x3D;&quot;grid-item&quot;&gt;
+            &lt;p&gt;Gromphadorhina (4) · 2.99€&lt;/p&gt;
+            &lt;img src&#x3D;&quot;/assets/blattodea_gromphadorhina.jpg&quot; alt&#x3D;&quot;Gromphadorhina&quot;&gt;
+            &lt;div class&#x3D;&quot;buttons&quot;&gt;
+              &lt;button class&#x3D;&quot;add-to-cart&quot;&gt;
+                &lt;span class&#x3D;&quot;icon cart-icon&quot;&gt;🛒&lt;/span&gt; Añadir a carrito &lt;span class&#x3D;&quot;icon arrow-icon&quot;&gt;→&lt;/span&gt;
+              &lt;/button&gt;
+              &lt;button class&#x3D;&quot;add-to-favorites&quot;&gt;Añadir a favoritos&lt;/button&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+          &lt;div class&#x3D;&quot;grid-item&quot;&gt;
+            &lt;p&gt;Blatta orientalis (10) · 1.99€&lt;/p&gt;
+            &lt;img src&#x3D;&quot;/assets/blattodea_blattaorientalis.jpg&quot; alt&#x3D;&quot;Blatta orientalis&quot;&gt;
+            &lt;div class&#x3D;&quot;buttons&quot;&gt;
+              &lt;button class&#x3D;&quot;add-to-cart&quot;&gt;
+                &lt;span class&#x3D;&quot;icon cart-icon&quot;&gt;🛒&lt;/span&gt; Añadir a carrito &lt;span class&#x3D;&quot;icon arrow-icon&quot;&gt;→&lt;/span&gt;
+              &lt;/button&gt;
+              &lt;button class&#x3D;&quot;add-to-favorites&quot;&gt;Añadir a favoritos&lt;/button&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+          &lt;div class&#x3D;&quot;grid-item&quot;&gt;
+            &lt;p&gt;Prosoplecta (4) · 5.99€&lt;/p&gt;
+            &lt;img src&#x3D;&quot;/assets/blattodea_prosoplecta.jpg&quot; alt&#x3D;&quot;Araña Pavo Real&quot;&gt;
+            &lt;div class&#x3D;&quot;buttons&quot;&gt;
+              &lt;button class&#x3D;&quot;add-to-cart&quot;&gt;
+                &lt;span class&#x3D;&quot;icon cart-icon&quot;&gt;🛒&lt;/span&gt; Añadir a carrito &lt;span class&#x3D;&quot;icon arrow-icon&quot;&gt;→&lt;/span&gt;
+              &lt;/button&gt;
+              &lt;button class&#x3D;&quot;add-to-favorites&quot;&gt;Añadir a favoritos&lt;/button&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+          &lt;div class&#x3D;&quot;grid-item&quot;&gt;
+            &lt;p&gt;Blaptica dubia (10) · 5.99€&lt;/p&gt;
+            &lt;img src&#x3D;&quot;/assets/blattodea_blapticadubia.jpeg&quot; alt&#x3D;&quot;Blaptica Dubia&quot;&gt;
+            &lt;div class&#x3D;&quot;buttons&quot;&gt;
+              &lt;button class&#x3D;&quot;add-to-cart&quot;&gt;
+                &lt;span class&#x3D;&quot;icon cart-icon&quot;&gt;🛒&lt;/span&gt; Añadir a carrito &lt;span class&#x3D;&quot;icon arrow-icon&quot;&gt;→&lt;/span&gt;
+              &lt;/button&gt;
+              &lt;button class&#x3D;&quot;add-to-favorites&quot;&gt;Añadir a favoritos&lt;/button&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+          &lt;div class&#x3D;&quot;grid-item&quot;&gt;
+            &lt;p&gt;Chloroblatta (2) · 15.99€&lt;/p&gt;
+            &lt;img src&#x3D;&quot;/assets/blattodea_chloroblatta.jpg&quot; alt&#x3D;&quot;Araña Avispa&quot;&gt;
+            &lt;div class&#x3D;&quot;buttons&quot;&gt;
+              &lt;button class&#x3D;&quot;add-to-cart&quot;&gt;
+                &lt;span class&#x3D;&quot;icon cart-icon&quot;&gt;🛒&lt;/span&gt; Añadir a carrito &lt;span class&#x3D;&quot;icon arrow-icon&quot;&gt;→&lt;/span&gt;
+              &lt;/button&gt;
+              &lt;button class&#x3D;&quot;add-to-favorites&quot;&gt;Añadir a favoritos&lt;/button&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+          &lt;div class&#x3D;&quot;grid-item&quot;&gt;
+            &lt;p&gt;Eushelfordia pica (2) · 8.99€&lt;/p&gt;
+            &lt;img src&#x3D;&quot;/assets/blattodea_eushelfordiapica.jpg&quot; alt&#x3D;&quot;Eushelfordia pica&quot;&gt;
+            &lt;div class&#x3D;&quot;buttons&quot;&gt;
+              &lt;button class&#x3D;&quot;add-to-cart&quot;&gt;
+                &lt;span class&#x3D;&quot;icon cart-icon&quot;&gt;🛒&lt;/span&gt; Añadir a carrito &lt;span class&#x3D;&quot;icon arrow-icon&quot;&gt;→&lt;/span&gt;
+              &lt;/button&gt;
+              &lt;button class&#x3D;&quot;add-to-favorites&quot;&gt;Añadir a favoritos&lt;/button&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+          &lt;div class&#x3D;&quot;grid-item&quot;&gt;
+            &lt;p&gt;Therea Bernhardti (2) · 6.99€&lt;/p&gt;
+            &lt;img src&#x3D;&quot;/assets/blattodea_thereabernhardti.png&quot; alt&#x3D;&quot;Therea Bernhardti&quot;&gt;
+            &lt;div class&#x3D;&quot;buttons&quot;&gt;
+              &lt;button class&#x3D;&quot;add-to-cart&quot;&gt;
+                &lt;span class&#x3D;&quot;icon cart-icon&quot;&gt;🛒&lt;/span&gt; Añadir a carrito &lt;span class&#x3D;&quot;icon arrow-icon&quot;&gt;→&lt;/span&gt;
+              &lt;/button&gt;
+              &lt;button class&#x3D;&quot;add-to-favorites&quot;&gt;Añadir a favoritos&lt;/button&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/section&gt;
+
+    &lt;!-- Sección de Ciempiés --&gt;
+    &lt;section class&#x3D;&quot;categorias-section&quot;&gt;
+      &lt;h2&gt;&lt;a href&#x3D;&quot;shop/shopchilopoda&quot;&gt;Ciempiés (chilopoda)&lt;/a&gt;&lt;/h2&gt;
+      &lt;div class&#x3D;&quot;grid&quot;&gt;
+        &lt;div class&#x3D;&quot;grid-item&quot;&gt;
+          &lt;p&gt;Scolopendra gigantea · 89.99€&lt;/p&gt;
+          &lt;img src&#x3D;&quot;/assets/chilipoda_scolopendragigantea.jpg&quot; alt&#x3D;&quot;Scolopendra gigantea&quot;&gt;
+          &lt;div class&#x3D;&quot;buttons&quot;&gt;
+            &lt;button class&#x3D;&quot;add-to-cart&quot;&gt;
+              &lt;span class&#x3D;&quot;icon cart-icon&quot;&gt;🛒&lt;/span&gt; Añadir a carrito &lt;span class&#x3D;&quot;icon arrow-icon&quot;&gt;→&lt;/span&gt;
+            &lt;/button&gt;
+            &lt;button class&#x3D;&quot;add-to-favorites&quot;&gt;Añadir a favoritos&lt;/button&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class&#x3D;&quot;grid-item&quot;&gt;
+          &lt;p&gt;Scolopendra heros · 45.99€&lt;/p&gt;
+          &lt;img src&#x3D;&quot;/assets/chilopoda_scolopendraheros.jpg&quot; alt&#x3D;&quot;Scolopendra heros&quot;&gt;
+          &lt;div class&#x3D;&quot;buttons&quot;&gt;
+            &lt;button class&#x3D;&quot;add-to-cart&quot;&gt;
+              &lt;span class&#x3D;&quot;icon cart-icon&quot;&gt;🛒&lt;/span&gt; Añadir a carrito &lt;span class&#x3D;&quot;icon arrow-icon&quot;&gt;→&lt;/span&gt;
+            &lt;/button&gt;
+            &lt;button class&#x3D;&quot;add-to-favorites&quot;&gt;Añadir a favoritos&lt;/button&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class&#x3D;&quot;grid-item&quot;&gt;
+          &lt;p&gt;Ethmostigmus rub. · 55.99€&lt;/p&gt;
+          &lt;img src&#x3D;&quot;/assets/chilopoda_ethmostigmusrubripes.jpg&quot; alt&#x3D;&quot;Ethmostigmus rubripes&quot;&gt;
+          &lt;div class&#x3D;&quot;buttons&quot;&gt;
+            &lt;button class&#x3D;&quot;add-to-cart&quot;&gt;
+              &lt;span class&#x3D;&quot;icon cart-icon&quot;&gt;🛒&lt;/span&gt; Añadir a carrito &lt;span class&#x3D;&quot;icon arrow-icon&quot;&gt;→&lt;/span&gt;
+            &lt;/button&gt;
+            &lt;button class&#x3D;&quot;add-to-favorites&quot;&gt;Añadir a favoritos&lt;/button&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class&#x3D;&quot;grid-item&quot;&gt;
+          &lt;p&gt;Scolopendra subs. · 79.99€&lt;/p&gt;
+          &lt;img src&#x3D;&quot;/assets/chilopoda_scolopendrasubspinipes.png&quot; alt&#x3D;&quot;Scolopendra subspinipes&quot;&gt;
+          &lt;div class&#x3D;&quot;buttons&quot;&gt;
+            &lt;button class&#x3D;&quot;add-to-cart&quot;&gt;
+              &lt;span class&#x3D;&quot;icon cart-icon&quot;&gt;🛒&lt;/span&gt; Añadir a carrito &lt;span class&#x3D;&quot;icon arrow-icon&quot;&gt;→&lt;/span&gt;
+            &lt;/button&gt;
+            &lt;button class&#x3D;&quot;add-to-favorites&quot;&gt;Añadir a favoritos&lt;/button&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class&#x3D;&quot;grid-item&quot;&gt;
+          &lt;p&gt;Cryptops hortensis · 35.99€&lt;/p&gt;
+          &lt;img src&#x3D;&quot;/assets/chilopoda_cryptopshortensis.png&quot; alt&#x3D;&quot;Cryptops hortensis&quot;&gt;
+          &lt;div class&#x3D;&quot;buttons&quot;&gt;
+            &lt;button class&#x3D;&quot;add-to-cart&quot;&gt;
+              &lt;span class&#x3D;&quot;icon cart-icon&quot;&gt;🛒&lt;/span&gt; Añadir a carrito &lt;span class&#x3D;&quot;icon arrow-icon&quot;&gt;→&lt;/span&gt;
+            &lt;/button&gt;
+            &lt;button class&#x3D;&quot;add-to-favorites&quot;&gt;Añadir a favoritos&lt;/button&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class&#x3D;&quot;grid-item&quot;&gt;
+          &lt;p&gt;Lithobius forficatus · 29.99€&lt;/p&gt;
+          &lt;img src&#x3D;&quot;/assets/chilopoda_lithobiusforficatus.jpg&quot; alt&#x3D;&quot;Lithobius forficatus&quot;&gt;
+          &lt;div class&#x3D;&quot;buttons&quot;&gt;
+            &lt;button class&#x3D;&quot;add-to-cart&quot;&gt;
+              &lt;span class&#x3D;&quot;icon cart-icon&quot;&gt;🛒&lt;/span&gt; Añadir a carrito &lt;span class&#x3D;&quot;icon arrow-icon&quot;&gt;→&lt;/span&gt;
+            &lt;/button&gt;
+            &lt;button class&#x3D;&quot;add-to-favorites&quot;&gt;Añadir a favoritos&lt;/button&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class&#x3D;&quot;grid-item&quot;&gt;
+          &lt;p&gt;Scutigera coleoptrata · 9.99€&lt;/p&gt;
+          &lt;img src&#x3D;&quot;/assets/chilopoda_scutigeracoleoptrata.png&quot; alt&#x3D;&quot;Scutigera coleoptrata&quot;&gt;
+          &lt;div class&#x3D;&quot;buttons&quot;&gt;
+            &lt;button class&#x3D;&quot;add-to-cart&quot;&gt;
+              &lt;span class&#x3D;&quot;icon cart-icon&quot;&gt;🛒&lt;/span&gt; Añadir a carrito &lt;span class&#x3D;&quot;icon arrow-icon&quot;&gt;→&lt;/span&gt;
+            &lt;/button&gt;
+            &lt;button class&#x3D;&quot;add-to-favorites&quot;&gt;Añadir a favoritos&lt;/button&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class&#x3D;&quot;grid-item&quot;&gt;
+          &lt;p&gt;Hemiscolopendra m. · 49.99€&lt;/p&gt;
+          &lt;img src&#x3D;&quot;/assets/chilopoda_hemiscolopendramarginata.png&quot; alt&#x3D;&quot;Hemiscolopendra marginata&quot;&gt;
+          &lt;div class&#x3D;&quot;buttons&quot;&gt;
+            &lt;button class&#x3D;&quot;add-to-cart&quot;&gt;
+              &lt;span class&#x3D;&quot;icon cart-icon&quot;&gt;🛒&lt;/span&gt; Añadir a carrito &lt;span class&#x3D;&quot;icon arrow-icon&quot;&gt;→&lt;/span&gt;
+            &lt;/button&gt;
+            &lt;button class&#x3D;&quot;add-to-favorites&quot;&gt;Añadir a favoritos&lt;/button&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class&#x3D;&quot;grid-item&quot;&gt;
+          &lt;p&gt;Alipes grandidieri · 59.99€&lt;/p&gt;
+          &lt;img src&#x3D;&quot;/assets/chilopoda_alipesgrandidieri.jpg&quot; alt&#x3D;&quot;Alipes grandidieri&quot;&gt;
+          &lt;div class&#x3D;&quot;buttons&quot;&gt;
+            &lt;button class&#x3D;&quot;add-to-cart&quot;&gt;
+              &lt;span class&#x3D;&quot;icon cart-icon&quot;&gt;🛒&lt;/span&gt; Añadir a carrito &lt;span class&#x3D;&quot;icon arrow-icon&quot;&gt;→&lt;/span&gt;
+            &lt;/button&gt;
+            &lt;button class&#x3D;&quot;add-to-favorites&quot;&gt;Añadir a favoritos&lt;/button&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/section&gt;
+
+      &lt;!-- Sección de Escarabajos --&gt;
+      &lt;section class&#x3D;&quot;categorias-section&quot;&gt;
+        &lt;h2&gt;&lt;a href&#x3D;&quot;shop/shopcoleoptera&quot;&gt;Escarabajos (coleoptera)&lt;/a&gt;&lt;/h2&gt;
+        &lt;div class&#x3D;&quot;grid&quot;&gt;
+            &lt;div class&#x3D;&quot;grid-item&quot;&gt;
+                &lt;p&gt;Dynastes hercules · 129.99€&lt;/p&gt;
+                &lt;img src&#x3D;&quot;/assets/coleoptera_dynasteshercules.jpg&quot; alt&#x3D;&quot;Dynastes hercules&quot;&gt;
+                &lt;div class&#x3D;&quot;buttons&quot;&gt;
+                    &lt;button class&#x3D;&quot;add-to-cart&quot;&gt;
+                        &lt;span class&#x3D;&quot;icon cart-icon&quot;&gt;🛒&lt;/span&gt; Añadir a carrito &lt;span class&#x3D;&quot;icon arrow-icon&quot;&gt;→&lt;/span&gt;
+                    &lt;/button&gt;
+                    &lt;button class&#x3D;&quot;add-to-favorites&quot;&gt;Añadir a favoritos&lt;/button&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class&#x3D;&quot;grid-item&quot;&gt;
+                &lt;p&gt;Chalcosoma caucasus · 99.99€&lt;/p&gt;
+                &lt;img src&#x3D;&quot;/assets/coleoptera_chalcosomacaucasus.png&quot; alt&#x3D;&quot;Chalcosoma caucasus&quot;&gt;
+                &lt;div class&#x3D;&quot;buttons&quot;&gt;
+                    &lt;button class&#x3D;&quot;add-to-cart&quot;&gt;
+                        &lt;span class&#x3D;&quot;icon cart-icon&quot;&gt;🛒&lt;/span&gt; Añadir a carrito &lt;span class&#x3D;&quot;icon arrow-icon&quot;&gt;→&lt;/span&gt;
+                    &lt;/button&gt;
+                    &lt;button class&#x3D;&quot;add-to-favorites&quot;&gt;Añadir a favoritos&lt;/button&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class&#x3D;&quot;grid-item&quot;&gt;
+                &lt;p&gt;Megasoma elephas · 119.99€&lt;/p&gt;
+                &lt;img src&#x3D;&quot;/assets/coleoptera_megasomaelephas.jpg&quot; alt&#x3D;&quot;Megasoma elephas&quot;&gt;
+                &lt;div class&#x3D;&quot;buttons&quot;&gt;
+                    &lt;button class&#x3D;&quot;add-to-cart&quot;&gt;
+                        &lt;span class&#x3D;&quot;icon cart-icon&quot;&gt;🛒&lt;/span&gt; Añadir a carrito &lt;span class&#x3D;&quot;icon arrow-icon&quot;&gt;→&lt;/span&gt;
+                    &lt;/button&gt;
+                    &lt;button class&#x3D;&quot;add-to-favorites&quot;&gt;Añadir a favoritos&lt;/button&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class&#x3D;&quot;grid-item&quot;&gt;
+                &lt;p&gt;Phalacrognathus m. · 89.99€&lt;/p&gt;
+                &lt;img src&#x3D;&quot;/assets/coleoptera_phalacrognathusmuelleri.jpg&quot; alt&#x3D;&quot;Phalacrognathus muelleri&quot;&gt;
+                &lt;div class&#x3D;&quot;buttons&quot;&gt;
+                    &lt;button class&#x3D;&quot;add-to-cart&quot;&gt;
+                        &lt;span class&#x3D;&quot;icon cart-icon&quot;&gt;🛒&lt;/span&gt; Añadir a carrito &lt;span class&#x3D;&quot;icon arrow-icon&quot;&gt;→&lt;/span&gt;
+                    &lt;/button&gt;
+                    &lt;button class&#x3D;&quot;add-to-favorites&quot;&gt;Añadir a favoritos&lt;/button&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class&#x3D;&quot;grid-item&quot;&gt;
+                &lt;p&gt;Goliathus goliatus · 149.99€&lt;/p&gt;
+                &lt;img src&#x3D;&quot;/assets/coleoptera_goliathusgoliatus.jpg&quot; alt&#x3D;&quot;Goliathus goliatus&quot;&gt;
+                &lt;div class&#x3D;&quot;buttons&quot;&gt;
+                    &lt;button class&#x3D;&quot;add-to-cart&quot;&gt;
+                        &lt;span class&#x3D;&quot;icon cart-icon&quot;&gt;🛒&lt;/span&gt; Añadir a carrito &lt;span class&#x3D;&quot;icon arrow-icon&quot;&gt;→&lt;/span&gt;
+                    &lt;/button&gt;
+                    &lt;button class&#x3D;&quot;add-to-favorites&quot;&gt;Añadir a favoritos&lt;/button&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class&#x3D;&quot;grid-item&quot;&gt;
+                &lt;p&gt;Lucanus cervus · 69.99€&lt;/p&gt;
+                &lt;img src&#x3D;&quot;/assets/coleoptera_lucanuscervus.jpg&quot; alt&#x3D;&quot;Lucanus cervus&quot;&gt;
+                &lt;div class&#x3D;&quot;buttons&quot;&gt;
+                    &lt;button class&#x3D;&quot;add-to-cart&quot;&gt;
+                        &lt;span class&#x3D;&quot;icon cart-icon&quot;&gt;🛒&lt;/span&gt; Añadir a carrito &lt;span class&#x3D;&quot;icon arrow-icon&quot;&gt;→&lt;/span&gt;
+                    &lt;/button&gt;
+                    &lt;button class&#x3D;&quot;add-to-favorites&quot;&gt;Añadir a favoritos&lt;/button&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class&#x3D;&quot;grid-item&quot;&gt;
+                &lt;p&gt;Mecynorrhina torquata · 79.99€&lt;/p&gt;
+                &lt;img src&#x3D;&quot;/assets/coleoptera_mecynorrhinatorquata.jpg&quot; alt&#x3D;&quot;Mecynorrhina torquata&quot;&gt;
+                &lt;div class&#x3D;&quot;buttons&quot;&gt;
+                    &lt;button class&#x3D;&quot;add-to-cart&quot;&gt;
+                        &lt;span class&#x3D;&quot;icon cart-icon&quot;&gt;🛒&lt;/span&gt; Añadir a carrito &lt;span class&#x3D;&quot;icon arrow-icon&quot;&gt;→&lt;/span&gt;
+                    &lt;/button&gt;
+                    &lt;button class&#x3D;&quot;add-to-favorites&quot;&gt;Añadir a favoritos&lt;/button&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class&#x3D;&quot;grid-item&quot;&gt;
+                &lt;p&gt;Prosopocoilus giraffa · 74.99€&lt;/p&gt;
+                &lt;img src&#x3D;&quot;/assets/coleoptera_prosopocoilusgiraffa.jpeg&quot; alt&#x3D;&quot;Prosopocoilus giraffa&quot;&gt;
+                &lt;div class&#x3D;&quot;buttons&quot;&gt;
+                    &lt;button class&#x3D;&quot;add-to-cart&quot;&gt;
+                        &lt;span class&#x3D;&quot;icon cart-icon&quot;&gt;🛒&lt;/span&gt; Añadir a carrito &lt;span class&#x3D;&quot;icon arrow-icon&quot;&gt;→&lt;/span&gt;
+                    &lt;/button&gt;
+                    &lt;button class&#x3D;&quot;add-to-favorites&quot;&gt;Añadir a favoritos&lt;/button&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class&#x3D;&quot;grid-item&quot;&gt;
+                &lt;p&gt;Asbolus verrucosus · 9.99€&lt;/p&gt;
+                &lt;img src&#x3D;&quot;/assets/coleoptera_asbolusverrucosus.jpg&quot; alt&#x3D;&quot;Asbolus verrucosus&quot;&gt;
+                &lt;div class&#x3D;&quot;buttons&quot;&gt;
+                    &lt;button class&#x3D;&quot;add-to-cart&quot;&gt;
+                        &lt;span class&#x3D;&quot;icon cart-icon&quot;&gt;🛒&lt;/span&gt; Añadir a carrito &lt;span class&#x3D;&quot;icon arrow-icon&quot;&gt;→&lt;/span&gt;
+                    &lt;/button&gt;
+                    &lt;button class&#x3D;&quot;add-to-favorites&quot;&gt;Añadir a favoritos&lt;/button&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;!--Seccion crustaceos--&gt;
+    &lt;section class&#x3D;&quot;categorias-section&quot;&gt;
+      &lt;h2&gt;&lt;a href&#x3D;&quot;shop/shopcrustacea&quot;&gt;Crustáceos (crustacea)&lt;/a&gt;&lt;/h2&gt;
+      &lt;div class&#x3D;&quot;grid&quot;&gt;
+          &lt;div class&#x3D;&quot;grid-item&quot;&gt;
+              &lt;p&gt;Procambarus clarkii · 12.99€&lt;/p&gt;
+              &lt;img src&#x3D;&quot;/assets/crustacea_procambarusclarkii.jpg&quot; alt&#x3D;&quot;Procambarus clarkii&quot;&gt;
+              &lt;div class&#x3D;&quot;buttons&quot;&gt;
+                  &lt;button class&#x3D;&quot;add-to-cart&quot;&gt;
+                      &lt;span class&#x3D;&quot;icon cart-icon&quot;&gt;🛒&lt;/span&gt; Añadir a carrito &lt;span class&#x3D;&quot;icon arrow-icon&quot;&gt;→&lt;/span&gt;
+                  &lt;/button&gt;
+                  &lt;button class&#x3D;&quot;add-to-favorites&quot;&gt;Añadir a favoritos&lt;/button&gt;
+              &lt;/div&gt;
+          &lt;/div&gt;
+          &lt;div class&#x3D;&quot;grid-item&quot;&gt;
+              &lt;p&gt;Cherax quad. · 15.99€&lt;/p&gt;
+              &lt;img src&#x3D;&quot;/assets/crustacea_cheraxquadricarinatus.jpg&quot; alt&#x3D;&quot;Cherax quadricarinatus&quot;&gt;
+              &lt;div class&#x3D;&quot;buttons&quot;&gt;
+                  &lt;button class&#x3D;&quot;add-to-cart&quot;&gt;
+                      &lt;span class&#x3D;&quot;icon cart-icon&quot;&gt;🛒&lt;/span&gt; Añadir a carrito &lt;span class&#x3D;&quot;icon arrow-icon&quot;&gt;→&lt;/span&gt;
+                  &lt;/button&gt;
+                  &lt;button class&#x3D;&quot;add-to-favorites&quot;&gt;Añadir a favoritos&lt;/button&gt;
+              &lt;/div&gt;
+          &lt;/div&gt;
+          &lt;div class&#x3D;&quot;grid-item&quot;&gt;
+              &lt;p&gt;Neocaridina davidi · 9.99€&lt;/p&gt;
+              &lt;img src&#x3D;&quot;/assets/crustacea_neocaridinadavidi.jpg&quot; alt&#x3D;&quot;Neocaridina davidi&quot;&gt;
+              &lt;div class&#x3D;&quot;buttons&quot;&gt;
+                  &lt;button class&#x3D;&quot;add-to-cart&quot;&gt;
+                      &lt;span class&#x3D;&quot;icon cart-icon&quot;&gt;🛒&lt;/span&gt; Añadir a carrito &lt;span class&#x3D;&quot;icon arrow-icon&quot;&gt;→&lt;/span&gt;
+                  &lt;/button&gt;
+                  &lt;button class&#x3D;&quot;add-to-favorites&quot;&gt;Añadir a favoritos&lt;/button&gt;
+              &lt;/div&gt;
+          &lt;/div&gt;
+          &lt;div class&#x3D;&quot;grid-item&quot;&gt;
+              &lt;p&gt;Caridina multidentata · 14.99€&lt;/p&gt;
+              &lt;img src&#x3D;&quot;/assets/crustacea_caridinamultidentata.jpg&quot; alt&#x3D;&quot;Caridina multidentata&quot;&gt;
+              &lt;div class&#x3D;&quot;buttons&quot;&gt;
+                  &lt;button class&#x3D;&quot;add-to-cart&quot;&gt;
+                      &lt;span class&#x3D;&quot;icon cart-icon&quot;&gt;🛒&lt;/span&gt; Añadir a carrito &lt;span class&#x3D;&quot;icon arrow-icon&quot;&gt;→&lt;/span&gt;
+                  &lt;/button&gt;
+                  &lt;button class&#x3D;&quot;add-to-favorites&quot;&gt;Añadir a favoritos&lt;/button&gt;
+              &lt;/div&gt;
+          &lt;/div&gt;
+          &lt;div class&#x3D;&quot;grid-item&quot;&gt;
+              &lt;p&gt;Macrobrachium r. · 19.99€&lt;/p&gt;
+              &lt;img src&#x3D;&quot;/assets/crustacea_macrobrachiumrosenbergii.jpg&quot; alt&#x3D;&quot;Macrobrachium rosenbergii&quot;&gt;
+              &lt;div class&#x3D;&quot;buttons&quot;&gt;
+                  &lt;button class&#x3D;&quot;add-to-cart&quot;&gt;
+                      &lt;span class&#x3D;&quot;icon cart-icon&quot;&gt;🛒&lt;/span&gt; Añadir a carrito &lt;span class&#x3D;&quot;icon arrow-icon&quot;&gt;→&lt;/span&gt;
+                  &lt;/button&gt;
+                  &lt;button class&#x3D;&quot;add-to-favorites&quot;&gt;Añadir a favoritos&lt;/button&gt;
+              &lt;/div&gt;
+          &lt;/div&gt;
+          &lt;div class&#x3D;&quot;grid-item&quot;&gt;
+              &lt;p&gt;Perisesarma bidens · 24.99€&lt;/p&gt;
+              &lt;img src&#x3D;&quot;/assets/crustacea_perisesarmabidens.jpg&quot; alt&#x3D;&quot;Perisesarma bidens&quot;&gt;
+              &lt;div class&#x3D;&quot;buttons&quot;&gt;
+                  &lt;button class&#x3D;&quot;add-to-cart&quot;&gt;
+                      &lt;span class&#x3D;&quot;icon cart-icon&quot;&gt;🛒&lt;/span&gt; Añadir a carrito &lt;span class&#x3D;&quot;icon arrow-icon&quot;&gt;→&lt;/span&gt;
+                  &lt;/button&gt;
+                  &lt;button class&#x3D;&quot;add-to-favorites&quot;&gt;Añadir a favoritos&lt;/button&gt;
+              &lt;/div&gt;
+          &lt;/div&gt;
+          &lt;div class&#x3D;&quot;grid-item&quot;&gt;
+              &lt;p&gt;Blueberry Shrimp · 8.99€&lt;/p&gt;
+              &lt;img src&#x3D;&quot;/assets/crustacea_blueberryshrimp.jpg&quot; alt&#x3D;&quot;Blueberry Shrimp&quot;&gt;
+              &lt;div class&#x3D;&quot;buttons&quot;&gt;
+                  &lt;button class&#x3D;&quot;add-to-cart&quot;&gt;
+                      &lt;span class&#x3D;&quot;icon cart-icon&quot;&gt;🛒&lt;/span&gt; Añadir a carrito &lt;span class&#x3D;&quot;icon arrow-icon&quot;&gt;→&lt;/span&gt;
+                  &lt;/button&gt;
+                  &lt;button class&#x3D;&quot;add-to-favorites&quot;&gt;Añadir a favoritos&lt;/button&gt;
+              &lt;/div&gt;
+          &lt;/div&gt;
+          &lt;div class&#x3D;&quot;grid-item&quot;&gt;
+              &lt;p&gt;Palaemonetes p. · 5.99€&lt;/p&gt;
+              &lt;img src&#x3D;&quot;/assets/crustacea_palaemonetespaludosus.jpg&quot; alt&#x3D;&quot;Palaemonetes paludosus&quot;&gt;
+              &lt;div class&#x3D;&quot;buttons&quot;&gt;
+                  &lt;button class&#x3D;&quot;add-to-cart&quot;&gt;
+                      &lt;span class&#x3D;&quot;icon cart-icon&quot;&gt;🛒&lt;/span&gt; Añadir a carrito &lt;span class&#x3D;&quot;icon arrow-icon&quot;&gt;→&lt;/span&gt;
+                  &lt;/button&gt;
+                  &lt;button class&#x3D;&quot;add-to-favorites&quot;&gt;Añadir a favoritos&lt;/button&gt;
+              &lt;/div&gt;
+          &lt;/div&gt;
+          &lt;div class&#x3D;&quot;grid-item&quot;&gt;
+              &lt;p&gt;Uca pugilator · 10.99€&lt;/p&gt;
+              &lt;img src&#x3D;&quot;/assets/crustacea_ucapugilator.jpg&quot; alt&#x3D;&quot;Uca pugilator&quot;&gt;
+              &lt;div class&#x3D;&quot;buttons&quot;&gt;
+                  &lt;button class&#x3D;&quot;add-to-cart&quot;&gt;
+                      &lt;span class&#x3D;&quot;icon cart-icon&quot;&gt;🛒&lt;/span&gt; Añadir a carrito &lt;span class&#x3D;&quot;icon arrow-icon&quot;&gt;→&lt;/span&gt;
+                  &lt;/button&gt;
+                  &lt;button class&#x3D;&quot;add-to-favorites&quot;&gt;Añadir a favoritos&lt;/button&gt;
+              &lt;/div&gt;
+          &lt;/div&gt;
+      &lt;/div&gt;
+  &lt;/section&gt;
+
+  &lt;!--secicon milpies--&gt;
+  &lt;section class&#x3D;&quot;categorias-section&quot;&gt;
+    &lt;h2&gt;&lt;a href&#x3D;&quot;shop/shopdiplopoda&quot;&gt;Milpiés (diplopoda)&lt;/a&gt;&lt;/h2&gt;
+    &lt;div class&#x3D;&quot;grid&quot;&gt;
+        &lt;div class&#x3D;&quot;grid-item&quot;&gt;
+            &lt;p&gt;Peridontopyge rubes. · 10.99€&lt;/p&gt;
+            &lt;img src&#x3D;&quot;/assets/diplopoda_peridontopygerubescens.png&quot; alt&#x3D;&quot;Peridontopyge rubescens&quot;&gt;
+            &lt;div class&#x3D;&quot;buttons&quot;&gt;
+                &lt;button class&#x3D;&quot;add-to-cart&quot;&gt;
+                    &lt;span class&#x3D;&quot;icon cart-icon&quot;&gt;🛒&lt;/span&gt; Añadir a carrito &lt;span class&#x3D;&quot;icon arrow-icon&quot;&gt;→&lt;/span&gt;
+                &lt;/button&gt;
+                &lt;button class&#x3D;&quot;add-to-favorites&quot;&gt;Añadir a favoritos&lt;/button&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class&#x3D;&quot;grid-item&quot;&gt;
+            &lt;p&gt;Coromus vittattus · 13.99€&lt;/p&gt;
+            &lt;img src&#x3D;&quot;/assets/diplopoda_coromosvittatusvittatus.png&quot; alt&#x3D;&quot;Coromus vittattus vittatus&quot;&gt;
+            &lt;div class&#x3D;&quot;buttons&quot;&gt;
+                &lt;button class&#x3D;&quot;add-to-cart&quot;&gt;
+                    &lt;span class&#x3D;&quot;icon cart-icon&quot;&gt;🛒&lt;/span&gt; Añadir a carrito &lt;span class&#x3D;&quot;icon arrow-icon&quot;&gt;→&lt;/span&gt;
+                &lt;/button&gt;
+                &lt;button class&#x3D;&quot;add-to-favorites&quot;&gt;Añadir a favoritos&lt;/button&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class&#x3D;&quot;grid-item&quot;&gt;
+            &lt;p&gt;Anadenobolus moni. · 13.99€&lt;/p&gt;
+            &lt;img src&#x3D;&quot;/assets/diplopoda_anadenobolusmonilicornis.png&quot; alt&#x3D;&quot;Anadenobolus moni&quot;&gt;
+            &lt;div class&#x3D;&quot;buttons&quot;&gt;
+                &lt;button class&#x3D;&quot;add-to-cart&quot;&gt;
+                    &lt;span class&#x3D;&quot;icon cart-icon&quot;&gt;🛒&lt;/span&gt; Añadir a carrito &lt;span class&#x3D;&quot;icon arrow-icon&quot;&gt;→&lt;/span&gt;
+                &lt;/button&gt;
+                &lt;button class&#x3D;&quot;add-to-favorites&quot;&gt;Añadir a favoritos&lt;/button&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class&#x3D;&quot;grid-item&quot;&gt;
+            &lt;p&gt;Desmoxytes planata · 20.99€&lt;/p&gt;
+            &lt;img src&#x3D;&quot;/assets/diplopoda_desmoxytesplanata.jpg&quot; alt&#x3D;&quot;Desmoxytes planata&quot;&gt;
+            &lt;div class&#x3D;&quot;buttons&quot;&gt;
+                &lt;button class&#x3D;&quot;add-to-cart&quot;&gt;
+                    &lt;span class&#x3D;&quot;icon cart-icon&quot;&gt;🛒&lt;/span&gt; Añadir a carrito &lt;span class&#x3D;&quot;icon arrow-icon&quot;&gt;→&lt;/span&gt;
+                &lt;/button&gt;
+                &lt;button class&#x3D;&quot;add-to-favorites&quot;&gt;Añadir a favoritos&lt;/button&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class&#x3D;&quot;grid-item&quot;&gt;
+            &lt;p&gt;Pachyiulus krivol. · 19.99€&lt;/p&gt;
+            &lt;img src&#x3D;&quot;/assets/diplopoda_pachyiuluskrivolutskyi.jpg&quot; alt&#x3D;&quot;Pachyiulus krivolutskyi&quot;&gt;
+            &lt;div class&#x3D;&quot;buttons&quot;&gt;
+                &lt;button class&#x3D;&quot;add-to-cart&quot;&gt;
+                    &lt;span class&#x3D;&quot;icon cart-icon&quot;&gt;🛒&lt;/span&gt; Añadir a carrito &lt;span class&#x3D;&quot;icon arrow-icon&quot;&gt;→&lt;/span&gt;
+                &lt;/button&gt;
+                &lt;button class&#x3D;&quot;add-to-favorites&quot;&gt;Añadir a favoritos&lt;/button&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class&#x3D;&quot;grid-item&quot;&gt;
+            &lt;p&gt;Gosodesmus claremontus · 24.99€&lt;/p&gt;
+            &lt;img src&#x3D;&quot;/assets/diplopoda_gosodesmusclaremontus.jpg&quot; alt&#x3D;&quot;Gosodesmus claremontus&quot;&gt;
+            &lt;div class&#x3D;&quot;buttons&quot;&gt;
+                &lt;button class&#x3D;&quot;add-to-cart&quot;&gt;
+                    &lt;span class&#x3D;&quot;icon cart-icon&quot;&gt;🛒&lt;/span&gt; Añadir a carrito &lt;span class&#x3D;&quot;icon arrow-icon&quot;&gt;→&lt;/span&gt;
+                &lt;/button&gt;
+                &lt;button class&#x3D;&quot;add-to-favorites&quot;&gt;Añadir a favoritos&lt;/button&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class&#x3D;&quot;grid-item&quot;&gt;
+            &lt;p&gt;Chicobolus spinigerus · 6.99€&lt;/p&gt;
+            &lt;img src&#x3D;&quot;/assets/diplopoda_chicobolusspinigerus.jpg&quot; alt&#x3D;&quot;Chicobolus spinigerus&quot;&gt;
+            &lt;div class&#x3D;&quot;buttons&quot;&gt;
+                &lt;button class&#x3D;&quot;add-to-cart&quot;&gt;
+                    &lt;span class&#x3D;&quot;icon cart-icon&quot;&gt;🛒&lt;/span&gt; Añadir a carrito &lt;span class&#x3D;&quot;icon arrow-icon&quot;&gt;→&lt;/span&gt;
+                &lt;/button&gt;
+                &lt;button class&#x3D;&quot;add-to-favorites&quot;&gt;Añadir a favoritos&lt;/button&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class&#x3D;&quot;grid-item&quot;&gt;
+            &lt;p&gt;Pelmatojulus excisus · 25.99€&lt;/p&gt;
+            &lt;img src&#x3D;&quot;/assets/diplopoda_pelmatojulusexcisus.jpg&quot; alt&#x3D;&quot;Pelmatojulus excisus&quot;&gt;
+            &lt;div class&#x3D;&quot;buttons&quot;&gt;
+                &lt;button class&#x3D;&quot;add-to-cart&quot;&gt;
+                    &lt;span class&#x3D;&quot;icon cart-icon&quot;&gt;🛒&lt;/span&gt; Añadir a carrito &lt;span class&#x3D;&quot;icon arrow-icon&quot;&gt;→&lt;/span&gt;
+                &lt;/button&gt;
+                &lt;button class&#x3D;&quot;add-to-favorites&quot;&gt;Añadir a favoritos&lt;/button&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class&#x3D;&quot;grid-item&quot;&gt;
+            &lt;p&gt;Spirobolus caudulanus · 14.99€&lt;/p&gt;
+            &lt;img src&#x3D;&quot;/assets/diplopoda_spiroboluscaudulanus.jpg&quot; alt&#x3D;&quot;Spirobolus caudulanus&quot;&gt;
+            &lt;div class&#x3D;&quot;buttons&quot;&gt;
+                &lt;button class&#x3D;&quot;add-to-cart&quot;&gt;
+                    &lt;span class&#x3D;&quot;icon cart-icon&quot;&gt;🛒&lt;/span&gt; Añadir a carrito &lt;span class&#x3D;&quot;icon arrow-icon&quot;&gt;→&lt;/span&gt;
+                &lt;/button&gt;
+                &lt;button class&#x3D;&quot;add-to-favorites&quot;&gt;Añadir a favoritos&lt;/button&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/section&gt;
+
+&lt;!--seccion gastropodos--&gt;
+&lt;section class&#x3D;&quot;categorias-section&quot;&gt;
+  &lt;h2&gt;&lt;a href&#x3D;&quot;shop/shopgastropoda&quot;&gt;Gasterópodos (gastropoda)&lt;/a&gt;&lt;/h2&gt;
+  &lt;div class&#x3D;&quot;grid&quot;&gt;
+      &lt;div class&#x3D;&quot;grid-item&quot;&gt;
+          &lt;p&gt;Achatina balteata · 4.99€&lt;/p&gt;
+          &lt;img src&#x3D;&quot;/assets/gastropoda_achatinabalteata.jpg&quot; alt&#x3D;&quot;Achatina balteata&quot;&gt;
+          &lt;div class&#x3D;&quot;buttons&quot;&gt;
+              &lt;button class&#x3D;&quot;add-to-cart&quot;&gt;
+                  &lt;span class&#x3D;&quot;icon cart-icon&quot;&gt;🛒&lt;/span&gt; Añadir a carrito &lt;span class&#x3D;&quot;icon arrow-icon&quot;&gt;→&lt;/span&gt;
+              &lt;/button&gt;
+              &lt;button class&#x3D;&quot;add-to-favorites&quot;&gt;Añadir a favoritos&lt;/button&gt;
+          &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div class&#x3D;&quot;grid-item&quot;&gt;
+          &lt;p&gt;Achatina achatina · 18.99€&lt;/p&gt;
+          &lt;img src&#x3D;&quot;/assets/gastropoda_achatinaachatina.jpg&quot; alt&#x3D;&quot;Achatina achatina&quot;&gt;
+          &lt;div class&#x3D;&quot;buttons&quot;&gt;
+              &lt;button class&#x3D;&quot;add-to-cart&quot;&gt;
+                  &lt;span class&#x3D;&quot;icon cart-icon&quot;&gt;🛒&lt;/span&gt; Añadir a carrito &lt;span class&#x3D;&quot;icon arrow-icon&quot;&gt;→&lt;/span&gt;
+              &lt;/button&gt;
+              &lt;button class&#x3D;&quot;add-to-favorites&quot;&gt;Añadir a favoritos&lt;/button&gt;
+          &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div class&#x3D;&quot;grid-item&quot;&gt;
+          &lt;p&gt;Emphysetes udzun. · 11.99€&lt;/p&gt;
+          &lt;img src&#x3D;&quot;/assets/gastropoda_emphysetesundzugwensis.jpg&quot; alt&#x3D;&quot;Anadenobolus moni&quot;&gt;
+          &lt;div class&#x3D;&quot;buttons&quot;&gt;
+              &lt;button class&#x3D;&quot;add-to-cart&quot;&gt;
+                  &lt;span class&#x3D;&quot;icon cart-icon&quot;&gt;🛒&lt;/span&gt; Añadir a carrito &lt;span class&#x3D;&quot;icon arrow-icon&quot;&gt;→&lt;/span&gt;
+              &lt;/button&gt;
+              &lt;button class&#x3D;&quot;add-to-favorites&quot;&gt;Añadir a favoritos&lt;/button&gt;
+          &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div class&#x3D;&quot;grid-item&quot;&gt;
+          &lt;p&gt;Platymma tweediei · 20.99€&lt;/p&gt;
+          &lt;img src&#x3D;&quot;/assets/gastropoda_platymmatweediei.jpg&quot; alt&#x3D;&quot;Platymma tweediei&quot;&gt;
+          &lt;div class&#x3D;&quot;buttons&quot;&gt;
+              &lt;button class&#x3D;&quot;add-to-cart&quot;&gt;
+                  &lt;span class&#x3D;&quot;icon cart-icon&quot;&gt;🛒&lt;/span&gt; Añadir a carrito &lt;span class&#x3D;&quot;icon arrow-icon&quot;&gt;→&lt;/span&gt;
+              &lt;/button&gt;
+              &lt;button class&#x3D;&quot;add-to-favorites&quot;&gt;Añadir a favoritos&lt;/button&gt;
+          &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div class&#x3D;&quot;grid-item&quot;&gt;
+          &lt;p&gt;Tropidophora cuv. · 15.99€&lt;/p&gt;
+          &lt;img src&#x3D;&quot;/assets/gastropoda_tropidophoracuveriana.jpg&quot; alt&#x3D;&quot;Tropidophora cuveriana&quot;&gt;
+          &lt;div class&#x3D;&quot;buttons&quot;&gt;
+              &lt;button class&#x3D;&quot;add-to-cart&quot;&gt;
+                  &lt;span class&#x3D;&quot;icon cart-icon&quot;&gt;🛒&lt;/span&gt; Añadir a carrito &lt;span class&#x3D;&quot;icon arrow-icon&quot;&gt;→&lt;/span&gt;
+              &lt;/button&gt;
+              &lt;button class&#x3D;&quot;add-to-favorites&quot;&gt;Añadir a favoritos&lt;/button&gt;
+          &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div class&#x3D;&quot;grid-item&quot;&gt;
+          &lt;p&gt;Moulinsia fusca · 14.99€&lt;/p&gt;
+          &lt;img src&#x3D;&quot;/assets/gastropoda_moulinsiafusca.jpg&quot; alt&#x3D;&quot;Moulinsia fusca&quot;&gt;
+          &lt;div class&#x3D;&quot;buttons&quot;&gt;
+              &lt;button class&#x3D;&quot;add-to-cart&quot;&gt;
+                  &lt;span class&#x3D;&quot;icon cart-icon&quot;&gt;🛒&lt;/span&gt; Añadir a carrito &lt;span class&#x3D;&quot;icon arrow-icon&quot;&gt;→&lt;/span&gt;
+              &lt;/button&gt;
+              &lt;button class&#x3D;&quot;add-to-favorites&quot;&gt;Añadir a favoritos&lt;/button&gt;
+          &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div class&#x3D;&quot;grid-item&quot;&gt;
+          &lt;p&gt;Veronicella cubensis · 6.99€&lt;/p&gt;
+          &lt;img src&#x3D;&quot;/assets/gastropoda_veronicellacubensis.jpg&quot; alt&#x3D;&quot;Veronicella cubensis&quot;&gt;
+          &lt;div class&#x3D;&quot;buttons&quot;&gt;
+              &lt;button class&#x3D;&quot;add-to-cart&quot;&gt;
+                  &lt;span class&#x3D;&quot;icon cart-icon&quot;&gt;🛒&lt;/span&gt; Añadir a carrito &lt;span class&#x3D;&quot;icon arrow-icon&quot;&gt;→&lt;/span&gt;
+              &lt;/button&gt;
+              &lt;button class&#x3D;&quot;add-to-favorites&quot;&gt;Añadir a favoritos&lt;/button&gt;
+          &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div class&#x3D;&quot;grid-item&quot;&gt;
+          &lt;p&gt;Anguispira alternata · 8.99€&lt;/p&gt;
+          &lt;img src&#x3D;&quot;/assets/gastropoda_anguispiraalternata.jpg&quot; alt&#x3D;&quot;Anguispira alternata&quot;&gt;
+          &lt;div class&#x3D;&quot;buttons&quot;&gt;
+              &lt;button class&#x3D;&quot;add-to-cart&quot;&gt;
+                  &lt;span class&#x3D;&quot;icon cart-icon&quot;&gt;🛒&lt;/span&gt; Añadir a carrito &lt;span class&#x3D;&quot;icon arrow-icon&quot;&gt;→&lt;/span&gt;
+              &lt;/button&gt;
+              &lt;button class&#x3D;&quot;add-to-favorites&quot;&gt;Añadir a favoritos&lt;/button&gt;
+          &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div class&#x3D;&quot;grid-item&quot;&gt;
+          &lt;p&gt;Megalobulimus o. · 14.99€&lt;/p&gt;
+          &lt;img src&#x3D;&quot;/assets/gastropoda_megalobulimusoblongus.jpg&quot; alt&#x3D;&quot;Megalobulimus oblongus&quot;&gt;
+          &lt;div class&#x3D;&quot;buttons&quot;&gt;
+              &lt;button class&#x3D;&quot;add-to-cart&quot;&gt;
+                  &lt;span class&#x3D;&quot;icon cart-icon&quot;&gt;🛒&lt;/span&gt; Añadir a carrito &lt;span class&#x3D;&quot;icon arrow-icon&quot;&gt;→&lt;/span&gt;
+              &lt;/button&gt;
+              &lt;button class&#x3D;&quot;add-to-favorites&quot;&gt;Añadir a favoritos&lt;/button&gt;
+          &lt;/div&gt;
+      &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/section&gt;
+
+&lt;!--seccion himenopteros--&gt;
+&lt;section class&#x3D;&quot;categorias-section&quot;&gt;
+  &lt;h2&gt;&lt;a href&#x3D;&quot;shop/shophymenoptera&quot;&gt;Himenópteros (hymenoptera)&lt;/a&gt;&lt;/h2&gt;
+  &lt;div class&#x3D;&quot;grid&quot;&gt;
+      &lt;div class&#x3D;&quot;grid-item&quot;&gt;
+          &lt;p&gt;Messor barbarus · 4.99€&lt;/p&gt;
+          &lt;img src&#x3D;&quot;/assets/hymenoptera_messorbarbarus.jpg&quot; alt&#x3D;&quot;Messor barbarus&quot;&gt;
+          &lt;div class&#x3D;&quot;buttons&quot;&gt;
+              &lt;button class&#x3D;&quot;add-to-cart&quot;&gt;
+                  &lt;span class&#x3D;&quot;icon cart-icon&quot;&gt;🛒&lt;/span&gt; Añadir a carrito &lt;span class&#x3D;&quot;icon arrow-icon&quot;&gt;→&lt;/span&gt;
+              &lt;/button&gt;
+              &lt;button class&#x3D;&quot;add-to-favorites&quot;&gt;Añadir a favoritos&lt;/button&gt;
+          &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div class&#x3D;&quot;grid-item&quot;&gt;
+          &lt;p&gt;Lasius niger · 4.99€&lt;/p&gt;
+          &lt;img src&#x3D;&quot;/assets/hymenoptera_lasiusniger.jpg&quot; alt&#x3D;&quot;Lasius niger&quot;&gt;
+          &lt;div class&#x3D;&quot;buttons&quot;&gt;
+              &lt;button class&#x3D;&quot;add-to-cart&quot;&gt;
+                  &lt;span class&#x3D;&quot;icon cart-icon&quot;&gt;🛒&lt;/span&gt; Añadir a carrito &lt;span class&#x3D;&quot;icon arrow-icon&quot;&gt;→&lt;/span&gt;
+              &lt;/button&gt;
+              &lt;button class&#x3D;&quot;add-to-favorites&quot;&gt;Añadir a favoritos&lt;/button&gt;
+          &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div class&#x3D;&quot;grid-item&quot;&gt;
+          &lt;p&gt;Lasius flavus · 4.99€&lt;/p&gt;
+          &lt;img src&#x3D;&quot;/assets/hymenoptera_lasiusflavus.jpg&quot; alt&#x3D;&quot;Lasius flavus&quot;&gt;
+          &lt;div class&#x3D;&quot;buttons&quot;&gt;
+              &lt;button class&#x3D;&quot;add-to-cart&quot;&gt;
+                  &lt;span class&#x3D;&quot;icon cart-icon&quot;&gt;🛒&lt;/span&gt; Añadir a carrito &lt;span class&#x3D;&quot;icon arrow-icon&quot;&gt;→&lt;/span&gt;
+              &lt;/button&gt;
+              &lt;button class&#x3D;&quot;add-to-favorites&quot;&gt;Añadir a favoritos&lt;/button&gt;
+          &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div class&#x3D;&quot;grid-item&quot;&gt;
+          &lt;p&gt;Camponotus cruentatus · 4.99€&lt;/p&gt;
+          &lt;img src&#x3D;&quot;/assets/hymenoptera_camponotuscruentatus.jpg&quot; alt&#x3D;&quot;Csmponotus cruentatus&quot;&gt;
+          &lt;div class&#x3D;&quot;buttons&quot;&gt;
+              &lt;button class&#x3D;&quot;add-to-cart&quot;&gt;
+                  &lt;span class&#x3D;&quot;icon cart-icon&quot;&gt;🛒&lt;/span&gt; Añadir a carrito &lt;span class&#x3D;&quot;icon arrow-icon&quot;&gt;→&lt;/span&gt;
+              &lt;/button&gt;
+              &lt;button class&#x3D;&quot;add-to-favorites&quot;&gt;Añadir a favoritos&lt;/button&gt;
+          &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div class&#x3D;&quot;grid-item&quot;&gt;
+          &lt;p&gt;Camponotus ligniperda · 4.99€&lt;/p&gt;
+          &lt;img src&#x3D;&quot;/assets/hymenoptera_camponotusligniperda.jpg&quot; alt&#x3D;&quot;Camponotus ligniperda&quot;&gt;
+          &lt;div class&#x3D;&quot;buttons&quot;&gt;
+              &lt;button class&#x3D;&quot;add-to-cart&quot;&gt;
+                  &lt;span class&#x3D;&quot;icon cart-icon&quot;&gt;🛒&lt;/span&gt; Añadir a carrito &lt;span class&#x3D;&quot;icon arrow-icon&quot;&gt;→&lt;/span&gt;
+              &lt;/button&gt;
+              &lt;button class&#x3D;&quot;add-to-favorites&quot;&gt;Añadir a favoritos&lt;/button&gt;
+          &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div class&#x3D;&quot;grid-item&quot;&gt;
+          &lt;p&gt;Hormiga bala · 7.99€&lt;/p&gt;
+          &lt;img src&#x3D;&quot;/assets/hymenoptera_hormigabala.jpg&quot; alt&#x3D;&quot;Hormiga bala&quot;&gt;
+          &lt;div class&#x3D;&quot;buttons&quot;&gt;
+              &lt;button class&#x3D;&quot;add-to-cart&quot;&gt;
+                  &lt;span class&#x3D;&quot;icon cart-icon&quot;&gt;🛒&lt;/span&gt; Añadir a carrito &lt;span class&#x3D;&quot;icon arrow-icon&quot;&gt;→&lt;/span&gt;
+              &lt;/button&gt;
+              &lt;button class&#x3D;&quot;add-to-favorites&quot;&gt;Añadir a favoritos&lt;/button&gt;
+          &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div class&#x3D;&quot;grid-item&quot;&gt;
+          &lt;p&gt;Hormiga bulldog · 6.99€&lt;/p&gt;
+          &lt;img src&#x3D;&quot;/assets/hymenoptera_hormigabulldog.jpg&quot; alt&#x3D;&quot;Hormiga bulldog&quot;&gt;
+          &lt;div class&#x3D;&quot;buttons&quot;&gt;
+              &lt;button class&#x3D;&quot;add-to-cart&quot;&gt;
+                  &lt;span class&#x3D;&quot;icon cart-icon&quot;&gt;🛒&lt;/span&gt; Añadir a carrito &lt;span class&#x3D;&quot;icon arrow-icon&quot;&gt;→&lt;/span&gt;
+              &lt;/button&gt;
+              &lt;button class&#x3D;&quot;add-to-favorites&quot;&gt;Añadir a favoritos&lt;/button&gt;
+          &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div class&#x3D;&quot;grid-item&quot;&gt;
+          &lt;p&gt;Hormiga cortadora · 8.99€&lt;/p&gt;
+          &lt;img src&#x3D;&quot;/assets/hymenoptera_hormigacortadora.jpg&quot; alt&#x3D;&quot;Hormiga cortadora&quot;&gt;
+          &lt;div class&#x3D;&quot;buttons&quot;&gt;
+              &lt;button class&#x3D;&quot;add-to-cart&quot;&gt;
+                  &lt;span class&#x3D;&quot;icon cart-icon&quot;&gt;🛒&lt;/span&gt; Añadir a carrito &lt;span class&#x3D;&quot;icon arrow-icon&quot;&gt;→&lt;/span&gt;
+              &lt;/button&gt;
+              &lt;button class&#x3D;&quot;add-to-favorites&quot;&gt;Añadir a favoritos&lt;/button&gt;
+          &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div class&#x3D;&quot;grid-item&quot;&gt;
+          &lt;p&gt;Reina + 10 obreras · 24.99€&lt;/p&gt;
+          &lt;img src&#x3D;&quot;/assets/hymenoptero_abejas.jpg&quot; alt&#x3D;&quot;Abeja reina + 10 obreras&quot;&gt;
+          &lt;div class&#x3D;&quot;buttons&quot;&gt;
+              &lt;button class&#x3D;&quot;add-to-cart&quot;&gt;
+                  &lt;span class&#x3D;&quot;icon cart-icon&quot;&gt;🛒&lt;/span&gt; Añadir a carrito &lt;span class&#x3D;&quot;icon arrow-icon&quot;&gt;→&lt;/span&gt;
+              &lt;/button&gt;
+              &lt;button class&#x3D;&quot;add-to-favorites&quot;&gt;Añadir a favoritos&lt;/button&gt;
+          &lt;/div&gt;
+      &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/section&gt;
+
+      &lt;!--seccion de cochinitas--&gt;
+      &lt;section class&#x3D;&quot;categorias-section&quot;&gt;
+        &lt;h2&gt;&lt;a href&#x3D;&quot;shop/shopisopoda&quot;&gt;Isópodos (isopoda)&lt;/a&gt;&lt;/h2&gt;
+        &lt;div class&#x3D;&quot;grid&quot;&gt;
+            &lt;div class&#x3D;&quot;grid-item&quot;&gt;
+                &lt;p&gt;Porcellionides Prui. (6) · 9.99€&lt;/p&gt;
+                &lt;img src&#x3D;&quot;/assets/isopoda_porcellionidespruinosus.png&quot; alt&#x3D;&quot;Porcellionides Prui.&quot;&gt;
+                &lt;div class&#x3D;&quot;buttons&quot;&gt;
+                    &lt;button class&#x3D;&quot;add-to-cart&quot;&gt;
+                        &lt;span class&#x3D;&quot;icon cart-icon&quot;&gt;🛒&lt;/span&gt; Añadir a carrito &lt;span class&#x3D;&quot;icon arrow-icon&quot;&gt;→&lt;/span&gt;
+                    &lt;/button&gt;
+                    &lt;button class&#x3D;&quot;add-to-favorites&quot;&gt;Añadir a favoritos&lt;/button&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class&#x3D;&quot;grid-item&quot;&gt;
+                &lt;p&gt;Dairy Cow (6)· 14.99€&lt;/p&gt;
+                &lt;img src&#x3D;&quot;/assets/isopoda_dairycow.png&quot; alt&#x3D;&quot;Dairy Cow&quot;&gt;
+                &lt;div class&#x3D;&quot;buttons&quot;&gt;
+                    &lt;button class&#x3D;&quot;add-to-cart&quot;&gt;
+                        &lt;span class&#x3D;&quot;icon cart-icon&quot;&gt;🛒&lt;/span&gt; Añadir a carrito &lt;span class&#x3D;&quot;icon arrow-icon&quot;&gt;→&lt;/span&gt;
+                    &lt;/button&gt;
+                    &lt;button class&#x3D;&quot;add-to-favorites&quot;&gt;Añadir a favoritos&lt;/button&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class&#x3D;&quot;grid-item&quot;&gt;
+                &lt;p&gt;Magic Potion (8) · 14.99€&lt;/p&gt;
+                &lt;img src&#x3D;&quot;/assets/isopoda_magicpotion.png&quot; alt&#x3D;&quot;Magic Potion&quot;&gt;
+                &lt;div class&#x3D;&quot;buttons&quot;&gt;
+                    &lt;button class&#x3D;&quot;add-to-cart&quot;&gt;
+                        &lt;span class&#x3D;&quot;icon cart-icon&quot;&gt;🛒&lt;/span&gt; Añadir a carrito &lt;span class&#x3D;&quot;icon arrow-icon&quot;&gt;→&lt;/span&gt;
+                    &lt;/button&gt;
+                    &lt;button class&#x3D;&quot;add-to-favorites&quot;&gt;Añadir a favoritos&lt;/button&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class&#x3D;&quot;grid-item&quot;&gt;
+                &lt;p&gt;Zebra (8) · 14.99€&lt;/p&gt;
+                &lt;img src&#x3D;&quot;/assets/isopoda_zebra.png&quot; alt&#x3D;&quot;Zebra&quot;&gt;
+                &lt;div class&#x3D;&quot;buttons&quot;&gt;
+                    &lt;button class&#x3D;&quot;add-to-cart&quot;&gt;
+                        &lt;span class&#x3D;&quot;icon cart-icon&quot;&gt;🛒&lt;/span&gt; Añadir a carrito &lt;span class&#x3D;&quot;icon arrow-icon&quot;&gt;→&lt;/span&gt;
+                    &lt;/button&gt;
+                    &lt;button class&#x3D;&quot;add-to-favorites&quot;&gt;Añadir a favoritos&lt;/button&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class&#x3D;&quot;grid-item&quot;&gt;
+                &lt;p&gt;Dalmatian (8) · 14.99€&lt;/p&gt;
+                &lt;img src&#x3D;&quot;/assets/isopoda_dalmatian.png&quot; alt&#x3D;&quot;Dalmatian&quot;&gt;
+                &lt;div class&#x3D;&quot;buttons&quot;&gt;
+                    &lt;button class&#x3D;&quot;add-to-cart&quot;&gt;
+                        &lt;span class&#x3D;&quot;icon cart-icon&quot;&gt;🛒&lt;/span&gt; Añadir a carrito &lt;span class&#x3D;&quot;icon arrow-icon&quot;&gt;→&lt;/span&gt;
+                    &lt;/button&gt;
+                    &lt;button class&#x3D;&quot;add-to-favorites&quot;&gt;Añadir a favoritos&lt;/button&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class&#x3D;&quot;grid-item&quot;&gt;
+                &lt;p&gt;Hoffmannseggii · 79.99€&lt;/p&gt;
+                &lt;img src&#x3D;&quot;/assets/isopoda_hoffmannseggii.jpg&quot; alt&#x3D;&quot;Hoffmannseggii&quot;&gt;
+                &lt;div class&#x3D;&quot;buttons&quot;&gt;
+                    &lt;button class&#x3D;&quot;add-to-cart&quot;&gt;
+                        &lt;span class&#x3D;&quot;icon cart-icon&quot;&gt;🛒&lt;/span&gt; Añadir a carrito &lt;span class&#x3D;&quot;icon arrow-icon&quot;&gt;→&lt;/span&gt;
+                    &lt;/button&gt;
+                    &lt;button class&#x3D;&quot;add-to-favorites&quot;&gt;Añadir a favoritos&lt;/button&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class&#x3D;&quot;grid-item&quot;&gt;
+                &lt;p&gt;White Ducky (6) · 16.99€&lt;/p&gt;
+                &lt;img src&#x3D;&quot;/assets/isopoda_whiteducky.png&quot; alt&#x3D;&quot;White Ducky&quot;&gt;
+                &lt;div class&#x3D;&quot;buttons&quot;&gt;
+                    &lt;button class&#x3D;&quot;add-to-cart&quot;&gt;
+                        &lt;span class&#x3D;&quot;icon cart-icon&quot;&gt;🛒&lt;/span&gt; Añadir a carrito &lt;span class&#x3D;&quot;icon arrow-icon&quot;&gt;→&lt;/span&gt;
+                    &lt;/button&gt;
+                    &lt;button class&#x3D;&quot;add-to-favorites&quot;&gt;Añadir a favoritos&lt;/button&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class&#x3D;&quot;grid-item&quot;&gt;
+                &lt;p&gt;Patito de goma (6) · 14.99€&lt;/p&gt;
+                &lt;img src&#x3D;&quot;/assets/isopoda_rubberducky.png&quot; alt&#x3D;&quot;Patito de goma&quot;&gt;
+                &lt;div class&#x3D;&quot;buttons&quot;&gt;
+                    &lt;button class&#x3D;&quot;add-to-cart&quot;&gt;
+                        &lt;span class&#x3D;&quot;icon cart-icon&quot;&gt;🛒&lt;/span&gt; Añadir a carrito &lt;span class&#x3D;&quot;icon arrow-icon&quot;&gt;→&lt;/span&gt;
+                    &lt;/button&gt;
+                    &lt;button class&#x3D;&quot;add-to-favorites&quot;&gt;Añadir a favoritos&lt;/button&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class&#x3D;&quot;grid-item&quot;&gt;
+                &lt;p&gt;Thai Spiky (10) · 24.99€&lt;/p&gt;
+                &lt;img src&#x3D;&quot;/assets/isopoda_thaispiky.jpg&quot; alt&#x3D;&quot;Thaispiky&quot;&gt;
+                &lt;div class&#x3D;&quot;buttons&quot;&gt;
+                    &lt;button class&#x3D;&quot;add-to-cart&quot;&gt;
+                        &lt;span class&#x3D;&quot;icon cart-icon&quot;&gt;🛒&lt;/span&gt; Añadir a carrito &lt;span class&#x3D;&quot;icon arrow-icon&quot;&gt;→&lt;/span&gt;
+                    &lt;/button&gt;
+                    &lt;button class&#x3D;&quot;add-to-favorites&quot;&gt;Añadir a favoritos&lt;/button&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;!--lepidoptera--&gt;
+    &lt;section class&#x3D;&quot;categorias-section&quot;&gt;
+      &lt;h2&gt;&lt;a href&#x3D;&quot;shop/shoplepidoptera&quot;&gt;Lepidópteros (lepidoptera)&lt;/a&gt;&lt;/h2&gt;
+      &lt;div class&#x3D;&quot;grid&quot;&gt;
+          &lt;div class&#x3D;&quot;grid-item&quot;&gt;
+              &lt;p&gt;Rosada del Arce (3) · 12.99€&lt;/p&gt;
+              &lt;img src&#x3D;&quot;/assets/lepidoptera_rosymaplemoth.jpg&quot; alt&#x3D;&quot;Rosy Maple Moth&quot;&gt;
+              &lt;div class&#x3D;&quot;buttons&quot;&gt;
+                  &lt;button class&#x3D;&quot;add-to-cart&quot;&gt;
+                      &lt;span class&#x3D;&quot;icon cart-icon&quot;&gt;🛒&lt;/span&gt; Añadir a carrito &lt;span class&#x3D;&quot;icon arrow-icon&quot;&gt;→&lt;/span&gt;
+                  &lt;/button&gt;
+                  &lt;button class&#x3D;&quot;add-to-favorites&quot;&gt;Añadir a favoritos&lt;/button&gt;
+              &lt;/div&gt;
+          &lt;/div&gt;
+          &lt;div class&#x3D;&quot;grid-item&quot;&gt;
+              &lt;p&gt;Polilla de la seda (9) · 3.99€ &lt;/p&gt;
+              &lt;img src&#x3D;&quot;/assets/lepidoptera_polilladeseda.jpg&quot; alt&#x3D;&quot;Polilla de la seda&quot;&gt;
+              &lt;div class&#x3D;&quot;buttons&quot;&gt;
+                  &lt;button class&#x3D;&quot;add-to-cart&quot;&gt;
+                      &lt;span class&#x3D;&quot;icon cart-icon&quot;&gt;🛒&lt;/span&gt; Añadir a carrito &lt;span class&#x3D;&quot;icon arrow-icon&quot;&gt;→&lt;/span&gt;
+                  &lt;/button&gt;
+                  &lt;button class&#x3D;&quot;add-to-favorites&quot;&gt;Añadir a favoritos&lt;/button&gt;
+              &lt;/div&gt;
+          &lt;/div&gt;
+          &lt;div class&#x3D;&quot;grid-item&quot;&gt;
+              &lt;p&gt;Esfinge Calavera (5) · 18.99€&lt;/p&gt;
+              &lt;img src&#x3D;&quot;/assets/lepidoptera_esfingecalavera.jpg&quot; alt&#x3D;&quot;Esfinge Calavera&quot;&gt;
+              &lt;div class&#x3D;&quot;buttons&quot;&gt;
+                  &lt;button class&#x3D;&quot;add-to-cart&quot;&gt;
+                      &lt;span class&#x3D;&quot;icon cart-icon&quot;&gt;🛒&lt;/span&gt; Añadir a carrito &lt;span class&#x3D;&quot;icon arrow-icon&quot;&gt;→&lt;/span&gt;
+                  &lt;/button&gt;
+                  &lt;button class&#x3D;&quot;add-to-favorites&quot;&gt;Añadir a favoritos&lt;/button&gt;
+              &lt;/div&gt;
+          &lt;/div&gt;
+          &lt;div class&#x3D;&quot;grid-item&quot;&gt;
+              &lt;p&gt;Alas de pájaro (3) · 17.99€&lt;/p&gt;
+              &lt;img src&#x3D;&quot;/assets/lepidoptera_ornithopteraalexandrae.jpg&quot; alt&#x3D;&quot;Alas de pájaro&quot;&gt;
+              &lt;div class&#x3D;&quot;buttons&quot;&gt;
+                  &lt;button class&#x3D;&quot;add-to-cart&quot;&gt;
+                      &lt;span class&#x3D;&quot;icon cart-icon&quot;&gt;🛒&lt;/span&gt; Añadir a carrito &lt;span class&#x3D;&quot;icon arrow-icon&quot;&gt;→&lt;/span&gt;
+                  &lt;/button&gt;
+                  &lt;button class&#x3D;&quot;add-to-favorites&quot;&gt;Añadir a favoritos&lt;/button&gt;
+              &lt;/div&gt;
+          &lt;/div&gt;
+          &lt;div class&#x3D;&quot;grid-item&quot;&gt;
+              &lt;p&gt;Papilio Bianor (3) · 14.99€&lt;/p&gt;
+              &lt;img src&#x3D;&quot;/assets/lepidoptera_papiliobianor.jpg&quot; alt&#x3D;&quot;Dalmatian&quot;&gt;
+              &lt;div class&#x3D;&quot;buttons&quot;&gt;
+                  &lt;button class&#x3D;&quot;add-to-cart&quot;&gt;
+                      &lt;span class&#x3D;&quot;icon cart-icon&quot;&gt;🛒&lt;/span&gt; Añadir a carrito &lt;span class&#x3D;&quot;icon arrow-icon&quot;&gt;→&lt;/span&gt;
+                  &lt;/button&gt;
+                  &lt;button class&#x3D;&quot;add-to-favorites&quot;&gt;Añadir a favoritos&lt;/button&gt;
+              &lt;/div&gt;
+          &lt;/div&gt;
+          &lt;div class&#x3D;&quot;grid-item&quot;&gt;
+              &lt;p&gt;Alas Brooke (3) · 17.99€&lt;/p&gt;
+              &lt;img src&#x3D;&quot;/assets/lepidoptera_brooke.jpg&quot; alt&#x3D;&quot;Alas Brooke&quot;&gt;
+              &lt;div class&#x3D;&quot;buttons&quot;&gt;
+                  &lt;button class&#x3D;&quot;add-to-cart&quot;&gt;
+                      &lt;span class&#x3D;&quot;icon cart-icon&quot;&gt;🛒&lt;/span&gt; Añadir a carrito &lt;span class&#x3D;&quot;icon arrow-icon&quot;&gt;→&lt;/span&gt;
+                  &lt;/button&gt;
+                  &lt;button class&#x3D;&quot;add-to-favorites&quot;&gt;Añadir a favoritos&lt;/button&gt;
+              &lt;/div&gt;
+          &lt;/div&gt;
+          &lt;div class&#x3D;&quot;grid-item&quot;&gt;
+              &lt;p&gt;Triángulo azul (3) · 14.99€&lt;/p&gt;
+              &lt;img src&#x3D;&quot;/assets/lepidoptera_trianguloazul.JPG&quot; alt&#x3D;&quot;Triángulo azul&quot;&gt;
+              &lt;div class&#x3D;&quot;buttons&quot;&gt;
+                  &lt;button class&#x3D;&quot;add-to-cart&quot;&gt;
+                      &lt;span class&#x3D;&quot;icon cart-icon&quot;&gt;🛒&lt;/span&gt; Añadir a carrito &lt;span class&#x3D;&quot;icon arrow-icon&quot;&gt;→&lt;/span&gt;
+                  &lt;/button&gt;
+                  &lt;button class&#x3D;&quot;add-to-favorites&quot;&gt;Añadir a favoritos&lt;/button&gt;
+              &lt;/div&gt;
+          &lt;/div&gt;
+          &lt;div class&#x3D;&quot;grid-item&quot;&gt;
+              &lt;p&gt;Tigre de tres colas (3) · 14.99€&lt;/p&gt;
+              &lt;img src&#x3D;&quot;/assets/lepidoptera_tigre3colas.jpg&quot; alt&#x3D;&quot;Tigre de tres colas&quot;&gt;
+              &lt;div class&#x3D;&quot;buttons&quot;&gt;
+                  &lt;button class&#x3D;&quot;add-to-cart&quot;&gt;
+                      &lt;span class&#x3D;&quot;icon cart-icon&quot;&gt;🛒&lt;/span&gt; Añadir a carrito &lt;span class&#x3D;&quot;icon arrow-icon&quot;&gt;→&lt;/span&gt;
+                  &lt;/button&gt;
+                  &lt;button class&#x3D;&quot;add-to-favorites&quot;&gt;Añadir a favoritos&lt;/button&gt;
+              &lt;/div&gt;
+          &lt;/div&gt;
+          &lt;div class&#x3D;&quot;grid-item&quot;&gt;
+              &lt;p&gt;Cometa de papel (3) · 14.99€&lt;/p&gt;
+              &lt;img src&#x3D;&quot;/assets/lepidoptera_cometadepapel.jpg&quot; alt&#x3D;&quot;Cometa de papel&quot;&gt;
+              &lt;div class&#x3D;&quot;buttons&quot;&gt;
+                  &lt;button class&#x3D;&quot;add-to-cart&quot;&gt;
+                      &lt;span class&#x3D;&quot;icon cart-icon&quot;&gt;🛒&lt;/span&gt; Añadir a carrito &lt;span class&#x3D;&quot;icon arrow-icon&quot;&gt;→&lt;/span&gt;
+                  &lt;/button&gt;
+                  &lt;button class&#x3D;&quot;add-to-favorites&quot;&gt;Añadir a favoritos&lt;/button&gt;
+              &lt;/div&gt;
+          &lt;/div&gt;
+      &lt;/div&gt;
+  &lt;/section&gt;
+
+      &lt;!-- Sección de mantis --&gt;
+      &lt;section class&#x3D;&quot;categorias-section&quot;&gt;
+        &lt;h2&gt;&lt;a href&#x3D;&quot;shop/shopmantodea&quot;&gt;Mantis (mantodea)&lt;/a&gt;&lt;/h2&gt;
+        &lt;div class&#x3D;&quot;grid&quot;&gt;
+          &lt;div class&#x3D;&quot;grid-item&quot;&gt;
+            &lt;p&gt;Mantis Hoja Muerta · 12.99€&lt;/p&gt;
+            &lt;img src&#x3D;&quot;/assets/mantodea_mantishojamuerta.jpg&quot; alt&#x3D;&quot;Mantis Hoja Muerta&quot;&gt;
+            &lt;div class&#x3D;&quot;buttons&quot;&gt;
+              &lt;button class&#x3D;&quot;add-to-cart&quot;&gt;
+                &lt;span class&#x3D;&quot;icon cart-icon&quot;&gt;🛒&lt;/span&gt; Añadir a carrito &lt;span class&#x3D;&quot;icon arrow-icon&quot;&gt;→&lt;/span&gt;
+              &lt;/button&gt;
+              &lt;button class&#x3D;&quot;add-to-favorites&quot;&gt;Añadir a favoritos&lt;/button&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+          &lt;div class&#x3D;&quot;grid-item&quot;&gt;
+            &lt;p&gt;Mantis Orquídea · 15.99€&lt;/p&gt;
+            &lt;img src&#x3D;&quot;/assets/mantodea_orchidmantis.jpg&quot; alt&#x3D;&quot;Mantis Orquídea&quot;&gt;
+            &lt;div class&#x3D;&quot;buttons&quot;&gt;
+              &lt;button class&#x3D;&quot;add-to-cart&quot;&gt;
+                &lt;span class&#x3D;&quot;icon cart-icon&quot;&gt;🛒&lt;/span&gt; Añadir a carrito &lt;span class&#x3D;&quot;icon arrow-icon&quot;&gt;→&lt;/span&gt;
+              &lt;/button&gt;
+              &lt;button class&#x3D;&quot;add-to-favorites&quot;&gt;Añadir a favoritos&lt;/button&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+          &lt;div class&#x3D;&quot;grid-item&quot;&gt;
+            &lt;p&gt;Mantis Flor India · 17.99€&lt;/p&gt;
+            &lt;img src&#x3D;&quot;/assets/mantodea_indianflowermantis.jpg&quot; alt&#x3D;&quot;Mantis Flor India&quot;&gt;
+            &lt;div class&#x3D;&quot;buttons&quot;&gt;
+              &lt;button class&#x3D;&quot;add-to-cart&quot;&gt;
+                &lt;span class&#x3D;&quot;icon cart-icon&quot;&gt;🛒&lt;/span&gt; Añadir a carrito &lt;span class&#x3D;&quot;icon arrow-icon&quot;&gt;→&lt;/span&gt;
+              &lt;/button&gt;
+              &lt;button class&#x3D;&quot;add-to-favorites&quot;&gt;Añadir a favoritos&lt;/button&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+          &lt;div class&#x3D;&quot;grid-item&quot;&gt;
+            &lt;p&gt;Mantis Flor Espinosa · 17.99€&lt;/p&gt;
+            &lt;img src&#x3D;&quot;/assets/mantodea_spinyflower.jpeg&quot; alt&#x3D;&quot;Mantis Flor Espinosa&quot;&gt;
+            &lt;div class&#x3D;&quot;buttons&quot;&gt;
+              &lt;button class&#x3D;&quot;add-to-cart&quot;&gt;
+                &lt;span class&#x3D;&quot;icon cart-icon&quot;&gt;🛒&lt;/span&gt; Añadir a carrito &lt;span class&#x3D;&quot;icon arrow-icon&quot;&gt;→&lt;/span&gt;
+              &lt;/button&gt;
+              &lt;button class&#x3D;&quot;add-to-favorites&quot;&gt;Añadir a favoritos&lt;/button&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+          &lt;div class&#x3D;&quot;grid-item&quot;&gt;
+            &lt;p&gt;Mantis Palo · 12.99€&lt;/p&gt;
+            &lt;img src&#x3D;&quot;/assets/mantodea_empusapennata.jpg&quot; alt&#x3D;&quot;Mantis Palo&quot;&gt;
+            &lt;div class&#x3D;&quot;buttons&quot;&gt;
+              &lt;button class&#x3D;&quot;add-to-cart&quot;&gt;
+                &lt;span class&#x3D;&quot;icon cart-icon&quot;&gt;🛒&lt;/span&gt; Añadir a carrito &lt;span class&#x3D;&quot;icon arrow-icon&quot;&gt;→&lt;/span&gt;
+              &lt;/button&gt;
+              &lt;button class&#x3D;&quot;add-to-favorites&quot;&gt;Añadir a favoritos&lt;/button&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+          &lt;div class&#x3D;&quot;grid-item&quot;&gt;
+            &lt;p&gt;Asiática Gigante · 19.99€&lt;/p&gt;
+            &lt;img src&#x3D;&quot;/assets/mantodea_asiaticagigante.png&quot; alt&#x3D;&quot;Asiática Gigante&quot;&gt;
+            &lt;div class&#x3D;&quot;buttons&quot;&gt;
+              &lt;button class&#x3D;&quot;add-to-cart&quot;&gt;
+                &lt;span class&#x3D;&quot;icon cart-icon&quot;&gt;🛒&lt;/span&gt; Añadir a carrito &lt;span class&#x3D;&quot;icon arrow-icon&quot;&gt;→&lt;/span&gt;
+              &lt;/button&gt;
+              &lt;button class&#x3D;&quot;add-to-favorites&quot;&gt;Añadir a favoritos&lt;/button&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+          &lt;div class&#x3D;&quot;grid-item&quot;&gt;
+            &lt;p&gt;Mantis Gato · 19.99€&lt;/p&gt;
+            &lt;img src&#x3D;&quot;/assets/mantodea_mantisgato.jpeg&quot; alt&#x3D;&quot;Mantis Gato&quot;&gt;
+            &lt;div class&#x3D;&quot;buttons&quot;&gt;
+              &lt;button class&#x3D;&quot;add-to-cart&quot;&gt;
+                &lt;span class&#x3D;&quot;icon cart-icon&quot;&gt;🛒&lt;/span&gt; Añadir a carrito &lt;span class&#x3D;&quot;icon arrow-icon&quot;&gt;→&lt;/span&gt;
+              &lt;/button&gt;
+              &lt;button class&#x3D;&quot;add-to-favorites&quot;&gt;Añadir a favoritos&lt;/button&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+          &lt;div class&#x3D;&quot;grid-item&quot;&gt;
+            &lt;p&gt;Mantis Europea · 9.99€&lt;/p&gt;
+            &lt;img src&#x3D;&quot;/assets/mantodea_mantiseuroropea.jpg&quot; alt&#x3D;&quot;Mantis Europea&quot;&gt;
+            &lt;div class&#x3D;&quot;buttons&quot;&gt;
+              &lt;button class&#x3D;&quot;add-to-cart&quot;&gt;
+                &lt;span class&#x3D;&quot;icon cart-icon&quot;&gt;🛒&lt;/span&gt; Añadir a carrito &lt;span class&#x3D;&quot;icon arrow-icon&quot;&gt;→&lt;/span&gt;
+              &lt;/button&gt;
+              &lt;button class&#x3D;&quot;add-to-favorites&quot;&gt;Añadir a favoritos&lt;/button&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+          &lt;div class&#x3D;&quot;grid-item&quot;&gt;
+            &lt;p&gt;Mantis Escudo · 19.99€&lt;/p&gt;
+            &lt;img src&#x3D;&quot;/assets/mantodea_mantisescudo.jpg&quot; alt&#x3D;&quot;Mantis Escudo&quot;&gt;
+            &lt;div class&#x3D;&quot;buttons&quot;&gt;
+              &lt;button class&#x3D;&quot;add-to-cart&quot;&gt;
+                &lt;span class&#x3D;&quot;icon cart-icon&quot;&gt;🛒&lt;/span&gt; Añadir a carrito &lt;span class&#x3D;&quot;icon arrow-icon&quot;&gt;→&lt;/span&gt;
+              &lt;/button&gt;
+              &lt;button class&#x3D;&quot;add-to-favorites&quot;&gt;Añadir a favoritos&lt;/button&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/section&gt;
+      
+      &lt;section class&#x3D;&quot;categorias-section&quot;&gt;
+        &lt;h2&gt;&lt;a href&#x3D;&quot;shop/shopphasmatodea&quot;&gt;Fásmidos (phasmatodea)&lt;/a&gt;&lt;/h2&gt;
+        &lt;div class&#x3D;&quot;grid&quot;&gt;
+            &lt;div class&#x3D;&quot;grid-item&quot;&gt;
+                &lt;p&gt;Bicho Palo Vietnamita · 9.99€&lt;/p&gt;
+                &lt;img src&#x3D;&quot;/assets/phasm_palovietnamita.jpg&quot; alt&#x3D;&quot;Bicho Palo Vietnamita&quot;&gt;
+                &lt;div class&#x3D;&quot;buttons&quot;&gt;
+                    &lt;button class&#x3D;&quot;add-to-cart&quot;&gt;
+                        &lt;span class&#x3D;&quot;icon cart-icon&quot;&gt;🛒&lt;/span&gt; Añadir a carrito &lt;span class&#x3D;&quot;icon arrow-icon&quot;&gt;→&lt;/span&gt;
+                    &lt;/button&gt;
+                    &lt;button class&#x3D;&quot;add-to-favorites&quot;&gt;Añadir a favoritos&lt;/button&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class&#x3D;&quot;grid-item&quot;&gt;
+                &lt;p&gt;Bicho Palo Terciopelo · 11.99€&lt;/p&gt;
+                &lt;img src&#x3D;&quot;/assets/phasm_blackvelvet.jpg&quot; alt&#x3D;&quot;Terciopelo&quot;&gt;
+                &lt;div class&#x3D;&quot;buttons&quot;&gt;
+                    &lt;button class&#x3D;&quot;add-to-cart&quot;&gt;
+                        &lt;span class&#x3D;&quot;icon cart-icon&quot;&gt;🛒&lt;/span&gt; Añadir a carrito &lt;span class&#x3D;&quot;icon arrow-icon&quot;&gt;→&lt;/span&gt;
+                    &lt;/button&gt;
+                    &lt;button class&#x3D;&quot;add-to-favorites&quot;&gt;Añadir a favoritos&lt;/button&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class&#x3D;&quot;grid-item&quot;&gt;
+                &lt;p&gt;Bicho Palo Soleado · 11.99€&lt;/p&gt;
+                &lt;img src&#x3D;&quot;/assets/phasm_sunnystick.jpg&quot; alt&#x3D;&quot;Megasoma elephas&quot;&gt;
+                &lt;div class&#x3D;&quot;buttons&quot;&gt;
+                    &lt;button class&#x3D;&quot;add-to-cart&quot;&gt;
+                        &lt;span class&#x3D;&quot;icon cart-icon&quot;&gt;🛒&lt;/span&gt; Añadir a carrito &lt;span class&#x3D;&quot;icon arrow-icon&quot;&gt;→&lt;/span&gt;
+                    &lt;/button&gt;
+                    &lt;button class&#x3D;&quot;add-to-favorites&quot;&gt;Añadir a favoritos&lt;/button&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class&#x3D;&quot;grid-item&quot;&gt;
+                &lt;p&gt;Bicho Palo Budwing · 15.99€&lt;/p&gt;
+                &lt;img src&#x3D;&quot;/assets/phasm_budwingstick.jpg&quot; alt&#x3D;&quot;Bicho Palo Budwing&quot;&gt;
+                &lt;div class&#x3D;&quot;buttons&quot;&gt;
+                    &lt;button class&#x3D;&quot;add-to-cart&quot;&gt;
+                        &lt;span class&#x3D;&quot;icon cart-icon&quot;&gt;🛒&lt;/span&gt; Añadir a carrito &lt;span class&#x3D;&quot;icon arrow-icon&quot;&gt;→&lt;/span&gt;
+                    &lt;/button&gt;
+                    &lt;button class&#x3D;&quot;add-to-favorites&quot;&gt;Añadir a favoritos&lt;/button&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class&#x3D;&quot;grid-item&quot;&gt;
+                &lt;p&gt;Bicho Palo Lima · 15.99€&lt;/p&gt;
+                &lt;img src&#x3D;&quot;/assets/phasm_giantlime.jpg&quot; alt&#x3D;&quot;Bicho Palo Lima&quot;&gt;
+                &lt;div class&#x3D;&quot;buttons&quot;&gt;
+                    &lt;button class&#x3D;&quot;add-to-cart&quot;&gt;
+                        &lt;span class&#x3D;&quot;icon cart-icon&quot;&gt;🛒&lt;/span&gt; Añadir a carrito &lt;span class&#x3D;&quot;icon arrow-icon&quot;&gt;→&lt;/span&gt;
+                    &lt;/button&gt;
+                    &lt;button class&#x3D;&quot;add-to-favorites&quot;&gt;Añadir a favoritos&lt;/button&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class&#x3D;&quot;grid-item&quot;&gt;
+                &lt;p&gt;Bicho Palo Espinoso · 15.99€&lt;/p&gt;
+                &lt;img src&#x3D;&quot;/assets/phasm_spiky.jpg&quot; alt&#x3D;&quot;Bicho Palo Espinoso&quot;&gt;
+                &lt;div class&#x3D;&quot;buttons&quot;&gt;
+                    &lt;button class&#x3D;&quot;add-to-cart&quot;&gt;
+                        &lt;span class&#x3D;&quot;icon cart-icon&quot;&gt;🛒&lt;/span&gt; Añadir a carrito &lt;span class&#x3D;&quot;icon arrow-icon&quot;&gt;→&lt;/span&gt;
+                    &lt;/button&gt;
+                    &lt;button class&#x3D;&quot;add-to-favorites&quot;&gt;Añadir a favoritos&lt;/button&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class&#x3D;&quot;grid-item&quot;&gt;
+                &lt;p&gt;Bicho Palo Caballo · 15.99€&lt;/p&gt;
+                &lt;img src&#x3D;&quot;/assets/phasm_horseface.jpg&quot; alt&#x3D;&quot;Bicho Palo Caballo&quot;&gt;
+                &lt;div class&#x3D;&quot;buttons&quot;&gt;
+                    &lt;button class&#x3D;&quot;add-to-cart&quot;&gt;
+                        &lt;span class&#x3D;&quot;icon cart-icon&quot;&gt;🛒&lt;/span&gt; Añadir a carrito &lt;span class&#x3D;&quot;icon arrow-icon&quot;&gt;→&lt;/span&gt;
+                    &lt;/button&gt;
+                    &lt;button class&#x3D;&quot;add-to-favorites&quot;&gt;Añadir a favoritos&lt;/button&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class&#x3D;&quot;grid-item&quot;&gt;
+                &lt;p&gt;Bicho Hoja Espinosa · 14.99€&lt;/p&gt;
+                &lt;img src&#x3D;&quot;/assets/phasm_hojaarrugada.jpg&quot; alt&#x3D;&quot;Bicho Hoja Espinosa&quot;&gt;
+                &lt;div class&#x3D;&quot;buttons&quot;&gt;
+                    &lt;button class&#x3D;&quot;add-to-cart&quot;&gt;
+                        &lt;span class&#x3D;&quot;icon cart-icon&quot;&gt;🛒&lt;/span&gt; Añadir a carrito &lt;span class&#x3D;&quot;icon arrow-icon&quot;&gt;→&lt;/span&gt;
+                    &lt;/button&gt;
+                    &lt;button class&#x3D;&quot;add-to-favorites&quot;&gt;Añadir a favoritos&lt;/button&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class&#x3D;&quot;grid-item&quot;&gt;
+                &lt;p&gt;Bicho Hoja Otoñal · 14.99€&lt;/p&gt;
+                &lt;img src&#x3D;&quot;/assets/phasm_hojaotono.jpg&quot; alt&#x3D;&quot;Bicho Hoja otoño&quot;&gt;
+                &lt;div class&#x3D;&quot;buttons&quot;&gt;
+                    &lt;button class&#x3D;&quot;add-to-cart&quot;&gt;
+                        &lt;span class&#x3D;&quot;icon cart-icon&quot;&gt;🛒&lt;/span&gt; Añadir a carrito &lt;span class&#x3D;&quot;icon arrow-icon&quot;&gt;→&lt;/span&gt;
+                    &lt;/button&gt;
+                    &lt;button class&#x3D;&quot;add-to-favorites&quot;&gt;Añadir a favoritos&lt;/button&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+    &lt;/main&gt;
+
+    &lt;footer&gt;
+      &lt;div class&#x3D;&quot;footer-left&quot;&gt;
+          &lt;p&gt;&lt;strong&gt;Insectarium&lt;/strong&gt;&lt;/p&gt;
+          &lt;p&gt;C/ Asunción, 14&lt;/p&gt;
+        &lt;p&gt;41011 Sevilla&lt;/p&gt;
+      &lt;/div&gt;
+      &lt;div class&#x3D;&quot;footer-right&quot;&gt;
+        &lt;p&gt;653 785 231&lt;/p&gt;
+        &lt;p&gt;insectarium&quot;&amp;#64;&quot;gmail.com&lt;/p&gt;
+      &lt;/div&gt;
+    &lt;/footer&gt;
+
+  &lt;/body&gt;
+  </code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="styleData">
+                <p class="comment">
+                    <code>./allshop.component.css</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">/* Estilos del header */
+header {
+  background-color: rgba(120, 210, 106, 0.9);
+  padding: 15px;
+  border-radius: 0 0 15px 15px;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px; 
+}
+
+header h1 {
+  margin: 10px;
+  color: white;
+  font-size: 24px;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 10px 10px 10px 10px;
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  align-items: center;
+  height: 100%;
+}
+
+nav li {
+  display: inline;
+  margin-right: 20px;
+}
+
+/* Enlaces del header */
+nav a {
+  text-decoration: none; 
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+nav a:hover {
+  text-decoration: none;
+}
+/* ------------------------------------------------------------------------------------------------------------------------ */
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: url(&#x27;/assets/home_bg.png&#x27;) no-repeat center center fixed;
+  background-size: cover;
+  text-align: center;
+}
+
+/* Contenido general */
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.catalog-image {
+  display: block;            
+  margin-left: auto;         
+  margin-right: auto;        
+  max-width: 70%;           
+  height: auto;              
+}
+
+/* Sección de bixos */
+.categorias-section {
+  margin-top: 30px;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.596);
+  border: 1px solid #aacb8f;  
+  padding: 20px; /* Añadir padding para que no esté pegado a los bordes */
+  border-radius: 18px; /* Bordes redondeados */
+}
+
+.categorias-section h2 {
+  text-align: left;
+  width: 100%;
+  font-size: 160%;
+  font-weight: bolder;
+  color: #1f6c28;
+}
+
+/* Sección de Productos */
+.productos-section {
+  width: 100%;
+  margin-bottom: 40px;
+  background-color: rgba(255, 255, 255, 0.596);
+  border: 1px solid #aacb8f;
+  padding: 20px;
+  border-radius: 18px; 
+}
+
+/* Título de la sección de productos */
+.productos-section h2 {
+  text-align: left;
+  width: 100%;
+  font-size: 160%;
+  font-weight: bolder;
+  color: #1f6c28;
+  margin-bottom: 20px; /* Añadir espacio debajo del título */
+}
+
+/* Estilo del grid 3x3 de productos */
+.grid {
+display: grid;
+grid-template-columns: repeat(3, 1fr); /* 3 columnas */
+gap: 20px;
+margin: 20px 0;
+}
+
+.grid-item {
+background-color: rgba(120, 210, 106, 0.123);
+border-radius: 18px;
+padding: 10px;
+text-align: center;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: space-between;
+height: 300px;
+}
+
+.grid-item img {
+width: 100%;
+height: 150px;
+object-fit: cover;
+border-radius: 18px;
+transition: transform 0.3s ease; /* Transición para qeu se amplie la foto */
+}
+
+/* Hover para las imágenes */
+.grid-item img:hover {
+transform: scale(1.1); /* amplia la imagen un 10% al pasar el ratón por encima */
+}
+
+/* Estilo del texto dentro de los grid-item */
+.grid-item p {
+margin: 10px 0;
+font-weight: bold;
+color: #1f6c28;
+font-size: 16px;
+}
+
+/* Estilo de los botones dentro de cada grid-item */
+.buttons {
+display: flex;
+flex-direction: column;
+gap: 10px; /* Espacio entre los botones */
+width: 100%; /* Hace que los botones ocupen todo el ancho */
+}
+
+/* Botón de añadir al carrito */
+.add-to-cart {
+background-color: #44a35c;
+color: white;
+padding: 10px 20px;
+border-radius: 18px;
+border: none;
+display: flex;
+justify-content: center;
+align-items: center;
+width: 100%;
+transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Icono de carrito en el botón */
+.add-to-cart .cart-icon {
+margin-right: 8px;
+}
+
+.add-to-cart .arrow-icon {
+margin-left: 8px;
+}
+
+/* Hover para el botón de añadir al carrito */
+.add-to-cart:hover {
+background-color: #95e36b;
+transform: scale(1.05); /* Efecto de agrandamiento en hover */
+}
+
+/* Botón de añadir a favoritos */
+.add-to-favorites {
+font-size: 13px;
+background-color: transparent;
+color: black;
+border-radius:18px;
+border: none;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+/* Hover de los botones */
+.add-to-favorites:hover {
+background-color: rgba(120, 210, 106, 0.3);
+}
+
+/* Ajuste de los iconos dentro del botón */
+button .icon {
+margin: 0 5px;
+}
+
+
+
+/* Sección de Guias destacadas */
+.guias-section {
+  width: 100%;
+  text-align: left;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.596);
+  border: 1px solid #aacb8f;
+  border-radius: 18px;
+  box-shadow: 0 2px 8px rgba(34, 165, 39, 0.1);
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+
+.guias-section h2 {
+  text-align: left;
+  width: 100%;
+  font-size: 160%;
+  font-weight: bolder;
+  color: #1f6c28;
+  margin-bottom: 20px;
+}
+
+/* Estilo del boton que contiene cada guia */
+.faq-item {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  background-color: rgba(120, 210, 106, 0.2);
+  border: none;
+  padding: 15px;
+  margin-bottom: 15px;
+  width: 100%;
+  cursor: pointer;
+  text-align: left;
+  border-radius: 18px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+/* Hover para los botones */
+.faq-item:hover {
+  background-color: rgba(120, 210, 106, 0.4);
+  transform: scale(1.05);
+}
+
+.faq-item h3 {
+  margin-bottom: 5px;
+  color: #333;
+  font-size: 100%;
+  font-weight: bold;
+}
+
+.faq-item p {
+  margin: 0;
+  color: #555;
+}
+
+
+/*------------------------------------------------------------------*/
+/* Estilos del footer */
+footer {
+background-color: rgba(120, 210, 106, 0.9); 
+padding: 15px;
+border-radius: 15px 15px 0 0; 
+box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+display: flex;
+justify-content: space-between; 
+padding: 10px 30px; 
+position: relative; 
+margin-top: 30px; 
+width: 100%; 
+z-index: 1;
+}
+
+/* Estilos del footer */
+footer {
+background-color: rgba(120, 210, 106, 0.9); 
+padding: 15px;
+border-radius: 15px 15px 0 0;
+box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+display: flex;
+justify-content: space-between; 
+padding: 10px 30px; 
+position: relative;
+margin-top: 30px;
+width: 100%;
+z-index: 1;
+}
+
+/* Estilo de los textos dentro del footer */
+footer p {
+margin: 0;
+color: white;
+font-size: 14px;
+}
+
+/* Estilo para las columnas dentro del footer */
+.footer-left, .footer-right {
+display: flex;
+flex-direction: column;
+}
+
+.footer-left {
+text-align: left;
+margin-left: 10%;
+}
+
+.footer-right {
+text-align: right;
+margin-right: 10%;
+
+}
+
+a{
+  text-decoration: none;
+  color: #1f6c28;
+}</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><body>    <header>      <nav>        <ul>          <li><a href="/home" style="font-size: 150%;">Insectarium</a></li>          <li><a href="/allshop">Tienda</a></li>          <li><a href="/allguides">Guías</a></li>          <li><a href="/contact">Contacto</a></li>          <li><a href="/profile">Mi perfil</a></li>          <li><a href="/shoppingcart">Carrito</a></li>          <li><a href="/blog">Blog</a></li>         </ul>      </nav>    </header>      <main class="content">        <img src="/assets/shopallshop.png" alt="Catálogo Completo" class="catalog-image">              <!-- Seccion complementos -->    <section class="categorias-section">      <div class="category-section">        <h2>Suministros para hábitat y alimentación</h2>        <div class="grid">          <div class="grid-item">            <p>Suplemento alimenticio · 5.99€</p>            <img src="/assets/lepidoptera_food.png" alt="Suplemento alimenticio">            <div class="buttons">                <button class="add-to-cart">                    <span class="cart-icon">🛒</span> Añadir a carrito <span class="arrow-icon">→</span>                </button>                <button class="add-to-favorites">Añadir a favoritos</button>            </div>          </div>          <div class="grid-item">            <p>Larvas moscas (200g) · 2.99€</p>            <img src="/assets/carnivore_food.jpeg" alt="Larvas moscas">          <div class="buttons">            <button class="add-to-cart">              <span class="cart-icon">🛒</span> Añadir a carrito <span class="arrow-icon">→</span>            </button>            <button class="add-to-favorites">Añadir a favoritos</button>          </div>        </div>        <div class="grid-item">          <p>Grillos vivos (250g) · 4.99€</p>          <img src="/assets/carnivore_food2.jpg" alt="Grillos vivos">        <div class="buttons">          <button class="add-to-cart">            <span class="cart-icon">🛒</span> Añadir a carrito <span class="arrow-icon">→</span>          </button>          <button class="add-to-favorites">Añadir a favoritos</button>        </div>      </div>          <div class="grid-item">              <p>Hábitat · 19.99€</p>              <img src="/assets/enclosure2.jpg" alt="Hábitat">            <div class="buttons">              <button class="add-to-cart">                <span class="cart-icon">🛒</span> Añadir a carrito <span class="arrow-icon">→</span>              </button>              <button class="add-to-favorites">Añadir a favoritos</button>            </div>          </div>                  <div class="grid-item">          <p>Hábitat · 15.99€</p>          <img src="/assets/enclosure1.png" alt="Hábitat">        <div class="buttons">          <button class="add-to-cart">            <span class="cart-icon">🛒</span> Añadir a carrito <span class="arrow-icon">→</span>          </button>          <button class="add-to-favorites">Añadir a favoritos</button>        </div>      </div>      <div class="grid-item">        <p>Hormiguero · 35.99€</p>        <img src="/assets/enclosure3hormigueri.jpg" alt="Hormiguero">        <div class="buttons">            <button class="add-to-cart">                <span class="cart-icon">🛒</span> Añadir a carrito <span class="arrow-icon">→</span>            </button>            <button class="add-to-favorites">Añadir a favoritos</button>        </div>      </div>      <div class="grid-item">        <p>Escondite de corcho · 4.99€</p>        <img src="/assets/z_hideout1.png" alt="Escondite">      <div class="buttons">        <button class="add-to-cart">          <span class="cart-icon">🛒</span> Añadir a carrito <span class="arrow-icon">→</span>        </button>        <button class="add-to-favorites">Añadir a favoritos</button>      </div>    </div>      <div class="grid-item">        <p>Escondite de tubos · 15.99€</p>        <img src="/assets/z_hideout2.png" alt="Escondite tubos">      <div class="buttons">        <button class="add-to-cart">          <span class="cart-icon">🛒</span> Añadir a carrito <span class="arrow-icon">→</span>        </button>        <button class="add-to-favorites">Añadir a favoritos</button>      </div>    </div>        <div class="grid-item">      <p>Colémbolos · 12.99€</p>      <img src="/assets/colembolos.jpg" alt="Colémbolos">      <div class="buttons">          <button class="add-to-cart">              <span class="cart-icon">🛒</span> Añadir a carrito <span class="arrow-icon">→</span>          </button>          <button class="add-to-favorites">Añadir a favoritos</button>      </div>  </div>        </div>      </div>    </section>      <!-- Sección de Arañas -->      <section class="categorias-section">        <h2><a href="shop/shoparachnida">Arañas (arachnida)</a></h2>        <div class="grid">          <div class="grid-item">            <p>Caribena Versicolor · 69.99€</p>            <img src="/assets/arachnida_caribenaversicolor.png" alt="caribenaversicolor">            <div class="buttons">              <button class="add-to-cart">                <span class="icon cart-icon">🛒</span> Añadir a carrito <span class="icon arrow-icon">→</span>              </button>              <button class="add-to-favorites">Añadir a favoritos</button>            </div>          </div>          <div class="grid-item">            <p>Thomisus onustus · 25.99€</p>            <img src="/assets/arachnida_arañacangrejodelasflores.jpg" alt="arañacangrejodelasflores">            <div class="buttons">              <button class="add-to-cart">                <span class="icon cart-icon">🛒</span> Añadir a carrito <span class="icon arrow-icon">→</span>              </button>              <button class="add-to-favorites">Añadir a favoritos</button>            </div>          </div>          <div class="grid-item">            <p>Araña Espejo · 35.99€</p>            <img src="/assets/arachnida_aranaespejo.jpg" alt="arañaespejo">            <div class="buttons">              <button class="add-to-cart">                <span class="icon cart-icon">🛒</span> Añadir a carrito <span class="icon arrow-icon">→</span>              </button>              <button class="add-to-favorites">Añadir a favoritos</button>            </div>          </div>          <div class="grid-item">            <p>Araña Mariquita · 35.99€</p>            <img src="/assets/arachnida_arañamariquita.png" alt="Araña Mariquita">            <div class="buttons">              <button class="add-to-cart">                <span class="icon cart-icon">🛒</span> Añadir a carrito <span class="icon arrow-icon">→</span>              </button>              <button class="add-to-favorites">Añadir a favoritos</button>            </div>          </div>          <div class="grid-item">            <p>Araña Pavo Real · 69.99€</p>            <img src="/assets/arachnida_pavoreal.jpg" alt="Araña Pavo Real">            <div class="buttons">              <button class="add-to-cart">                <span class="icon cart-icon">🛒</span> Añadir a carrito <span class="icon arrow-icon">→</span>              </button>              <button class="add-to-favorites">Añadir a favoritos</button>            </div>          </div>          <div class="grid-item">            <p>Tarántula Calabaza · 79.99€</p>            <img src="/assets/arachnida_tarantulacalabaza.jpg" alt="Tarántula Calabaza">            <div class="buttons">              <button class="add-to-cart">                <span class="icon cart-icon">🛒</span> Añadir a carrito <span class="icon arrow-icon">→</span>              </button>              <button class="add-to-favorites">Añadir a favoritos</button>            </div>          </div>          <div class="grid-item">            <p>Araña Avispa · 29.99€</p>            <img src="/assets/arachnida_arañaavispa.jpg" alt="Araña Avispa">            <div class="buttons">              <button class="add-to-cart">                <span class="icon cart-icon">🛒</span> Añadir a carrito <span class="icon arrow-icon">→</span>              </button>              <button class="add-to-favorites">Añadir a favoritos</button>            </div>          </div>          <div class="grid-item">            <p>Araña Cangrejo · 23.99€</p>            <img src="/assets/arachnida_arañacangrejo.jpg" alt="Araña Cangrejo">            <div class="buttons">              <button class="add-to-cart">                <span class="icon cart-icon">🛒</span> Añadir a carrito <span class="icon arrow-icon">→</span>              </button>              <button class="add-to-favorites">Añadir a favoritos</button>            </div>          </div>          <div class="grid-item">            <p>Araña de las Desertas · 59.99€</p>            <img src="/assets/arachnida_arañadelasdesertas.jpg" alt="Araña de las Desertas">            <div class="buttons">              <button class="add-to-cart">                <span class="icon cart-icon">🛒</span> Añadir a carrito <span class="icon arrow-icon">→</span>              </button>              <button class="add-to-favorites">Añadir a favoritos</button>            </div>          </div>        </div>      </section>        <!-- Sección de cucas -->      <section class="categorias-section">        <h2><a href="shop/shopblattodea">Cucarachas (blattodea)</a></h2>        <div class="grid">          <div class="grid-item">            <p>Pseudoglomeris m. (2) · 9.99€</p>            <img src="/assets/blattodea_pseudoglomerismagnifica.jpg" alt="Pseudoglomeris Magnifica">            <div class="buttons">              <button class="add-to-cart">                <span class="icon cart-icon">🛒</span> Añadir a carrito <span class="icon arrow-icon">→</span>              </button>              <button class="add-to-favorites">Añadir a favoritos</button>            </div>          </div>          <div class="grid-item">            <p>Polyzosteria mit. (2) · 9.99€</p>            <img src="/assets/blattodea_polyzosteriamitchelli.jpeg" alt="Polyzosteria mitchelli">            <div class="buttons">              <button class="add-to-cart">                <span class="icon cart-icon">🛒</span> Añadir a carrito <span class="icon arrow-icon">→</span>              </button>              <button class="add-to-favorites">Añadir a favoritos</button>            </div>          </div>          <div class="grid-item">            <p>Gromphadorhina (4) · 2.99€</p>            <img src="/assets/blattodea_gromphadorhina.jpg" alt="Gromphadorhina">            <div class="buttons">              <button class="add-to-cart">                <span class="icon cart-icon">🛒</span> Añadir a carrito <span class="icon arrow-icon">→</span>              </button>              <button class="add-to-favorites">Añadir a favoritos</button>            </div>          </div>          <div class="grid-item">            <p>Blatta orientalis (10) · 1.99€</p>            <img src="/assets/blattodea_blattaorientalis.jpg" alt="Blatta orientalis">            <div class="buttons">              <button class="add-to-cart">                <span class="icon cart-icon">🛒</span> Añadir a carrito <span class="icon arrow-icon">→</span>              </button>              <button class="add-to-favorites">Añadir a favoritos</button>            </div>          </div>          <div class="grid-item">            <p>Prosoplecta (4) · 5.99€</p>            <img src="/assets/blattodea_prosoplecta.jpg" alt="Araña Pavo Real">            <div class="buttons">              <button class="add-to-cart">                <span class="icon cart-icon">🛒</span> Añadir a carrito <span class="icon arrow-icon">→</span>              </button>              <button class="add-to-favorites">Añadir a favoritos</button>            </div>          </div>          <div class="grid-item">            <p>Blaptica dubia (10) · 5.99€</p>            <img src="/assets/blattodea_blapticadubia.jpeg" alt="Blaptica Dubia">            <div class="buttons">              <button class="add-to-cart">                <span class="icon cart-icon">🛒</span> Añadir a carrito <span class="icon arrow-icon">→</span>              </button>              <button class="add-to-favorites">Añadir a favoritos</button>            </div>          </div>          <div class="grid-item">            <p>Chloroblatta (2) · 15.99€</p>            <img src="/assets/blattodea_chloroblatta.jpg" alt="Araña Avispa">            <div class="buttons">              <button class="add-to-cart">                <span class="icon cart-icon">🛒</span> Añadir a carrito <span class="icon arrow-icon">→</span>              </button>              <button class="add-to-favorites">Añadir a favoritos</button>            </div>          </div>          <div class="grid-item">            <p>Eushelfordia pica (2) · 8.99€</p>            <img src="/assets/blattodea_eushelfordiapica.jpg" alt="Eushelfordia pica">            <div class="buttons">              <button class="add-to-cart">                <span class="icon cart-icon">🛒</span> Añadir a carrito <span class="icon arrow-icon">→</span>              </button>              <button class="add-to-favorites">Añadir a favoritos</button>            </div>          </div>          <div class="grid-item">            <p>Therea Bernhardti (2) · 6.99€</p>            <img src="/assets/blattodea_thereabernhardti.png" alt="Therea Bernhardti">            <div class="buttons">              <button class="add-to-cart">                <span class="icon cart-icon">🛒</span> Añadir a carrito <span class="icon arrow-icon">→</span>              </button>              <button class="add-to-favorites">Añadir a favoritos</button>            </div>          </div>        </div>      </section>    <!-- Sección de Ciempiés -->    <section class="categorias-section">      <h2><a href="shop/shopchilopoda">Ciempiés (chilopoda)</a></h2>      <div class="grid">        <div class="grid-item">          <p>Scolopendra gigantea · 89.99€</p>          <img src="/assets/chilipoda_scolopendragigantea.jpg" alt="Scolopendra gigantea">          <div class="buttons">            <button class="add-to-cart">              <span class="icon cart-icon">🛒</span> Añadir a carrito <span class="icon arrow-icon">→</span>            </button>            <button class="add-to-favorites">Añadir a favoritos</button>          </div>        </div>        <div class="grid-item">          <p>Scolopendra heros · 45.99€</p>          <img src="/assets/chilopoda_scolopendraheros.jpg" alt="Scolopendra heros">          <div class="buttons">            <button class="add-to-cart">              <span class="icon cart-icon">🛒</span> Añadir a carrito <span class="icon arrow-icon">→</span>            </button>            <button class="add-to-favorites">Añadir a favoritos</button>          </div>        </div>        <div class="grid-item">          <p>Ethmostigmus rub. · 55.99€</p>          <img src="/assets/chilopoda_ethmostigmusrubripes.jpg" alt="Ethmostigmus rubripes">          <div class="buttons">            <button class="add-to-cart">              <span class="icon cart-icon">🛒</span> Añadir a carrito <span class="icon arrow-icon">→</span>            </button>            <button class="add-to-favorites">Añadir a favoritos</button>          </div>        </div>        <div class="grid-item">          <p>Scolopendra subs. · 79.99€</p>          <img src="/assets/chilopoda_scolopendrasubspinipes.png" alt="Scolopendra subspinipes">          <div class="buttons">            <button class="add-to-cart">              <span class="icon cart-icon">🛒</span> Añadir a carrito <span class="icon arrow-icon">→</span>            </button>            <button class="add-to-favorites">Añadir a favoritos</button>          </div>        </div>        <div class="grid-item">          <p>Cryptops hortensis · 35.99€</p>          <img src="/assets/chilopoda_cryptopshortensis.png" alt="Cryptops hortensis">          <div class="buttons">            <button class="add-to-cart">              <span class="icon cart-icon">🛒</span> Añadir a carrito <span class="icon arrow-icon">→</span>            </button>            <button class="add-to-favorites">Añadir a favoritos</button>          </div>        </div>        <div class="grid-item">          <p>Lithobius forficatus · 29.99€</p>          <img src="/assets/chilopoda_lithobiusforficatus.jpg" alt="Lithobius forficatus">          <div class="buttons">            <button class="add-to-cart">              <span class="icon cart-icon">🛒</span> Añadir a carrito <span class="icon arrow-icon">→</span>            </button>            <button class="add-to-favorites">Añadir a favoritos</button>          </div>        </div>        <div class="grid-item">          <p>Scutigera coleoptrata · 9.99€</p>          <img src="/assets/chilopoda_scutigeracoleoptrata.png" alt="Scutigera coleoptrata">          <div class="buttons">            <button class="add-to-cart">              <span class="icon cart-icon">🛒</span> Añadir a carrito <span class="icon arrow-icon">→</span>            </button>            <button class="add-to-favorites">Añadir a favoritos</button>          </div>        </div>        <div class="grid-item">          <p>Hemiscolopendra m. · 49.99€</p>          <img src="/assets/chilopoda_hemiscolopendramarginata.png" alt="Hemiscolopendra marginata">          <div class="buttons">            <button class="add-to-cart">              <span class="icon cart-icon">🛒</span> Añadir a carrito <span class="icon arrow-icon">→</span>            </button>            <button class="add-to-favorites">Añadir a favoritos</button>          </div>        </div>        <div class="grid-item">          <p>Alipes grandidieri · 59.99€</p>          <img src="/assets/chilopoda_alipesgrandidieri.jpg" alt="Alipes grandidieri">          <div class="buttons">            <button class="add-to-cart">              <span class="icon cart-icon">🛒</span> Añadir a carrito <span class="icon arrow-icon">→</span>            </button>            <button class="add-to-favorites">Añadir a favoritos</button>          </div>        </div>      </div>    </section>      <!-- Sección de Escarabajos -->      <section class="categorias-section">        <h2><a href="shop/shopcoleoptera">Escarabajos (coleoptera)</a></h2>        <div class="grid">            <div class="grid-item">                <p>Dynastes hercules · 129.99€</p>                <img src="/assets/coleoptera_dynasteshercules.jpg" alt="Dynastes hercules">                <div class="buttons">                    <button class="add-to-cart">                        <span class="icon cart-icon">🛒</span> Añadir a carrito <span class="icon arrow-icon">→</span>                    </button>                    <button class="add-to-favorites">Añadir a favoritos</button>                </div>            </div>            <div class="grid-item">                <p>Chalcosoma caucasus · 99.99€</p>                <img src="/assets/coleoptera_chalcosomacaucasus.png" alt="Chalcosoma caucasus">                <div class="buttons">                    <button class="add-to-cart">                        <span class="icon cart-icon">🛒</span> Añadir a carrito <span class="icon arrow-icon">→</span>                    </button>                    <button class="add-to-favorites">Añadir a favoritos</button>                </div>            </div>            <div class="grid-item">                <p>Megasoma elephas · 119.99€</p>                <img src="/assets/coleoptera_megasomaelephas.jpg" alt="Megasoma elephas">                <div class="buttons">                    <button class="add-to-cart">                        <span class="icon cart-icon">🛒</span> Añadir a carrito <span class="icon arrow-icon">→</span>                    </button>                    <button class="add-to-favorites">Añadir a favoritos</button>                </div>            </div>            <div class="grid-item">                <p>Phalacrognathus m. · 89.99€</p>                <img src="/assets/coleoptera_phalacrognathusmuelleri.jpg" alt="Phalacrognathus muelleri">                <div class="buttons">                    <button class="add-to-cart">                        <span class="icon cart-icon">🛒</span> Añadir a carrito <span class="icon arrow-icon">→</span>                    </button>                    <button class="add-to-favorites">Añadir a favoritos</button>                </div>            </div>            <div class="grid-item">                <p>Goliathus goliatus · 149.99€</p>                <img src="/assets/coleoptera_goliathusgoliatus.jpg" alt="Goliathus goliatus">                <div class="buttons">                    <button class="add-to-cart">                        <span class="icon cart-icon">🛒</span> Añadir a carrito <span class="icon arrow-icon">→</span>                    </button>                    <button class="add-to-favorites">Añadir a favoritos</button>                </div>            </div>            <div class="grid-item">                <p>Lucanus cervus · 69.99€</p>                <img src="/assets/coleoptera_lucanuscervus.jpg" alt="Lucanus cervus">                <div class="buttons">                    <button class="add-to-cart">                        <span class="icon cart-icon">🛒</span> Añadir a carrito <span class="icon arrow-icon">→</span>                    </button>                    <button class="add-to-favorites">Añadir a favoritos</button>                </div>            </div>            <div class="grid-item">                <p>Mecynorrhina torquata · 79.99€</p>                <img src="/assets/coleoptera_mecynorrhinatorquata.jpg" alt="Mecynorrhina torquata">                <div class="buttons">                    <button class="add-to-cart">                        <span class="icon cart-icon">🛒</span> Añadir a carrito <span class="icon arrow-icon">→</span>                    </button>                    <button class="add-to-favorites">Añadir a favoritos</button>                </div>            </div>            <div class="grid-item">                <p>Prosopocoilus giraffa · 74.99€</p>                <img src="/assets/coleoptera_prosopocoilusgiraffa.jpeg" alt="Prosopocoilus giraffa">                <div class="buttons">                    <button class="add-to-cart">                        <span class="icon cart-icon">🛒</span> Añadir a carrito <span class="icon arrow-icon">→</span>                    </button>                    <button class="add-to-favorites">Añadir a favoritos</button>                </div>            </div>            <div class="grid-item">                <p>Asbolus verrucosus · 9.99€</p>                <img src="/assets/coleoptera_asbolusverrucosus.jpg" alt="Asbolus verrucosus">                <div class="buttons">                    <button class="add-to-cart">                        <span class="icon cart-icon">🛒</span> Añadir a carrito <span class="icon arrow-icon">→</span>                    </button>                    <button class="add-to-favorites">Añadir a favoritos</button>                </div>            </div>        </div>    </section>    <!--Seccion crustaceos-->    <section class="categorias-section">      <h2><a href="shop/shopcrustacea">Crustáceos (crustacea)</a></h2>      <div class="grid">          <div class="grid-item">              <p>Procambarus clarkii · 12.99€</p>              <img src="/assets/crustacea_procambarusclarkii.jpg" alt="Procambarus clarkii">              <div class="buttons">                  <button class="add-to-cart">                      <span class="icon cart-icon">🛒</span> Añadir a carrito <span class="icon arrow-icon">→</span>                  </button>                  <button class="add-to-favorites">Añadir a favoritos</button>              </div>          </div>          <div class="grid-item">              <p>Cherax quad. · 15.99€</p>              <img src="/assets/crustacea_cheraxquadricarinatus.jpg" alt="Cherax quadricarinatus">              <div class="buttons">                  <button class="add-to-cart">                      <span class="icon cart-icon">🛒</span> Añadir a carrito <span class="icon arrow-icon">→</span>                  </button>                  <button class="add-to-favorites">Añadir a favoritos</button>              </div>          </div>          <div class="grid-item">              <p>Neocaridina davidi · 9.99€</p>              <img src="/assets/crustacea_neocaridinadavidi.jpg" alt="Neocaridina davidi">              <div class="buttons">                  <button class="add-to-cart">                      <span class="icon cart-icon">🛒</span> Añadir a carrito <span class="icon arrow-icon">→</span>                  </button>                  <button class="add-to-favorites">Añadir a favoritos</button>              </div>          </div>          <div class="grid-item">              <p>Caridina multidentata · 14.99€</p>              <img src="/assets/crustacea_caridinamultidentata.jpg" alt="Caridina multidentata">              <div class="buttons">                  <button class="add-to-cart">                      <span class="icon cart-icon">🛒</span> Añadir a carrito <span class="icon arrow-icon">→</span>                  </button>                  <button class="add-to-favorites">Añadir a favoritos</button>              </div>          </div>          <div class="grid-item">              <p>Macrobrachium r. · 19.99€</p>              <img src="/assets/crustacea_macrobrachiumrosenbergii.jpg" alt="Macrobrachium rosenbergii">              <div class="buttons">                  <button class="add-to-cart">                      <span class="icon cart-icon">🛒</span> Añadir a carrito <span class="icon arrow-icon">→</span>                  </button>                  <button class="add-to-favorites">Añadir a favoritos</button>              </div>          </div>          <div class="grid-item">              <p>Perisesarma bidens · 24.99€</p>              <img src="/assets/crustacea_perisesarmabidens.jpg" alt="Perisesarma bidens">              <div class="buttons">                  <button class="add-to-cart">                      <span class="icon cart-icon">🛒</span> Añadir a carrito <span class="icon arrow-icon">→</span>                  </button>                  <button class="add-to-favorites">Añadir a favoritos</button>              </div>          </div>          <div class="grid-item">              <p>Blueberry Shrimp · 8.99€</p>              <img src="/assets/crustacea_blueberryshrimp.jpg" alt="Blueberry Shrimp">              <div class="buttons">                  <button class="add-to-cart">                      <span class="icon cart-icon">🛒</span> Añadir a carrito <span class="icon arrow-icon">→</span>                  </button>                  <button class="add-to-favorites">Añadir a favoritos</button>              </div>          </div>          <div class="grid-item">              <p>Palaemonetes p. · 5.99€</p>              <img src="/assets/crustacea_palaemonetespaludosus.jpg" alt="Palaemonetes paludosus">              <div class="buttons">                  <button class="add-to-cart">                      <span class="icon cart-icon">🛒</span> Añadir a carrito <span class="icon arrow-icon">→</span>                  </button>                  <button class="add-to-favorites">Añadir a favoritos</button>              </div>          </div>          <div class="grid-item">              <p>Uca pugilator · 10.99€</p>              <img src="/assets/crustacea_ucapugilator.jpg" alt="Uca pugilator">              <div class="buttons">                  <button class="add-to-cart">                      <span class="icon cart-icon">🛒</span> Añadir a carrito <span class="icon arrow-icon">→</span>                  </button>                  <button class="add-to-favorites">Añadir a favoritos</button>              </div>          </div>      </div>  </section>  <!--secicon milpies-->  <section class="categorias-section">    <h2><a href="shop/shopdiplopoda">Milpiés (diplopoda)</a></h2>    <div class="grid">        <div class="grid-item">            <p>Peridontopyge rubes. · 10.99€</p>            <img src="/assets/diplopoda_peridontopygerubescens.png" alt="Peridontopyge rubescens">            <div class="buttons">                <button class="add-to-cart">                    <span class="icon cart-icon">🛒</span> Añadir a carrito <span class="icon arrow-icon">→</span>                </button>                <button class="add-to-favorites">Añadir a favoritos</button>            </div>        </div>        <div class="grid-item">            <p>Coromus vittattus · 13.99€</p>            <img src="/assets/diplopoda_coromosvittatusvittatus.png" alt="Coromus vittattus vittatus">            <div class="buttons">                <button class="add-to-cart">                    <span class="icon cart-icon">🛒</span> Añadir a carrito <span class="icon arrow-icon">→</span>                </button>                <button class="add-to-favorites">Añadir a favoritos</button>            </div>        </div>        <div class="grid-item">            <p>Anadenobolus moni. · 13.99€</p>            <img src="/assets/diplopoda_anadenobolusmonilicornis.png" alt="Anadenobolus moni">            <div class="buttons">                <button class="add-to-cart">                    <span class="icon cart-icon">🛒</span> Añadir a carrito <span class="icon arrow-icon">→</span>                </button>                <button class="add-to-favorites">Añadir a favoritos</button>            </div>        </div>        <div class="grid-item">            <p>Desmoxytes planata · 20.99€</p>            <img src="/assets/diplopoda_desmoxytesplanata.jpg" alt="Desmoxytes planata">            <div class="buttons">                <button class="add-to-cart">                    <span class="icon cart-icon">🛒</span> Añadir a carrito <span class="icon arrow-icon">→</span>                </button>                <button class="add-to-favorites">Añadir a favoritos</button>            </div>        </div>        <div class="grid-item">            <p>Pachyiulus krivol. · 19.99€</p>            <img src="/assets/diplopoda_pachyiuluskrivolutskyi.jpg" alt="Pachyiulus krivolutskyi">            <div class="buttons">                <button class="add-to-cart">                    <span class="icon cart-icon">🛒</span> Añadir a carrito <span class="icon arrow-icon">→</span>                </button>                <button class="add-to-favorites">Añadir a favoritos</button>            </div>        </div>        <div class="grid-item">            <p>Gosodesmus claremontus · 24.99€</p>            <img src="/assets/diplopoda_gosodesmusclaremontus.jpg" alt="Gosodesmus claremontus">            <div class="buttons">                <button class="add-to-cart">                    <span class="icon cart-icon">🛒</span> Añadir a carrito <span class="icon arrow-icon">→</span>                </button>                <button class="add-to-favorites">Añadir a favoritos</button>            </div>        </div>        <div class="grid-item">            <p>Chicobolus spinigerus · 6.99€</p>            <img src="/assets/diplopoda_chicobolusspinigerus.jpg" alt="Chicobolus spinigerus">            <div class="buttons">                <button class="add-to-cart">                    <span class="icon cart-icon">🛒</span> Añadir a carrito <span class="icon arrow-icon">→</span>                </button>                <button class="add-to-favorites">Añadir a favoritos</button>            </div>        </div>        <div class="grid-item">            <p>Pelmatojulus excisus · 25.99€</p>            <img src="/assets/diplopoda_pelmatojulusexcisus.jpg" alt="Pelmatojulus excisus">            <div class="buttons">                <button class="add-to-cart">                    <span class="icon cart-icon">🛒</span> Añadir a carrito <span class="icon arrow-icon">→</span>                </button>                <button class="add-to-favorites">Añadir a favoritos</button>            </div>        </div>        <div class="grid-item">            <p>Spirobolus caudulanus · 14.99€</p>            <img src="/assets/diplopoda_spiroboluscaudulanus.jpg" alt="Spirobolus caudulanus">            <div class="buttons">                <button class="add-to-cart">                    <span class="icon cart-icon">🛒</span> Añadir a carrito <span class="icon arrow-icon">→</span>                </button>                <button class="add-to-favorites">Añadir a favoritos</button>            </div>        </div>    </div></section><!--seccion gastropodos--><section class="categorias-section">  <h2><a href="shop/shopgastropoda">Gasterópodos (gastropoda)</a></h2>  <div class="grid">      <div class="grid-item">          <p>Achatina balteata · 4.99€</p>          <img src="/assets/gastropoda_achatinabalteata.jpg" alt="Achatina balteata">          <div class="buttons">              <button class="add-to-cart">                  <span class="icon cart-icon">🛒</span> Añadir a carrito <span class="icon arrow-icon">→</span>              </button>              <button class="add-to-favorites">Añadir a favoritos</button>          </div>      </div>      <div class="grid-item">          <p>Achatina achatina · 18.99€</p>          <img src="/assets/gastropoda_achatinaachatina.jpg" alt="Achatina achatina">          <div class="buttons">              <button class="add-to-cart">                  <span class="icon cart-icon">🛒</span> Añadir a carrito <span class="icon arrow-icon">→</span>              </button>              <button class="add-to-favorites">Añadir a favoritos</button>          </div>      </div>      <div class="grid-item">          <p>Emphysetes udzun. · 11.99€</p>          <img src="/assets/gastropoda_emphysetesundzugwensis.jpg" alt="Anadenobolus moni">          <div class="buttons">              <button class="add-to-cart">                  <span class="icon cart-icon">🛒</span> Añadir a carrito <span class="icon arrow-icon">→</span>              </button>              <button class="add-to-favorites">Añadir a favoritos</button>          </div>      </div>      <div class="grid-item">          <p>Platymma tweediei · 20.99€</p>          <img src="/assets/gastropoda_platymmatweediei.jpg" alt="Platymma tweediei">          <div class="buttons">              <button class="add-to-cart">                  <span class="icon cart-icon">🛒</span> Añadir a carrito <span class="icon arrow-icon">→</span>              </button>              <button class="add-to-favorites">Añadir a favoritos</button>          </div>      </div>      <div class="grid-item">          <p>Tropidophora cuv. · 15.99€</p>          <img src="/assets/gastropoda_tropidophoracuveriana.jpg" alt="Tropidophora cuveriana">          <div class="buttons">              <button class="add-to-cart">                  <span class="icon cart-icon">🛒</span> Añadir a carrito <span class="icon arrow-icon">→</span>              </button>              <button class="add-to-favorites">Añadir a favoritos</button>          </div>      </div>      <div class="grid-item">          <p>Moulinsia fusca · 14.99€</p>          <img src="/assets/gastropoda_moulinsiafusca.jpg" alt="Moulinsia fusca">          <div class="buttons">              <button class="add-to-cart">                  <span class="icon cart-icon">🛒</span> Añadir a carrito <span class="icon arrow-icon">→</span>              </button>              <button class="add-to-favorites">Añadir a favoritos</button>          </div>      </div>      <div class="grid-item">          <p>Veronicella cubensis · 6.99€</p>          <img src="/assets/gastropoda_veronicellacubensis.jpg" alt="Veronicella cubensis">          <div class="buttons">              <button class="add-to-cart">                  <span class="icon cart-icon">🛒</span> Añadir a carrito <span class="icon arrow-icon">→</span>              </button>              <button class="add-to-favorites">Añadir a favoritos</button>          </div>      </div>      <div class="grid-item">          <p>Anguispira alternata · 8.99€</p>          <img src="/assets/gastropoda_anguispiraalternata.jpg" alt="Anguispira alternata">          <div class="buttons">              <button class="add-to-cart">                  <span class="icon cart-icon">🛒</span> Añadir a carrito <span class="icon arrow-icon">→</span>              </button>              <button class="add-to-favorites">Añadir a favoritos</button>          </div>      </div>      <div class="grid-item">          <p>Megalobulimus o. · 14.99€</p>          <img src="/assets/gastropoda_megalobulimusoblongus.jpg" alt="Megalobulimus oblongus">          <div class="buttons">              <button class="add-to-cart">                  <span class="icon cart-icon">🛒</span> Añadir a carrito <span class="icon arrow-icon">→</span>              </button>              <button class="add-to-favorites">Añadir a favoritos</button>          </div>      </div>  </div></section><!--seccion himenopteros--><section class="categorias-section">  <h2><a href="shop/shophymenoptera">Himenópteros (hymenoptera)</a></h2>  <div class="grid">      <div class="grid-item">          <p>Messor barbarus · 4.99€</p>          <img src="/assets/hymenoptera_messorbarbarus.jpg" alt="Messor barbarus">          <div class="buttons">              <button class="add-to-cart">                  <span class="icon cart-icon">🛒</span> Añadir a carrito <span class="icon arrow-icon">→</span>              </button>              <button class="add-to-favorites">Añadir a favoritos</button>          </div>      </div>      <div class="grid-item">          <p>Lasius niger · 4.99€</p>          <img src="/assets/hymenoptera_lasiusniger.jpg" alt="Lasius niger">          <div class="buttons">              <button class="add-to-cart">                  <span class="icon cart-icon">🛒</span> Añadir a carrito <span class="icon arrow-icon">→</span>              </button>              <button class="add-to-favorites">Añadir a favoritos</button>          </div>      </div>      <div class="grid-item">          <p>Lasius flavus · 4.99€</p>          <img src="/assets/hymenoptera_lasiusflavus.jpg" alt="Lasius flavus">          <div class="buttons">              <button class="add-to-cart">                  <span class="icon cart-icon">🛒</span> Añadir a carrito <span class="icon arrow-icon">→</span>              </button>              <button class="add-to-favorites">Añadir a favoritos</button>          </div>      </div>      <div class="grid-item">          <p>Camponotus cruentatus · 4.99€</p>          <img src="/assets/hymenoptera_camponotuscruentatus.jpg" alt="Csmponotus cruentatus">          <div class="buttons">              <button class="add-to-cart">                  <span class="icon cart-icon">🛒</span> Añadir a carrito <span class="icon arrow-icon">→</span>              </button>              <button class="add-to-favorites">Añadir a favoritos</button>          </div>      </div>      <div class="grid-item">          <p>Camponotus ligniperda · 4.99€</p>          <img src="/assets/hymenoptera_camponotusligniperda.jpg" alt="Camponotus ligniperda">          <div class="buttons">              <button class="add-to-cart">                  <span class="icon cart-icon">🛒</span> Añadir a carrito <span class="icon arrow-icon">→</span>              </button>              <button class="add-to-favorites">Añadir a favoritos</button>          </div>      </div>      <div class="grid-item">          <p>Hormiga bala · 7.99€</p>          <img src="/assets/hymenoptera_hormigabala.jpg" alt="Hormiga bala">          <div class="buttons">              <button class="add-to-cart">                  <span class="icon cart-icon">🛒</span> Añadir a carrito <span class="icon arrow-icon">→</span>              </button>              <button class="add-to-favorites">Añadir a favoritos</button>          </div>      </div>      <div class="grid-item">          <p>Hormiga bulldog · 6.99€</p>          <img src="/assets/hymenoptera_hormigabulldog.jpg" alt="Hormiga bulldog">          <div class="buttons">              <button class="add-to-cart">                  <span class="icon cart-icon">🛒</span> Añadir a carrito <span class="icon arrow-icon">→</span>              </button>              <button class="add-to-favorites">Añadir a favoritos</button>          </div>      </div>      <div class="grid-item">          <p>Hormiga cortadora · 8.99€</p>          <img src="/assets/hymenoptera_hormigacortadora.jpg" alt="Hormiga cortadora">          <div class="buttons">              <button class="add-to-cart">                  <span class="icon cart-icon">🛒</span> Añadir a carrito <span class="icon arrow-icon">→</span>              </button>              <button class="add-to-favorites">Añadir a favoritos</button>          </div>      </div>      <div class="grid-item">          <p>Reina + 10 obreras · 24.99€</p>          <img src="/assets/hymenoptero_abejas.jpg" alt="Abeja reina + 10 obreras">          <div class="buttons">              <button class="add-to-cart">                  <span class="icon cart-icon">🛒</span> Añadir a carrito <span class="icon arrow-icon">→</span>              </button>              <button class="add-to-favorites">Añadir a favoritos</button>          </div>      </div>  </div></section>      <!--seccion de cochinitas-->      <section class="categorias-section">        <h2><a href="shop/shopisopoda">Isópodos (isopoda)</a></h2>        <div class="grid">            <div class="grid-item">                <p>Porcellionides Prui. (6) · 9.99€</p>                <img src="/assets/isopoda_porcellionidespruinosus.png" alt="Porcellionides Prui.">                <div class="buttons">                    <button class="add-to-cart">                        <span class="icon cart-icon">🛒</span> Añadir a carrito <span class="icon arrow-icon">→</span>                    </button>                    <button class="add-to-favorites">Añadir a favoritos</button>                </div>            </div>            <div class="grid-item">                <p>Dairy Cow (6)· 14.99€</p>                <img src="/assets/isopoda_dairycow.png" alt="Dairy Cow">                <div class="buttons">                    <button class="add-to-cart">                        <span class="icon cart-icon">🛒</span> Añadir a carrito <span class="icon arrow-icon">→</span>                    </button>                    <button class="add-to-favorites">Añadir a favoritos</button>                </div>            </div>            <div class="grid-item">                <p>Magic Potion (8) · 14.99€</p>                <img src="/assets/isopoda_magicpotion.png" alt="Magic Potion">                <div class="buttons">                    <button class="add-to-cart">                        <span class="icon cart-icon">🛒</span> Añadir a carrito <span class="icon arrow-icon">→</span>                    </button>                    <button class="add-to-favorites">Añadir a favoritos</button>                </div>            </div>            <div class="grid-item">                <p>Zebra (8) · 14.99€</p>                <img src="/assets/isopoda_zebra.png" alt="Zebra">                <div class="buttons">                    <button class="add-to-cart">                        <span class="icon cart-icon">🛒</span> Añadir a carrito <span class="icon arrow-icon">→</span>                    </button>                    <button class="add-to-favorites">Añadir a favoritos</button>                </div>            </div>            <div class="grid-item">                <p>Dalmatian (8) · 14.99€</p>                <img src="/assets/isopoda_dalmatian.png" alt="Dalmatian">                <div class="buttons">                    <button class="add-to-cart">                        <span class="icon cart-icon">🛒</span> Añadir a carrito <span class="icon arrow-icon">→</span>                    </button>                    <button class="add-to-favorites">Añadir a favoritos</button>                </div>            </div>            <div class="grid-item">                <p>Hoffmannseggii · 79.99€</p>                <img src="/assets/isopoda_hoffmannseggii.jpg" alt="Hoffmannseggii">                <div class="buttons">                    <button class="add-to-cart">                        <span class="icon cart-icon">🛒</span> Añadir a carrito <span class="icon arrow-icon">→</span>                    </button>                    <button class="add-to-favorites">Añadir a favoritos</button>                </div>            </div>            <div class="grid-item">                <p>White Ducky (6) · 16.99€</p>                <img src="/assets/isopoda_whiteducky.png" alt="White Ducky">                <div class="buttons">                    <button class="add-to-cart">                        <span class="icon cart-icon">🛒</span> Añadir a carrito <span class="icon arrow-icon">→</span>                    </button>                    <button class="add-to-favorites">Añadir a favoritos</button>                </div>            </div>            <div class="grid-item">                <p>Patito de goma (6) · 14.99€</p>                <img src="/assets/isopoda_rubberducky.png" alt="Patito de goma">                <div class="buttons">                    <button class="add-to-cart">                        <span class="icon cart-icon">🛒</span> Añadir a carrito <span class="icon arrow-icon">→</span>                    </button>                    <button class="add-to-favorites">Añadir a favoritos</button>                </div>            </div>            <div class="grid-item">                <p>Thai Spiky (10) · 24.99€</p>                <img src="/assets/isopoda_thaispiky.jpg" alt="Thaispiky">                <div class="buttons">                    <button class="add-to-cart">                        <span class="icon cart-icon">🛒</span> Añadir a carrito <span class="icon arrow-icon">→</span>                    </button>                    <button class="add-to-favorites">Añadir a favoritos</button>                </div>            </div>        </div>    </section>    <!--lepidoptera-->    <section class="categorias-section">      <h2><a href="shop/shoplepidoptera">Lepidópteros (lepidoptera)</a></h2>      <div class="grid">          <div class="grid-item">              <p>Rosada del Arce (3) · 12.99€</p>              <img src="/assets/lepidoptera_rosymaplemoth.jpg" alt="Rosy Maple Moth">              <div class="buttons">                  <button class="add-to-cart">                      <span class="icon cart-icon">🛒</span> Añadir a carrito <span class="icon arrow-icon">→</span>                  </button>                  <button class="add-to-favorites">Añadir a favoritos</button>              </div>          </div>          <div class="grid-item">              <p>Polilla de la seda (9) · 3.99€ </p>              <img src="/assets/lepidoptera_polilladeseda.jpg" alt="Polilla de la seda">              <div class="buttons">                  <button class="add-to-cart">                      <span class="icon cart-icon">🛒</span> Añadir a carrito <span class="icon arrow-icon">→</span>                  </button>                  <button class="add-to-favorites">Añadir a favoritos</button>              </div>          </div>          <div class="grid-item">              <p>Esfinge Calavera (5) · 18.99€</p>              <img src="/assets/lepidoptera_esfingecalavera.jpg" alt="Esfinge Calavera">              <div class="buttons">                  <button class="add-to-cart">                      <span class="icon cart-icon">🛒</span> Añadir a carrito <span class="icon arrow-icon">→</span>                  </button>                  <button class="add-to-favorites">Añadir a favoritos</button>              </div>          </div>          <div class="grid-item">              <p>Alas de pájaro (3) · 17.99€</p>              <img src="/assets/lepidoptera_ornithopteraalexandrae.jpg" alt="Alas de pájaro">              <div class="buttons">                  <button class="add-to-cart">                      <span class="icon cart-icon">🛒</span> Añadir a carrito <span class="icon arrow-icon">→</span>                  </button>                  <button class="add-to-favorites">Añadir a favoritos</button>              </div>          </div>          <div class="grid-item">              <p>Papilio Bianor (3) · 14.99€</p>              <img src="/assets/lepidoptera_papiliobianor.jpg" alt="Dalmatian">              <div class="buttons">                  <button class="add-to-cart">                      <span class="icon cart-icon">🛒</span> Añadir a carrito <span class="icon arrow-icon">→</span>                  </button>                  <button class="add-to-favorites">Añadir a favoritos</button>              </div>          </div>          <div class="grid-item">              <p>Alas Brooke (3) · 17.99€</p>              <img src="/assets/lepidoptera_brooke.jpg" alt="Alas Brooke">              <div class="buttons">                  <button class="add-to-cart">                      <span class="icon cart-icon">🛒</span> Añadir a carrito <span class="icon arrow-icon">→</span>                  </button>                  <button class="add-to-favorites">Añadir a favoritos</button>              </div>          </div>          <div class="grid-item">              <p>Triángulo azul (3) · 14.99€</p>              <img src="/assets/lepidoptera_trianguloazul.JPG" alt="Triángulo azul">              <div class="buttons">                  <button class="add-to-cart">                      <span class="icon cart-icon">🛒</span> Añadir a carrito <span class="icon arrow-icon">→</span>                  </button>                  <button class="add-to-favorites">Añadir a favoritos</button>              </div>          </div>          <div class="grid-item">              <p>Tigre de tres colas (3) · 14.99€</p>              <img src="/assets/lepidoptera_tigre3colas.jpg" alt="Tigre de tres colas">              <div class="buttons">                  <button class="add-to-cart">                      <span class="icon cart-icon">🛒</span> Añadir a carrito <span class="icon arrow-icon">→</span>                  </button>                  <button class="add-to-favorites">Añadir a favoritos</button>              </div>          </div>          <div class="grid-item">              <p>Cometa de papel (3) · 14.99€</p>              <img src="/assets/lepidoptera_cometadepapel.jpg" alt="Cometa de papel">              <div class="buttons">                  <button class="add-to-cart">                      <span class="icon cart-icon">🛒</span> Añadir a carrito <span class="icon arrow-icon">→</span>                  </button>                  <button class="add-to-favorites">Añadir a favoritos</button>              </div>          </div>      </div>  </section>      <!-- Sección de mantis -->      <section class="categorias-section">        <h2><a href="shop/shopmantodea">Mantis (mantodea)</a></h2>        <div class="grid">          <div class="grid-item">            <p>Mantis Hoja Muerta · 12.99€</p>            <img src="/assets/mantodea_mantishojamuerta.jpg" alt="Mantis Hoja Muerta">            <div class="buttons">              <button class="add-to-cart">                <span class="icon cart-icon">🛒</span> Añadir a carrito <span class="icon arrow-icon">→</span>              </button>              <button class="add-to-favorites">Añadir a favoritos</button>            </div>          </div>          <div class="grid-item">            <p>Mantis Orquídea · 15.99€</p>            <img src="/assets/mantodea_orchidmantis.jpg" alt="Mantis Orquídea">            <div class="buttons">              <button class="add-to-cart">                <span class="icon cart-icon">🛒</span> Añadir a carrito <span class="icon arrow-icon">→</span>              </button>              <button class="add-to-favorites">Añadir a favoritos</button>            </div>          </div>          <div class="grid-item">            <p>Mantis Flor India · 17.99€</p>            <img src="/assets/mantodea_indianflowermantis.jpg" alt="Mantis Flor India">            <div class="buttons">              <button class="add-to-cart">                <span class="icon cart-icon">🛒</span> Añadir a carrito <span class="icon arrow-icon">→</span>              </button>              <button class="add-to-favorites">Añadir a favoritos</button>            </div>          </div>          <div class="grid-item">            <p>Mantis Flor Espinosa · 17.99€</p>            <img src="/assets/mantodea_spinyflower.jpeg" alt="Mantis Flor Espinosa">            <div class="buttons">              <button class="add-to-cart">                <span class="icon cart-icon">🛒</span> Añadir a carrito <span class="icon arrow-icon">→</span>              </button>              <button class="add-to-favorites">Añadir a favoritos</button>            </div>          </div>          <div class="grid-item">            <p>Mantis Palo · 12.99€</p>            <img src="/assets/mantodea_empusapennata.jpg" alt="Mantis Palo">            <div class="buttons">              <button class="add-to-cart">                <span class="icon cart-icon">🛒</span> Añadir a carrito <span class="icon arrow-icon">→</span>              </button>              <button class="add-to-favorites">Añadir a favoritos</button>            </div>          </div>          <div class="grid-item">            <p>Asiática Gigante · 19.99€</p>            <img src="/assets/mantodea_asiaticagigante.png" alt="Asiática Gigante">            <div class="buttons">              <button class="add-to-cart">                <span class="icon cart-icon">🛒</span> Añadir a carrito <span class="icon arrow-icon">→</span>              </button>              <button class="add-to-favorites">Añadir a favoritos</button>            </div>          </div>          <div class="grid-item">            <p>Mantis Gato · 19.99€</p>            <img src="/assets/mantodea_mantisgato.jpeg" alt="Mantis Gato">            <div class="buttons">              <button class="add-to-cart">                <span class="icon cart-icon">🛒</span> Añadir a carrito <span class="icon arrow-icon">→</span>              </button>              <button class="add-to-favorites">Añadir a favoritos</button>            </div>          </div>          <div class="grid-item">            <p>Mantis Europea · 9.99€</p>            <img src="/assets/mantodea_mantiseuroropea.jpg" alt="Mantis Europea">            <div class="buttons">              <button class="add-to-cart">                <span class="icon cart-icon">🛒</span> Añadir a carrito <span class="icon arrow-icon">→</span>              </button>              <button class="add-to-favorites">Añadir a favoritos</button>            </div>          </div>          <div class="grid-item">            <p>Mantis Escudo · 19.99€</p>            <img src="/assets/mantodea_mantisescudo.jpg" alt="Mantis Escudo">            <div class="buttons">              <button class="add-to-cart">                <span class="icon cart-icon">🛒</span> Añadir a carrito <span class="icon arrow-icon">→</span>              </button>              <button class="add-to-favorites">Añadir a favoritos</button>            </div>          </div>        </div>      </section>            <section class="categorias-section">        <h2><a href="shop/shopphasmatodea">Fásmidos (phasmatodea)</a></h2>        <div class="grid">            <div class="grid-item">                <p>Bicho Palo Vietnamita · 9.99€</p>                <img src="/assets/phasm_palovietnamita.jpg" alt="Bicho Palo Vietnamita">                <div class="buttons">                    <button class="add-to-cart">                        <span class="icon cart-icon">🛒</span> Añadir a carrito <span class="icon arrow-icon">→</span>                    </button>                    <button class="add-to-favorites">Añadir a favoritos</button>                </div>            </div>            <div class="grid-item">                <p>Bicho Palo Terciopelo · 11.99€</p>                <img src="/assets/phasm_blackvelvet.jpg" alt="Terciopelo">                <div class="buttons">                    <button class="add-to-cart">                        <span class="icon cart-icon">🛒</span> Añadir a carrito <span class="icon arrow-icon">→</span>                    </button>                    <button class="add-to-favorites">Añadir a favoritos</button>                </div>            </div>            <div class="grid-item">                <p>Bicho Palo Soleado · 11.99€</p>                <img src="/assets/phasm_sunnystick.jpg" alt="Megasoma elephas">                <div class="buttons">                    <button class="add-to-cart">                        <span class="icon cart-icon">🛒</span> Añadir a carrito <span class="icon arrow-icon">→</span>                    </button>                    <button class="add-to-favorites">Añadir a favoritos</button>                </div>            </div>            <div class="grid-item">                <p>Bicho Palo Budwing · 15.99€</p>                <img src="/assets/phasm_budwingstick.jpg" alt="Bicho Palo Budwing">                <div class="buttons">                    <button class="add-to-cart">                        <span class="icon cart-icon">🛒</span> Añadir a carrito <span class="icon arrow-icon">→</span>                    </button>                    <button class="add-to-favorites">Añadir a favoritos</button>                </div>            </div>            <div class="grid-item">                <p>Bicho Palo Lima · 15.99€</p>                <img src="/assets/phasm_giantlime.jpg" alt="Bicho Palo Lima">                <div class="buttons">                    <button class="add-to-cart">                        <span class="icon cart-icon">🛒</span> Añadir a carrito <span class="icon arrow-icon">→</span>                    </button>                    <button class="add-to-favorites">Añadir a favoritos</button>                </div>            </div>            <div class="grid-item">                <p>Bicho Palo Espinoso · 15.99€</p>                <img src="/assets/phasm_spiky.jpg" alt="Bicho Palo Espinoso">                <div class="buttons">                    <button class="add-to-cart">                        <span class="icon cart-icon">🛒</span> Añadir a carrito <span class="icon arrow-icon">→</span>                    </button>                    <button class="add-to-favorites">Añadir a favoritos</button>                </div>            </div>            <div class="grid-item">                <p>Bicho Palo Caballo · 15.99€</p>                <img src="/assets/phasm_horseface.jpg" alt="Bicho Palo Caballo">                <div class="buttons">                    <button class="add-to-cart">                        <span class="icon cart-icon">🛒</span> Añadir a carrito <span class="icon arrow-icon">→</span>                    </button>                    <button class="add-to-favorites">Añadir a favoritos</button>                </div>            </div>            <div class="grid-item">                <p>Bicho Hoja Espinosa · 14.99€</p>                <img src="/assets/phasm_hojaarrugada.jpg" alt="Bicho Hoja Espinosa">                <div class="buttons">                    <button class="add-to-cart">                        <span class="icon cart-icon">🛒</span> Añadir a carrito <span class="icon arrow-icon">→</span>                    </button>                    <button class="add-to-favorites">Añadir a favoritos</button>                </div>            </div>            <div class="grid-item">                <p>Bicho Hoja Otoñal · 14.99€</p>                <img src="/assets/phasm_hojaotono.jpg" alt="Bicho Hoja otoño">                <div class="buttons">                    <button class="add-to-cart">                        <span class="icon cart-icon">🛒</span> Añadir a carrito <span class="icon arrow-icon">→</span>                    </button>                    <button class="add-to-favorites">Añadir a favoritos</button>                </div>            </div>        </div>    </section>    </main>    <footer>      <div class="footer-left">          <p><strong>Insectarium</strong></p>          <p>C/ Asunción, 14</p>        <p>41011 Sevilla</p>      </div>      <div class="footer-right">        <p>653 785 231</p>        <p>insectarium"&#64;"gmail.com</p>      </div>    </footer>  </body>  </div>'
+    var COMPONENTS = [{'name': 'AllguidesComponent', 'selector': 'app-allguides'},{'name': 'AllshopComponent', 'selector': 'app-allshop'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BlogComponent', 'selector': 'app-blog'},{'name': 'CartComponent', 'selector': 'app-cart'},{'name': 'ContactComponent', 'selector': 'app-contact'},{'name': 'GuidesarachnidaComponent', 'selector': 'app-guidesarachnida'},{'name': 'GuidesblattodeaComponent', 'selector': 'app-guidesblattodea'},{'name': 'GuideschilopodaComponent', 'selector': 'app-guideschilopoda'},{'name': 'GuidescoleopteraComponent', 'selector': 'app-guidescoleoptera'},{'name': 'GuidescrustaceaComponent', 'selector': 'app-guidescrustacea'},{'name': 'GuidesdiplopodaComponent', 'selector': 'app-guidesdiplopoda'},{'name': 'GuidesgastropodaComponent', 'selector': 'app-guidesgastropoda'},{'name': 'GuideshymenopteraComponent', 'selector': 'app-guideshymenoptera'},{'name': 'GuidesisopodaComponent', 'selector': 'app-guidesisopoda'},{'name': 'GuideslepidopteraComponent', 'selector': 'app-guideslepidoptera'},{'name': 'GuidesmantodeaComponent', 'selector': 'app-guidesmantodea'},{'name': 'GuidesphasmatodeaComponent', 'selector': 'app-guidesphasmatodea'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'NotfoundComponent', 'selector': 'app-notfound'},{'name': 'ProfileComponent', 'selector': 'app-profile'},{'name': 'RegisterComponent', 'selector': 'app-register'},{'name': 'ShoparachnidaComponent', 'selector': 'app-shoparachnida'},{'name': 'ShopblattodeaComponent', 'selector': 'app-shopblattodea'},{'name': 'ShopchilopodaComponent', 'selector': 'app-shopchilopoda'},{'name': 'ShopcoleopteraComponent', 'selector': 'app-shopcoleoptera'},{'name': 'ShopcrustaceaComponent', 'selector': 'app-shopcrustacea'},{'name': 'ShopdiplopodaComponent', 'selector': 'app-shopdiplopoda'},{'name': 'ShopgastropodaComponent', 'selector': 'app-shopgastropoda'},{'name': 'ShophymenopteraComponent', 'selector': 'app-shophymenoptera'},{'name': 'ShopisopodaComponent', 'selector': 'app-shopisopoda'},{'name': 'ShoplepidopteraComponent', 'selector': 'app-shoplepidoptera'},{'name': 'ShopmantodeaComponent', 'selector': 'app-shopmantodea'},{'name': 'ShopphasmatodeaComponent', 'selector': 'app-shopphasmatodea'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'AllshopComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'AllshopComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

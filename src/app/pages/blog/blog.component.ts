@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { environment } from '../../../environments/environment';
 
+/**
+ * Componente que representa el blog de noticias sobre insectos y su conservación.
+ * Este componente maneja la visualización de noticias y su contenido, y permite alternar
+ * la visualización de las noticias al hacer clic.
+ */
 @Component({
   selector: 'app-blog',
   templateUrl: './blog.component.html',
@@ -8,8 +12,8 @@ import { environment } from '../../../environments/environment';
 })
 export class BlogComponent implements OnInit {
 
-  apiKey: string = environment.apiKey; 
 
+  /** Objeto que representa la primera noticia, incluyendo su contenido y estado de visibilidad */
   noticia1 = {
     isOpen: false,
     content: `
@@ -42,6 +46,7 @@ export class BlogComponent implements OnInit {
     `
   };
 
+  /** Objeto que representa la segunda noticia, incluyendo su contenido y estado de visibilidad */
   noticia2 = {
     isOpen: false,
     content: `
@@ -75,6 +80,7 @@ export class BlogComponent implements OnInit {
     `
   };
 
+  /** Objeto que representa la tercera noticia, incluyendo su contenido y estado de visibilidad */
   noticia3 = {
     isOpen: false,
     content: `
@@ -91,12 +97,19 @@ export class BlogComponent implements OnInit {
     `
   };
 
-  constructor() {}
-
+  /**
+   * Método del ciclo de vida de Angular que se ejecuta cuando el componente se inicializa.
+   * Este método se usa aquí para mostrar la clave de la API, solo con fines de depuración.
+   */
   ngOnInit() {
-    console.log('API Key:', this.apiKey); 
   }
 
+  /**
+   * Método que alterna la visibilidad del contenido de una noticia específica.
+   * Al hacer clic en una noticia, se cambia su estado de visibilidad entre abierto o cerrado.
+   * 
+   * @param {number} noticiaId El ID de la noticia cuyo contenido se quiere alternar
+   */
   toggleContent(noticiaId: number) {
     if (noticiaId === 1) {
       this.noticia1.isOpen = !this.noticia1.isOpen;

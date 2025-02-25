@@ -1,9 +1,16 @@
 import { Component, HostListener } from '@angular/core';
 
+/**
+ * Componente para gestionar el carrito de compras.
+ * 
+ * Este componente permite visualizar los productos en el carrito, así como realizar operaciones de
+ * aumentar/decrementar la cantidad de productos, eliminar productos, calcular el precio total y
+ * realizar la compra. Además, se tiene una función para hacer que el carrito se desplace con el scroll.
+ */
 @Component({
-  selector: 'app-cart',
-  templateUrl: './cart.component.html',
-  styleUrls: ['./cart.component.css']
+  selector: 'app-cart',  // Selector para este componente
+  templateUrl: './cart.component.html',  // Plantilla HTML asociada al componente
+  styleUrls: ['./cart.component.css']  // Estilos CSS asociados al componente
 })
 export class CartComponent {
   // Lista de productos en el carrito
@@ -16,40 +23,64 @@ export class CartComponent {
     { nombre: 'Polilla de la seda (9)', descripcion: 'Lepidópteros', precio: 3.99, cantidad: 2, imagen: '/assets/lepidoptera_polilladeseda.jpg' },
     { nombre: 'Lithobius forficatus', descripcion: 'Ciempiés', precio: 29.99, cantidad: 1, imagen: '/assets/chilopoda_lithobiusforficatus.jpg' },
     { nombre: 'Araña Cangrejo', descripcion: 'Arácnidos', precio: 23.99, cantidad: 1, imagen: '/assets/arachnida_arañacangrejo.jpg' }
-
   ];
+
   positionY: number = 0;  // Variable para controlar la posición Y del div
 
-  // Función para incrementar la cantidad
+  /**
+   * Incrementa la cantidad de un producto en el carrito.
+   * 
+   * @param item - El producto cuyo número de unidades se incrementa.
+   */
   incrementarCantidad(item: any) {
     item.cantidad++;
   }
 
-  // Función para decrementar la cantidad
+  /**
+   * Decrementa la cantidad de un producto en el carrito.
+   * 
+   * @param item - El producto cuyo número de unidades se decrementa.
+   */
   decrementarCantidad(item: any) {
     if (item.cantidad > 1) {
       item.cantidad--;
     }
   }
 
-  // Función para eliminar el producto del carrito
+  /**
+   * Elimina un producto del carrito.
+   * 
+   * @param item - El producto que se eliminará del carrito.
+   */
   eliminarDelCarrito(item: any) {
     this.carrito = this.carrito.filter(producto => producto !== item);
   }
 
-  // Función para calcular el precio total
+  /**
+   * Calcula el precio total de los productos en el carrito.
+   * 
+   * @returns El precio total del carrito redondeado a dos decimales.
+   */
   calcularPrecioTotal(): number {
     const total = this.carrito.reduce((acc, item) => acc + (item.precio * item.cantidad), 0);
     return Math.round(total * 100) / 100;  // Redondea a dos decimales
   }
 
-  // Función para manejar la compra de todos los productos
+  /**
+   * Realiza la compra de todos los productos en el carrito.
+   * 
+   * Limpia el carrito después de realizar la compra.
+   */
   comprarTodo() {
     alert('Compra realizada con éxito!');
     this.carrito = [];  // Limpiar el carrito después de la compra
   }
 
-  // Evento que se dispara cuando el usuario hace scroll en la página
+  /**
+   * Maneja el evento de scroll en la ventana para ajustar la posición Y del carrito.
+   * 
+   * @param event - El evento de scroll.
+   */
   @HostListener('window:scroll', ['$event'])
   onScroll(event: any): void {
     const scrollTop = window.scrollY || document.documentElement.scrollTop;

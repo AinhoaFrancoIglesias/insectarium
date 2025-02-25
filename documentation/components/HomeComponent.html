@@ -1,0 +1,676 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>insectarium documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="../" class="navbar-brand">insectarium documentation</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Components</li>
+  <li class="breadcrumb-item"
+  >
+  HomeComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" class="nav-link"
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li class="nav-item">
+            <a href="#templateData" class="nav-link"
+                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li class="nav-item">
+            <a href="#styleData" class="nav-link"
+                role="tab" id="styleData-tab" data-bs-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li class="nav-item">
+            <a href="#tree" class="nav-link"
+                role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/pages/home/home.component.ts</code>
+</p>
+
+
+    <p class="comment">
+        <h3>Description</h3>
+    </p>
+    <p class="comment">
+        <p>Componente de la página de inicio de la tienda de insectos.</p>
+<p>Este componente es responsable de mostrar la página principal de la tienda, que incluye enlaces a
+diferentes categorías de productos disponibles. Los usuarios pueden navegar a través de las categorías
+para explorar los productos de la tienda.</p>
+
+    </p>
+
+
+
+
+<section data-compodoc="block-metadata">
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-home</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./home.component.css</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./home.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+
+
+
+
+
+
+
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component } from &#x27;@angular/core&#x27;;
+
+/**
+ * Componente de la página de inicio de la tienda de insectos.
+ * 
+ * Este componente es responsable de mostrar la página principal de la tienda, que incluye enlaces a
+ * diferentes categorías de productos disponibles. Los usuarios pueden navegar a través de las categorías
+ * para explorar los productos de la tienda.
+ */
+@Component({
+  selector: &#x27;app-home&#x27;,  // Selector HTML para usar este componente en la plantilla
+  templateUrl: &#x27;./home.component.html&#x27;,  // Plantilla asociada al componente
+  styleUrls: [&#x27;./home.component.css&#x27;]  // Estilos CSS para este componente
+})
+export class HomeComponent {
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;body&gt;
+  &lt;header&gt;
+    &lt;nav&gt;
+      &lt;ul&gt;
+        &lt;li&gt;&lt;a href&#x3D;&quot;/home&quot; style&#x3D;&quot;font-size: 150%;&quot;&gt;Insectarium&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href&#x3D;&quot;/allshop&quot;&gt;Tienda&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href&#x3D;&quot;/allguides&quot;&gt;Guías&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href&#x3D;&quot;/contact&quot;&gt;Contacto&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href&#x3D;&quot;/profile&quot;&gt;Mi perfil&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href&#x3D;&quot;/shoppingcart&quot;&gt;Carrito&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href&#x3D;&quot;/blog&quot;&gt;Blog&lt;/a&gt;&lt;/li&gt; 
+    &lt;/ul&gt;
+    &lt;/nav&gt;
+  &lt;/header&gt;
+
+  &lt;main class&#x3D;&quot;content&quot;&gt;
+    &lt;!-- Sección de categorías --&gt;
+    &lt;section class&#x3D;&quot;category-section&quot;&gt;
+      &lt;h2&gt;Compra por categoría&lt;/h2&gt;
+      &lt;div class&#x3D;&quot;grid&quot;&gt;
+        &lt;a href&#x3D;&quot;/shop/shoparachnida&quot; class&#x3D;&quot;category-link&quot;&gt;
+            &lt;div class&#x3D;&quot;category-item&quot;&gt;
+                &lt;img src&#x3D;&quot;/assets/arachnida.png&quot; alt&#x3D;&quot;Arañas&quot;&gt;
+                &lt;p&gt;Arañas&lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/a&gt;
+        &lt;a href&#x3D;&quot;/shop/shopblattodea&quot; class&#x3D;&quot;category-link&quot;&gt;
+            &lt;div class&#x3D;&quot;category-item&quot;&gt;
+                &lt;img src&#x3D;&quot;/assets/blattodea.png&quot; alt&#x3D;&quot;Cucarachas&quot;&gt;
+                &lt;p&gt;Cucarachas&lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/a&gt;
+        &lt;a href&#x3D;&quot;/shop/shopchilopoda&quot; class&#x3D;&quot;category-link&quot;&gt;
+            &lt;div class&#x3D;&quot;category-item&quot;&gt;
+                &lt;img src&#x3D;&quot;/assets/chilopoda.png&quot; alt&#x3D;&quot;Ciempiés&quot;&gt;
+                &lt;p&gt;Ciempiés&lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/a&gt;
+        &lt;a href&#x3D;&quot;/shop/shopcoleoptera&quot; class&#x3D;&quot;category-link&quot;&gt;
+            &lt;div class&#x3D;&quot;category-item&quot;&gt;
+                &lt;img src&#x3D;&quot;/assets/coleoptera.png&quot; alt&#x3D;&quot;Escarabajos&quot;&gt;
+                &lt;p&gt;Escarabajos&lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/a&gt;
+        &lt;a href&#x3D;&quot;/shop/shopcrustacea&quot; class&#x3D;&quot;category-link&quot;&gt;
+            &lt;div class&#x3D;&quot;category-item&quot;&gt;
+                &lt;img src&#x3D;&quot;/assets/crustacea.png&quot; alt&#x3D;&quot;Crustáceos&quot;&gt;
+                &lt;p&gt;Crustáceos&lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/a&gt;
+        &lt;a href&#x3D;&quot;/shop/shopdiplopoda&quot; class&#x3D;&quot;category-link&quot;&gt;
+            &lt;div class&#x3D;&quot;category-item&quot;&gt;
+                &lt;img src&#x3D;&quot;/assets/diplopoda.png&quot; alt&#x3D;&quot;Milpiés&quot;&gt;
+                &lt;p&gt;Milpiés&lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/a&gt;
+        &lt;a href&#x3D;&quot;/shop/shopgastropoda&quot; class&#x3D;&quot;category-link&quot;&gt;
+            &lt;div class&#x3D;&quot;category-item&quot;&gt;
+                &lt;img src&#x3D;&quot;/assets/gastropoda.png&quot; alt&#x3D;&quot;Gasterópodos&quot;&gt;
+                &lt;p&gt;Gasterópodos&lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/a&gt;
+        &lt;a href&#x3D;&quot;/shop/shophymenoptera&quot; class&#x3D;&quot;category-link&quot;&gt;
+            &lt;div class&#x3D;&quot;category-item&quot;&gt;
+                &lt;img src&#x3D;&quot;/assets/himenoptera.png&quot; alt&#x3D;&quot;Himenópteros&quot;&gt;
+                &lt;p&gt;Himenópteros&lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/a&gt;
+        &lt;a href&#x3D;&quot;/shop/shopisopoda&quot; class&#x3D;&quot;category-link&quot;&gt;
+            &lt;div class&#x3D;&quot;category-item&quot;&gt;
+                &lt;img src&#x3D;&quot;/assets/isopoda.png&quot; alt&#x3D;&quot;Isópodos&quot;&gt;
+                &lt;p&gt;Isópodos&lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/a&gt;
+        &lt;a href&#x3D;&quot;/shop/shoplepidoptera&quot; class&#x3D;&quot;category-link&quot;&gt;
+            &lt;div class&#x3D;&quot;category-item&quot;&gt;
+                &lt;img src&#x3D;&quot;/assets/lepidoptera.png&quot; alt&#x3D;&quot;Lepidópteros&quot;&gt;
+                &lt;p&gt;Lepidópteros&lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/a&gt;
+        &lt;a href&#x3D;&quot;/shop/shopmantodea&quot; class&#x3D;&quot;category-link&quot;&gt;
+            &lt;div class&#x3D;&quot;category-item&quot;&gt;
+                &lt;img src&#x3D;&quot;/assets/mantodea.png&quot; alt&#x3D;&quot;Mantis&quot;&gt;
+                &lt;p&gt;Mantis&lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/a&gt;
+        &lt;a href&#x3D;&quot;/shop/shopphasmatodea&quot; class&#x3D;&quot;category-link&quot;&gt;
+            &lt;div class&#x3D;&quot;category-item&quot;&gt;
+                &lt;img src&#x3D;&quot;/assets/phasmatodea.png&quot; alt&#x3D;&quot;Fásmidos&quot;&gt;
+                &lt;p&gt;Fásmidos&lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/a&gt;
+    &lt;/div&gt;    
+    &lt;/section&gt;
+  &lt;/main&gt;
+
+  &lt;footer&gt;
+    &lt;div class&#x3D;&quot;footer-left&quot;&gt;
+        &lt;p&gt;&lt;strong&gt;Insectarium&lt;/strong&gt;&lt;/p&gt;
+        &lt;p&gt;C/ Asunción, 14&lt;/p&gt;
+      &lt;p&gt;41011 Sevilla&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div class&#x3D;&quot;footer-right&quot;&gt;
+      &lt;p&gt;653 785 231&lt;/p&gt;
+      &lt;p&gt;insectarium&quot;&amp;#64;&quot;gmail.com&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/footer&gt;
+  
+  
+&lt;/body&gt;</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="styleData">
+                <p class="comment">
+                    <code>./home.component.css</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">/* Estilos del header */
+header {
+  background-color: rgba(120, 210, 106, 0.9);
+  padding: 15px;
+  border-radius: 0 0 15px 15px;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px; 
+}
+
+header h1 {
+  margin: 10px;
+  color: white;
+  font-size: 24px;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 10px 10px 10px 10px;
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  align-items: center;
+  height: 100%;
+}
+
+nav li {
+  display: inline;
+  margin-right: 20px;
+}
+
+/* Enlaces del header */
+nav a {
+  text-decoration: none; 
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+nav a:hover {
+  text-decoration: none;
+}
+
+/* ------------------------------------------------------------------------------------------------------------------------ */
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: url(&#x27;/assets/home_bg.png&#x27;) no-repeat center center fixed;
+  background-size: cover;
+  text-align: center;
+}
+
+/* Contenido general */
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px; 
+}
+
+/* Sección de categorías */
+.category-section {
+  width: 100%;
+  margin-bottom: 40px;
+  background-color: rgba(255, 255, 255, 0.596);
+  border: 1px solid #aacb8f;  
+  padding: 20px; 
+  border-radius: 18px;
+}
+
+
+.category-section h2 {
+  text-align: left;
+  width: 100%;
+  font-size: 160%;
+  font-weight: bolder;
+  color: #1f6c28;
+  margin-bottom: 35px;
+  margin-top: 20px;
+}
+
+.category-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.category-item {
+  background-color: rgba(120, 210, 106, 0.123);
+  color: #1f6c28;
+  padding: 15px;
+  border-radius: 8px;
+  font-weight: bold;
+  text-transform:capitalize;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 200px; 
+}
+
+
+.category-item img {
+  width: 100%;
+  height: 75%;
+  object-fit: cover;
+  border-radius: 8px;
+  flex-grow: 1;
+  align-self: stretch;
+}
+
+/* Ajuste del texto */
+.category-item p {
+  margin: 5px 0 0;
+}
+
+
+/* Sección de FAQ */
+.faq-section {
+  width: 100%;
+  text-align: left; /* Alinea el texto a la izquierda */
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.596);
+  border: 1px solid #aacb8f;
+  border-radius: 18px;
+  box-shadow: 0 2px 8px rgba(34, 165, 39, 0.1);
+  align-self: flex-start; /* Asegura que se mantenga a la izquierda */
+}
+
+.faq-section h2 {
+  text-align: left;
+  width: 100%;
+  font-size: 160%;
+  font-weight: bolder;
+  color: #1f6c28;
+  margin-bottom: 20px;
+}
+
+
+.faq-item {
+  margin-bottom: 15px;
+  font-size: 100%;
+}
+
+.faq-item h3 {
+  margin-bottom: 5px;
+  color: #333;
+  font-size: 100%;
+  font-weight: bold;
+}
+
+
+/*------------------------------------------------------------------*/
+/* Estilos del footer */
+footer {
+  background-color: rgba(120, 210, 106, 0.9); 
+  padding: 15px;
+  border-radius: 15px 15px 0 0; 
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+  display: flex;
+  justify-content: space-between; 
+  padding: 10px 30px; 
+  position: relative; 
+  margin-top: 30px; 
+  width: 100%; 
+  z-index: 1;
+}
+
+/* Estilos del footer */
+footer {
+  background-color: rgba(120, 210, 106, 0.9); 
+  padding: 15px;
+  border-radius: 15px 15px 0 0;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+  display: flex;
+  justify-content: space-between; 
+  padding: 10px 30px; 
+  position: relative;
+  margin-top: 30px;
+  width: 100%;
+  z-index: 1;
+}
+
+/* Estilo de los textos dentro del footer */
+footer p {
+  margin: 0;
+  color: white;
+  font-size: 14px;
+}
+
+/* Estilo para las columnas dentro del footer */
+.footer-left, .footer-right {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-left {
+  text-align: left;
+  margin-left: 10%;
+}
+
+.footer-right {
+  text-align: right;
+  margin-right: 10%;
+
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><body>  <header>    <nav>      <ul>        <li><a href="/home" style="font-size: 150%;">Insectarium</a></li>        <li><a href="/allshop">Tienda</a></li>        <li><a href="/allguides">Guías</a></li>        <li><a href="/contact">Contacto</a></li>        <li><a href="/profile">Mi perfil</a></li>        <li><a href="/shoppingcart">Carrito</a></li>        <li><a href="/blog">Blog</a></li>     </ul>    </nav>  </header>  <main class="content">    <!-- Sección de categorías -->    <section class="category-section">      <h2>Compra por categoría</h2>      <div class="grid">        <a href="/shop/shoparachnida" class="category-link">            <div class="category-item">                <img src="/assets/arachnida.png" alt="Arañas">                <p>Arañas</p>            </div>        </a>        <a href="/shop/shopblattodea" class="category-link">            <div class="category-item">                <img src="/assets/blattodea.png" alt="Cucarachas">                <p>Cucarachas</p>            </div>        </a>        <a href="/shop/shopchilopoda" class="category-link">            <div class="category-item">                <img src="/assets/chilopoda.png" alt="Ciempiés">                <p>Ciempiés</p>            </div>        </a>        <a href="/shop/shopcoleoptera" class="category-link">            <div class="category-item">                <img src="/assets/coleoptera.png" alt="Escarabajos">                <p>Escarabajos</p>            </div>        </a>        <a href="/shop/shopcrustacea" class="category-link">            <div class="category-item">                <img src="/assets/crustacea.png" alt="Crustáceos">                <p>Crustáceos</p>            </div>        </a>        <a href="/shop/shopdiplopoda" class="category-link">            <div class="category-item">                <img src="/assets/diplopoda.png" alt="Milpiés">                <p>Milpiés</p>            </div>        </a>        <a href="/shop/shopgastropoda" class="category-link">            <div class="category-item">                <img src="/assets/gastropoda.png" alt="Gasterópodos">                <p>Gasterópodos</p>            </div>        </a>        <a href="/shop/shophymenoptera" class="category-link">            <div class="category-item">                <img src="/assets/himenoptera.png" alt="Himenópteros">                <p>Himenópteros</p>            </div>        </a>        <a href="/shop/shopisopoda" class="category-link">            <div class="category-item">                <img src="/assets/isopoda.png" alt="Isópodos">                <p>Isópodos</p>            </div>        </a>        <a href="/shop/shoplepidoptera" class="category-link">            <div class="category-item">                <img src="/assets/lepidoptera.png" alt="Lepidópteros">                <p>Lepidópteros</p>            </div>        </a>        <a href="/shop/shopmantodea" class="category-link">            <div class="category-item">                <img src="/assets/mantodea.png" alt="Mantis">                <p>Mantis</p>            </div>        </a>        <a href="/shop/shopphasmatodea" class="category-link">            <div class="category-item">                <img src="/assets/phasmatodea.png" alt="Fásmidos">                <p>Fásmidos</p>            </div>        </a>    </div>        </section>  </main>  <footer>    <div class="footer-left">        <p><strong>Insectarium</strong></p>        <p>C/ Asunción, 14</p>      <p>41011 Sevilla</p>    </div>    <div class="footer-right">      <p>653 785 231</p>      <p>insectarium"&#64;"gmail.com</p>    </div>  </footer>    </body></div>'
+    var COMPONENTS = [{'name': 'AllguidesComponent', 'selector': 'app-allguides'},{'name': 'AllshopComponent', 'selector': 'app-allshop'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BlogComponent', 'selector': 'app-blog'},{'name': 'CartComponent', 'selector': 'app-cart'},{'name': 'ContactComponent', 'selector': 'app-contact'},{'name': 'GuidesarachnidaComponent', 'selector': 'app-guidesarachnida'},{'name': 'GuidesblattodeaComponent', 'selector': 'app-guidesblattodea'},{'name': 'GuideschilopodaComponent', 'selector': 'app-guideschilopoda'},{'name': 'GuidescoleopteraComponent', 'selector': 'app-guidescoleoptera'},{'name': 'GuidescrustaceaComponent', 'selector': 'app-guidescrustacea'},{'name': 'GuidesdiplopodaComponent', 'selector': 'app-guidesdiplopoda'},{'name': 'GuidesgastropodaComponent', 'selector': 'app-guidesgastropoda'},{'name': 'GuideshymenopteraComponent', 'selector': 'app-guideshymenoptera'},{'name': 'GuidesisopodaComponent', 'selector': 'app-guidesisopoda'},{'name': 'GuideslepidopteraComponent', 'selector': 'app-guideslepidoptera'},{'name': 'GuidesmantodeaComponent', 'selector': 'app-guidesmantodea'},{'name': 'GuidesphasmatodeaComponent', 'selector': 'app-guidesphasmatodea'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'NotfoundComponent', 'selector': 'app-notfound'},{'name': 'ProfileComponent', 'selector': 'app-profile'},{'name': 'RegisterComponent', 'selector': 'app-register'},{'name': 'ShoparachnidaComponent', 'selector': 'app-shoparachnida'},{'name': 'ShopblattodeaComponent', 'selector': 'app-shopblattodea'},{'name': 'ShopchilopodaComponent', 'selector': 'app-shopchilopoda'},{'name': 'ShopcoleopteraComponent', 'selector': 'app-shopcoleoptera'},{'name': 'ShopcrustaceaComponent', 'selector': 'app-shopcrustacea'},{'name': 'ShopdiplopodaComponent', 'selector': 'app-shopdiplopoda'},{'name': 'ShopgastropodaComponent', 'selector': 'app-shopgastropoda'},{'name': 'ShophymenopteraComponent', 'selector': 'app-shophymenoptera'},{'name': 'ShopisopodaComponent', 'selector': 'app-shopisopoda'},{'name': 'ShoplepidopteraComponent', 'selector': 'app-shoplepidoptera'},{'name': 'ShopmantodeaComponent', 'selector': 'app-shopmantodea'},{'name': 'ShopphasmatodeaComponent', 'selector': 'app-shopphasmatodea'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'HomeComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'HomeComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

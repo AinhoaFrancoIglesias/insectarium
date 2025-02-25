@@ -33,17 +33,32 @@ import { GuidesmantodeaComponent } from './pages/guides/guidesmantodea/guidesman
 import { GuidesphasmatodeaComponent } from './pages/guides/guidesphasmatodea/guidesphasmatodea.component';
 import { CartComponent } from './purchase/cart/cart.component';
 import { BlogComponent } from './pages/blog/blog.component';
+import { NotfoundComponent } from './pages/notfound/notfound.component';
 
+/**
+ * Módulo de enrutamiento para la aplicación.
+ * 
+ * Define todas las rutas de navegación y las redirecciones dentro de la aplicación, incluyendo las rutas
+ * a las secciones de la tienda, guías, perfil del usuario, inicio de sesión, registro, blog y contacto.
+ */
 const routes: Routes = [
+  // Ruta para la página de inicio
   { path: 'home', component: HomeComponent },
+  
+  // Ruta para la tienda de todos los productos
   { path: 'allshop', component: AllshopComponent },
+  
+  // Ruta para todas las guías
   { path: 'allguides', component: AllguidesComponent },
+  
+  // Ruta para la página de contacto
   { path: 'contact', component: ContactComponent },
-  { path: 'profile', component: ProfileComponent },
-  { path: 'login', component: LoginComponent },
-  { path: 'register', component: RegisterComponent },
-  { path: 'blog', component: BlogComponent },
-
+  
+  // Rutas de autenticación
+  { path: 'profile', component: ProfileComponent }, // Perfil del usuario
+  { path: 'login', component: LoginComponent }, // Login de usuario
+  { path: 'register', component: RegisterComponent }, // Registro de usuario
+  { path: 'blog', component: BlogComponent }, // Blog de la tienda
 
   // Rutas de las tiendas por categoría
   { path: 'shop/shoparachnida', component: ShoparachnidaComponent },
@@ -58,8 +73,9 @@ const routes: Routes = [
   { path: 'shop/shoplepidoptera', component: ShoplepidopteraComponent },
   { path: 'shop/shopmantodea', component: ShopmantodeaComponent },
   { path: 'shop/shopphasmatodea', component: ShopphasmatodeaComponent },
-  { path: 'shoppingcart', component: CartComponent },
 
+  // Ruta para el carrito de compras
+  { path: 'shoppingcart', component: CartComponent },
 
   // Rutas de las guías por categoría
   { path: 'guides/guidesarachnida', component: GuidesarachnidaComponent },
@@ -75,12 +91,18 @@ const routes: Routes = [
   { path: 'guides/guidesmantodea', component: GuidesmantodeaComponent },
   { path: 'guides/guidesphasmatodea', component: GuidesphasmatodeaComponent },
 
-  { path: '', redirectTo: 'home', pathMatch: 'full' }, // Redirigir a home si la ruta está vacía
-  { path: '**', redirectTo: 'home' } // Manejo de rutas desconocidas
+  // Refirección para la página común para las rutas desconocidas
+  { path: 'notfound', component: NotfoundComponent },
+
+  // Redirección por defecto a la página de inicio si la ruta está vacía
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
+  
+  // Redirección para rutas no encontradas
+  { path: '**', redirectTo: 'notfound' }
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  imports: [RouterModule.forRoot(routes)], // Configuración del enrutador con las rutas definidas
+  exports: [RouterModule]  // Exportación del módulo de rutas
 })
 export class AppRoutingModule { }
