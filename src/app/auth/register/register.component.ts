@@ -86,7 +86,7 @@ export class RegisterComponent {
     if (this.registerForm.valid) {
       const { username, email, password } = this.registerForm.value;
       console.log('Registrando usuario:', { username, email, password });
-      this.router.navigate(['/pages/home']); // Redirige a la página de inicio después del registro
+      this.router.navigate(['/login']); // Redirige a la página de login después del registro
     }
   }
 }

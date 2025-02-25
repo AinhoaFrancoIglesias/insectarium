@@ -84,6 +84,6 @@ export class CartComponent {
   @HostListener('window:scroll', ['$event'])
   onScroll(event: any): void {
     const scrollTop = window.scrollY || document.documentElement.scrollTop;
-    this.positionY = scrollTop + 50;  // Aumentar la posición para que el div suba/baje con el scroll
+    this.positionY = scrollTop + 50;  
   }
 }
