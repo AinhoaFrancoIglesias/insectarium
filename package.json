@@ -6,7 +6,7 @@
     "compodoc:serve": "npx compodoc -s",
     "ng": "ng",
     "start": "ng serve",
-    "build": "npx ng build --prod",
+    "build": "npx ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "serve:ssr:insectarium": "node dist/insectarium/server/server.mjs"
